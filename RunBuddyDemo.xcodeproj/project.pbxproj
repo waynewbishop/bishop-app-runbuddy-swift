@@ -7,19 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DAAABCA12BC71F9C00A4C09A /* RunBuddyDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA02BC71F9C00A4C09A /* RunBuddyDemoApp.swift */; };
+		DA3536B02BD2FB9B009FDBB2 /* BuddyEngine2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine2.swift */; };
+		DA3536B22BD32EB5009FDBB2 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* ContentView2.swift */; };
+		DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */; };
+		DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* WeatherModel.swift */; };
+		DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */; };
 		DAAABCA32BC71F9C00A4C09A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA22BC71F9C00A4C09A /* ContentView.swift */; };
 		DAAABCA52BC71F9D00A4C09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */; };
 		DAAABCA92BC71F9D00A4C09A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */; };
+		DAAABCB12BC7209200A4C09A /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */; };
+		DAAABCB32BC7215D00A4C09A /* BuddyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB22BC7215D00A4C09A /* BuddyEngine.swift */; };
+		DAAABCB72BCE1E7400A4C09A /* MapSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB62BCE1E7400A4C09A /* MapSwiftUI.swift */; };
+		DAAABCB92BCE34D000A4C09A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* DataModel.swift */; };
+		DAAABCBB2BCF639800A4C09A /* SearchableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCBA2BCF639800A4C09A /* SearchableMap.swift */; };
+		DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCBC2BCF98E400A4C09A /* SheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyEngine2.swift; sourceTree = "<group>"; };
+		DA3536B12BD32EB5009FDBB2 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModel.swift; sourceTree = "<group>"; };
+		DA3536B82BD37062009FDBB2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunBuddyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAAABCA02BC71F9C00A4C09A /* RunBuddyDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBuddyDemoApp.swift; sourceTree = "<group>"; };
+		DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBuddyApp.swift; sourceTree = "<group>"; };
 		DAAABCA22BC71F9C00A4C09A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAABCA62BC71F9D00A4C09A /* RunBuddyDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunBuddyDemo.entitlements; sourceTree = "<group>"; };
 		DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DAAABCB22BC7215D00A4C09A /* BuddyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyEngine.swift; sourceTree = "<group>"; };
+		DAAABCB62BCE1E7400A4C09A /* MapSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSwiftUI.swift; sourceTree = "<group>"; };
+		DAAABCB82BCE34D000A4C09A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		DAAABCBA2BCF639800A4C09A /* SearchableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableMap.swift; sourceTree = "<group>"; };
+		DAAABCBC2BCF98E400A4C09A /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,12 +46,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAABCB12BC7209200A4C09A /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA3536B32BD36A03009FDBB2 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */,
+				DA3536B82BD37062009FDBB2 /* WeatherModel.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
 		DAAABC942BC71F9C00A4C09A = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +81,10 @@
 		DAAABC9F2BC71F9C00A4C09A /* RunBuddyDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DAAABCA02BC71F9C00A4C09A /* RunBuddyDemoApp.swift */,
-				DAAABCA22BC71F9C00A4C09A /* ContentView.swift */,
+				DA3536B32BD36A03009FDBB2 /* Structures */,
+				DAAABCBF2BD091B600A4C09A /* Models */,
+				DAAABCC02BD0979200A4C09A /* Views */,
+				DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */,
 				DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */,
 				DAAABCA62BC71F9D00A4C09A /* RunBuddyDemo.entitlements */,
 				DAAABCA72BC71F9D00A4C09A /* Preview Content */,
@@ -67,6 +98,28 @@
 				DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DAAABCBF2BD091B600A4C09A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAAABCB82BCE34D000A4C09A /* DataModel.swift */,
+				DAAABCB22BC7215D00A4C09A /* BuddyEngine.swift */,
+				DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine2.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DAAABCC02BD0979200A4C09A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAAABCB62BCE1E7400A4C09A /* MapSwiftUI.swift */,
+				DAAABCBA2BCF639800A4C09A /* SearchableMap.swift */,
+				DAAABCBC2BCF98E400A4C09A /* SheetView.swift */,
+				DAAABCA22BC71F9C00A4C09A /* ContentView.swift */,
+				DA3536B12BD32EB5009FDBB2 /* ContentView2.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +138,9 @@
 			dependencies = (
 			);
 			name = RunBuddyDemo;
+			packageProductDependencies = (
+				DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */,
+			);
 			productName = RunBuddyDemo;
 			productReference = DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +169,9 @@
 				Base,
 			);
 			mainGroup = DAAABC942BC71F9C00A4C09A;
+			packageReferences = (
+				DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			productRefGroup = DAAABC9E2BC71F9C00A4C09A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +198,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAABCB32BC7215D00A4C09A /* BuddyEngine.swift in Sources */,
+				DAAABCB72BCE1E7400A4C09A /* MapSwiftUI.swift in Sources */,
 				DAAABCA32BC71F9C00A4C09A /* ContentView.swift in Sources */,
-				DAAABCA12BC71F9C00A4C09A /* RunBuddyDemoApp.swift in Sources */,
+				DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */,
+				DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */,
+				DAAABCBB2BCF639800A4C09A /* SearchableMap.swift in Sources */,
+				DA3536B02BD2FB9B009FDBB2 /* BuddyEngine2.swift in Sources */,
+				DA3536B22BD32EB5009FDBB2 /* ContentView2.swift in Sources */,
+				DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */,
+				DAAABCB92BCE34D000A4C09A /* DataModel.swift in Sources */,
+				DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +338,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RunBuddyDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = 6586N6K7KU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -306,6 +375,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RunBuddyDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = 6586N6K7KU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -355,6 +425,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.10;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DAAABC952BC71F9C00A4C09A /* Project object */;
 }
