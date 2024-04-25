@@ -34,11 +34,20 @@ struct RotatingStarView: View {
             
           }
       }
-      
-  }
+  } //end view
+    
+    func startAnimation() {
+        //add code to start animation here..
+        print("now starting the animation..")
+    }
+    
+    func stopAnimation() {
+        print("now stopping the animation..")
+    }
+    
 }
 
 
 #Preview {
-    RotatingStarView(color: .orange, size: 30, duration: 1.5, degrees: 90) // Set color, size, duration, and initial rotation
+    RotatingStarView(color: .orange, size: 75, duration: 1.5, degrees: 90) // Set color, size, duration, and initial rotation
 }
