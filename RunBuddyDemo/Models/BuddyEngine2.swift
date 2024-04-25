@@ -36,7 +36,6 @@ class BuddyEngine2: ObservableObject {
         
         //TODO: With main functionality working, now we can build out a strongly typed model for the prompt.
         let prompt: String = prompt
-
         
         // Use streaming with text-only input
         let contentStream = model.generateContentStream(prompt)

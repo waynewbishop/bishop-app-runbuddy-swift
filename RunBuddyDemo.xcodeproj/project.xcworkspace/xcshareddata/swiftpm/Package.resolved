@@ -1,13 +1,22 @@
 {
-  "originHash" : "fb9ac36071f364d419c527ac181073d029907ab8c2d0a2cf5e1dbf2b4a353436",
+  "originHash" : "ddabd975e94786dbc07ea7d884c8e826d676d76550d18bdbfeb7411ffab75da0",
   "pins" : [
     {
       "identity" : "generative-ai-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/generative-ai-swift",
       "state" : {
-        "revision" : "9156ed7ea18def208d504ff0cf1d584f2a81399e",
-        "version" : "0.4.11"
+        "revision" : "584b1e9a8561716a34b16b8729ca9b85a60f0f95",
+        "version" : "0.5.0"
+      }
+    },
+    {
+      "identity" : "swift-structures",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/waynewbishop/swift-structures",
+      "state" : {
+        "revision" : "ace400434e42fae58917c713d0c13aec183c89de",
+        "version" : "0.5.2"
       }
     }
   ],

@@ -29,7 +29,7 @@ private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
                          
                        do {
                            //TODO: pass default prompt to the AI engine. Easier for testing..
-                           try await engine.getGenerativeTextChunkAnswer(prompt: .promptNewRunner, apiKey: apiKey)
+                           try await engine.getGenerativeTextChunkAnswer(prompt: .prompt10MileSample, apiKey: apiKey)
                            
                        } catch {
                          print(error.localizedDescription)

@@ -11,6 +11,7 @@
 		DA3536B22BD32EB5009FDBB2 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* ContentView2.swift */; };
 		DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */; };
 		DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* WeatherModel.swift */; };
+		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
 		DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */; };
 		DAAABCA32BC71F9C00A4C09A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA22BC71F9C00A4C09A /* ContentView.swift */; };
 		DAAABCA52BC71F9D00A4C09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		DA3536B12BD32EB5009FDBB2 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModel.swift; sourceTree = "<group>"; };
 		DA3536B82BD37062009FDBB2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		DA5BB9462BD863850010DC12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunBuddyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBuddyApp.swift; sourceTree = "<group>"; };
 		DAAABCA22BC71F9C00A4C09A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */,
 				DAAABCB12BC7209200A4C09A /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,11 +65,20 @@
 			path = Structures;
 			sourceTree = "<group>";
 		};
+		DA5BB9452BD863850010DC12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA5BB9462BD863850010DC12 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DAAABC942BC71F9C00A4C09A = {
 			isa = PBXGroup;
 			children = (
 				DAAABC9F2BC71F9C00A4C09A /* RunBuddyDemo */,
 				DAAABC9E2BC71F9C00A4C09A /* Products */,
+				DA5BB9452BD863850010DC12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +152,7 @@
 			name = RunBuddyDemo;
 			packageProductDependencies = (
 				DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */,
+				DA5BB9432BD862BC0010DC12 /* Structures */,
 			);
 			productName = RunBuddyDemo;
 			productReference = DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */;
@@ -171,6 +184,7 @@
 			mainGroup = DAAABC942BC71F9C00A4C09A;
 			packageReferences = (
 				DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+				DA5BB9422BD862BC0010DC12 /* XCRemoteSwiftPackageReference "swift-structures" */,
 			);
 			productRefGroup = DAAABC9E2BC71F9C00A4C09A /* Products */;
 			projectDirPath = "";
@@ -252,6 +266,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -427,6 +442,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		DA5BB9422BD862BC0010DC12 /* XCRemoteSwiftPackageReference "swift-structures" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/waynewbishop/swift-structures";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 		DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/generative-ai-swift";
@@ -438,6 +461,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		DA5BB9432BD862BC0010DC12 /* Structures */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA5BB9422BD862BC0010DC12 /* XCRemoteSwiftPackageReference "swift-structures" */;
+			productName = Structures;
+		};
 		DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
