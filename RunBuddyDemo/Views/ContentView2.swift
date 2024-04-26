@@ -14,28 +14,29 @@ struct ContentView2: View {
     
 @State private var userPrompt: String = ""
 @ObservedObject var engine = BuddyEngine2()
-    
-private var rotatingStarView = RotatingStarView(color: .orange, size: 25, duration: 1.0, degrees: 45)
-
+@State var isAnimating: Bool = false
     
 private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
 
     var body: some View {
         HStack {
             VStack {
-                
                 HStack {
-                    rotatingStarView
+                    AnimateTest(isGenerating: $isAnimating)
+                    
                     TextField("Ask a question..", text: $userPrompt,
                         onCommit: {
-                                              
+                        
+                         //start thinking process
+                         isAnimating = true
+                        
                          Task {
-                            //TODO: this is where we would call OpenWeatherAPI
                            do {
-                               try await engine.getGenerativeTextChunkAnswer(prompt: .promptNewRunner, apiKey: apiKey)
+                               try await engine.getGenerativeTextChunkAnswer(prompt: .prompt10MileSample, apiKey: apiKey)
                                
                            } catch {
                              print(error.localizedDescription)
+                             isAnimating = false
                            }
                          }
                       }) //question textfield
@@ -49,6 +50,11 @@ private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
                     .background(.gray.opacity(0.1))
                     .cornerRadius(8)
                     .foregroundColor(.primary)
+                
+                //TODO: is there an onChange event for the
+                //Texfield where I can stop the animation?
+                //or I can monitor the change in the chunkResponse
+                //data? 
             }
  
         }

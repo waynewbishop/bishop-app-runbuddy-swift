@@ -49,5 +49,5 @@ struct RotatingStarView: View {
 
 
 #Preview {
-    RotatingStarView(color: .orange, size: 75, duration: 1.5, degrees: 90) // Set color, size, duration, and initial rotation
+    RotatingStarView(color: .orange, size: 35, duration: 1.5, degrees: 90) // Set color, size, duration, and initial rotation
 }
