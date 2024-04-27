@@ -11,7 +11,7 @@ import Foundation
 import GoogleGenerativeAI
 
 
-class BuddyEngine2: ObservableObject {
+class BuddyEngine: ObservableObject {
 
     @Published var chunkResponse: String = ""
 

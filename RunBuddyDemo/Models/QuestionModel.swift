@@ -8,6 +8,7 @@
 import Foundation
 import SwiftData
 
-class DataModel {
-   //TODO: Find how how this can be used to persist user data on device without the use CoreData.
+//use SwiftData to persist previous planning questions 
+class QuestionModel {
+    
 }

@@ -7,43 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA3536B02BD2FB9B009FDBB2 /* BuddyEngine2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine2.swift */; };
-		DA3536B22BD32EB5009FDBB2 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* ContentView2.swift */; };
+		DA3536B02BD2FB9B009FDBB2 /* BuddyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */; };
+		DA3536B22BD32EB5009FDBB2 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */; };
 		DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */; };
 		DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* WeatherModel.swift */; };
 		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
-		DA5BB94B2BDAACFD0010DC12 /* RotatingStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94A2BDAACFD0010DC12 /* RotatingStarView.swift */; };
-		DA5BB94D2BDBFF730010DC12 /* AnimateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* AnimateTest.swift */; };
+		DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */; };
 		DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */; };
-		DAAABCA32BC71F9C00A4C09A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA22BC71F9C00A4C09A /* ContentView.swift */; };
 		DAAABCA52BC71F9D00A4C09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */; };
 		DAAABCA92BC71F9D00A4C09A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */; };
 		DAAABCB12BC7209200A4C09A /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */; };
-		DAAABCB32BC7215D00A4C09A /* BuddyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB22BC7215D00A4C09A /* BuddyEngine.swift */; };
-		DAAABCB72BCE1E7400A4C09A /* MapSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB62BCE1E7400A4C09A /* MapSwiftUI.swift */; };
-		DAAABCB92BCE34D000A4C09A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* DataModel.swift */; };
-		DAAABCBB2BCF639800A4C09A /* SearchableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCBA2BCF639800A4C09A /* SearchableMap.swift */; };
+		DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB62BCE1E7400A4C09A /* MapView.swift */; };
+		DAAABCB92BCE34D000A4C09A /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */; };
 		DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCBC2BCF98E400A4C09A /* SheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyEngine2.swift; sourceTree = "<group>"; };
-		DA3536B12BD32EB5009FDBB2 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
+		DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyEngine.swift; sourceTree = "<group>"; };
+		DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModel.swift; sourceTree = "<group>"; };
 		DA3536B82BD37062009FDBB2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		DA5BB9462BD863850010DC12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		DA5BB94A2BDAACFD0010DC12 /* RotatingStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingStarView.swift; sourceTree = "<group>"; };
-		DA5BB94C2BDBFF730010DC12 /* AnimateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateTest.swift; sourceTree = "<group>"; };
+		DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisView.swift; sourceTree = "<group>"; };
 		DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunBuddyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBuddyApp.swift; sourceTree = "<group>"; };
-		DAAABCA22BC71F9C00A4C09A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAABCA62BC71F9D00A4C09A /* RunBuddyDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunBuddyDemo.entitlements; sourceTree = "<group>"; };
 		DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DAAABCB22BC7215D00A4C09A /* BuddyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyEngine.swift; sourceTree = "<group>"; };
-		DAAABCB62BCE1E7400A4C09A /* MapSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSwiftUI.swift; sourceTree = "<group>"; };
-		DAAABCB82BCE34D000A4C09A /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		DAAABCBA2BCF639800A4C09A /* SearchableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableMap.swift; sourceTree = "<group>"; };
+		DAAABCB62BCE1E7400A4C09A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		DAAABCBC2BCF98E400A4C09A /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,8 +55,7 @@
 		DA3536B32BD36A03009FDBB2 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
-				DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */,
-				DA3536B82BD37062009FDBB2 /* WeatherModel.swift */,
+				DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -75,6 +66,13 @@
 				DA5BB9462BD863850010DC12 /* XCTest.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA5BB94E2BDCBB230010DC12 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		DAAABC942BC71F9C00A4C09A = {
@@ -119,9 +117,9 @@
 		DAAABCBF2BD091B600A4C09A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DAAABCB82BCE34D000A4C09A /* DataModel.swift */,
-				DAAABCB22BC7215D00A4C09A /* BuddyEngine.swift */,
-				DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine2.swift */,
+				DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */,
+				DA3536B82BD37062009FDBB2 /* WeatherModel.swift */,
+				DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,13 +127,11 @@
 		DAAABCC02BD0979200A4C09A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DAAABCB62BCE1E7400A4C09A /* MapSwiftUI.swift */,
-				DAAABCBA2BCF639800A4C09A /* SearchableMap.swift */,
+				DA5BB94E2BDCBB230010DC12 /* Modifiers */,
+				DAAABCB62BCE1E7400A4C09A /* MapView.swift */,
 				DAAABCBC2BCF98E400A4C09A /* SheetView.swift */,
-				DAAABCA22BC71F9C00A4C09A /* ContentView.swift */,
-				DA3536B12BD32EB5009FDBB2 /* ContentView2.swift */,
-				DA5BB94A2BDAACFD0010DC12 /* RotatingStarView.swift */,
-				DA5BB94C2BDBFF730010DC12 /* AnimateTest.swift */,
+				DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */,
+				DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,19 +214,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAAABCB32BC7215D00A4C09A /* BuddyEngine.swift in Sources */,
-				DAAABCB72BCE1E7400A4C09A /* MapSwiftUI.swift in Sources */,
-				DAAABCA32BC71F9C00A4C09A /* ContentView.swift in Sources */,
+				DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */,
 				DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */,
 				DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */,
-				DAAABCBB2BCF639800A4C09A /* SearchableMap.swift in Sources */,
-				DA5BB94B2BDAACFD0010DC12 /* RotatingStarView.swift in Sources */,
-				DA3536B02BD2FB9B009FDBB2 /* BuddyEngine2.swift in Sources */,
-				DA3536B22BD32EB5009FDBB2 /* ContentView2.swift in Sources */,
+				DA3536B02BD2FB9B009FDBB2 /* BuddyEngine.swift in Sources */,
+				DA3536B22BD32EB5009FDBB2 /* QuestionView.swift in Sources */,
 				DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */,
-				DAAABCB92BCE34D000A4C09A /* DataModel.swift in Sources */,
+				DAAABCB92BCE34D000A4C09A /* QuestionModel.swift in Sources */,
 				DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */,
-				DA5BB94D2BDBFF730010DC12 /* AnimateTest.swift in Sources */,
+				DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

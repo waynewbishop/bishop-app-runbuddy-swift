@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct AnimateTest: View {
+struct EllipsisView: View {
     
     @Binding var isGenerating: Bool
     
     var body: some View {
         
-        Image(systemName: "wave.3.forward.circle.fill")
+        Image(systemName: "ellipsis.bubble.fill")
             .resizable()
             .aspectRatio(contentMode: .fit) // Maintain aspect ratio
             .foregroundColor(.blue)
             .frame(width: 30, height: 30)
+            .symbolRenderingMode(.hierarchical)
             
             //only animate based on boolean value
             .symbolEffect(.variableColor.iterative.reversing, isActive: isGenerating)
@@ -29,6 +30,6 @@ struct AnimateTest: View {
 #Preview {
     @State var toggle: Bool = true
     return VStack {
-        AnimateTest(isGenerating: $toggle)
+        EllipsisView(isGenerating: $toggle)
     }
 }

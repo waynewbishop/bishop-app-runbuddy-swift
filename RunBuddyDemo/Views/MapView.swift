@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 
-
 extension MKCoordinateRegion {
 
     /*
@@ -26,10 +25,10 @@ extension MKCoordinateRegion {
 }
 
 
-struct MapSwiftUI: View {
+struct MapView: View {
     
-    @State private var position: MapCameraPosition = .region(.seattle)
-    //@State private var position: MapCameraPosition = .automatic
+    //@State private var position: MapCameraPosition = .region(.seattle)
+    @State private var position: MapCameraPosition = .automatic
     @State private var visibleRegion: MKCoordinateRegion?
     @State private var isSheetPresented: Bool = true
     
@@ -59,11 +58,10 @@ struct MapSwiftUI: View {
         }
         .sheet(isPresented: $isSheetPresented) {
             SheetView()
-        }
-        
+        }        
     }
 }
 
 #Preview {
-    MapSwiftUI()
+    MapView()
 }
