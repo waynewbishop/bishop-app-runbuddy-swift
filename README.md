@@ -1,7 +1,7 @@
 Run Buddy
 ====================
 
-This project utilizes Generative AI to help runners plan their next training run or event. Implemented in Swift,  the combines statisical weather data with Google's Gemini API to provide answers for frequently asked running questions. Considerations include variables such as location, distance, altitude, time of day, humidity as well as weather-based information.
+This project utilizes [Generative AI](https://www.linkedin.com/in/waynebishop) to help runners plan their next training run or event. Implemented in Swift,  the combines statisical weather data with Google's [Gemini API](https://ai.google.dev) to provide answers for frequently asked running questions. Considerations include variables such as location, distance, altitude, time of day, humidity as well as weather-based information.
 
 Audience
 ---------------------
@@ -10,38 +10,29 @@ Audience
 
 
 ```swift
-    func getGenerativeTextChunkAnswer(prompt: String, apiKey: String?) async throws -> () {
-        
-        //check for apiKey
-        guard let key = apiKey else {
-            throw GenerateContentError.invalidAPIKey(message: "error: invalid api key..")
-        }
+    let model = newTextModel(with: key)
+    let prompt: String = prompt
 
-        let model = newTextModel(with: key)
-        let prompt: String = prompt
-        
-        // Use streaming with text-only input
-        let contentStream = model.generateContentStream(prompt)
+    // Use streaming with text-only input
+    let contentStream = model.generateContentStream(prompt)
+            
+    do {
+        for try await chunk in contentStream {
+            if let text = chunk.text {
+                print(text)
                 
-        do {
-            for try await chunk in contentStream {
-                if let text = chunk.text {
-                    print(text)
-                    
-                    //update published property on main thread
-                    DispatchQueue.main.async {
-                        self.chunkResponse += text
-                    }
+                //update published property on main thread
+                DispatchQueue.main.async {
+                    self.chunkResponse += text
                 }
             }
-        } //end do
-        catch {
-            //throw general exception
-            print("something went wrong..")
-            throw error
         }
-        
-    } //end function
+    } //end do
+    catch {
+        //throw general exception
+        print("something went wrong..")
+        throw error
+    }
 ```
 
 Usage
