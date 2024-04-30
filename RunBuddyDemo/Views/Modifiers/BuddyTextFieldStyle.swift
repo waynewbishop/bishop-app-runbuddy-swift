@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextViewStyle: ViewModifier {
+struct BuddyTextFieldStyle: ViewModifier {
 
   let cornerRadius: CGFloat
   let backgroundOpacity: Double
@@ -28,9 +28,10 @@ struct TextViewStyle: ViewModifier {
   }
 }
 
+//the applied name of the modifier
 extension View {
     func buddyTextStyle() -> some View {
-        modifier(TextViewStyle())
+        modifier(BuddyTextFieldStyle())
     }
 }
 

@@ -42,10 +42,8 @@ private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
                 
                 TextField("Waiting for an answer..", text: $engine.chunkResponse, axis: .vertical)
                     .frame(minHeight: 20) // Sets a minimum height to prevent collapse
-                    .padding(15)
-                    .background(.gray.opacity(0.1))
-                    .cornerRadius(8)
-                    .foregroundColor(.primary)
+                    .buddyTextStyle()
+                    .disabled(true) // Disables user interaction
                     .onChange(of: engine.chunkResponse) { oldValue, newValue in
                         isAnimating = false
                     }
