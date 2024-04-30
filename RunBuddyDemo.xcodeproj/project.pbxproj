@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		DA3536B02BD2FB9B009FDBB2 /* BuddyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */; };
-		DA3536B22BD32EB5009FDBB2 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */; };
+		DA3536B22BD32EB5009FDBB2 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */; };
 		DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */; };
 		DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* WeatherModel.swift */; };
 		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
 		DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */; };
+		DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */; };
+		DAA42B122BE1A61300B041E9 /* TextViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B112BE1A61300B041E9 /* TextViewStyle.swift */; };
 		DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */; };
 		DAAABCA52BC71F9D00A4C09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */; };
 		DAAABCA92BC71F9D00A4C09A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */; };
@@ -20,15 +22,18 @@
 		DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB62BCE1E7400A4C09A /* MapView.swift */; };
 		DAAABCB92BCE34D000A4C09A /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */; };
 		DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCBC2BCF98E400A4C09A /* SheetView.swift */; };
+		DAC27C1F2BDF3A3E00BD7EE8 /* MapWithSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC27C1E2BDF3A3E00BD7EE8 /* MapWithSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyEngine.swift; sourceTree = "<group>"; };
-		DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModel.swift; sourceTree = "<group>"; };
 		DA3536B82BD37062009FDBB2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		DA5BB9462BD863850010DC12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisView.swift; sourceTree = "<group>"; };
+		DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		DAA42B112BE1A61300B041E9 /* TextViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewStyle.swift; sourceTree = "<group>"; };
 		DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunBuddyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBuddyApp.swift; sourceTree = "<group>"; };
 		DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		DAAABCB62BCE1E7400A4C09A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		DAAABCBC2BCF98E400A4C09A /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		DAC27C1E2BDF3A3E00BD7EE8 /* MapWithSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWithSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 		DA5BB94E2BDCBB230010DC12 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				DAA42B112BE1A61300B041E9 /* TextViewStyle.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -130,8 +137,10 @@
 				DA5BB94E2BDCBB230010DC12 /* Modifiers */,
 				DAAABCB62BCE1E7400A4C09A /* MapView.swift */,
 				DAAABCBC2BCF98E400A4C09A /* SheetView.swift */,
-				DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */,
+				DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */,
+				DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */,
 				DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */,
+				DAC27C1E2BDF3A3E00BD7EE8 /* MapWithSearch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,8 +227,11 @@
 				DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */,
 				DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */,
 				DA3536B02BD2FB9B009FDBB2 /* BuddyEngine.swift in Sources */,
-				DA3536B22BD32EB5009FDBB2 /* QuestionView.swift in Sources */,
+				DA3536B22BD32EB5009FDBB2 /* AnswerView.swift in Sources */,
 				DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */,
+				DAA42B122BE1A61300B041E9 /* TextViewStyle.swift in Sources */,
+				DAC27C1F2BDF3A3E00BD7EE8 /* MapWithSearch.swift in Sources */,
+				DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */,
 				DAAABCB92BCE34D000A4C09A /* QuestionModel.swift in Sources */,
 				DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */,
 				DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */,
