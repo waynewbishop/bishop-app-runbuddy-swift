@@ -9,10 +9,9 @@ import SwiftUI
 
 struct QuestionView: View {
 
-@State var location: String = "Choose a map location"
+@State var location: String = ""
 
       var body: some View {
-          
           VStack {
               HStack {
                 Text("Run Buddy")
@@ -23,10 +22,10 @@ struct QuestionView: View {
               
               HStack {
                   Image(systemName: "mappin.and.ellipse")
-                  TextField("Waiting for an answer..", text: $location, axis: .vertical)
+                  TextField("Search for map location", text: $location, axis: .vertical)
+                      .autocorrectionDisabled()
               }
-              .disabled(true) //disables user interaction
-              .buddyTextStyle()
+              .buddyFieldStyle()
               
               HStack {
                   Label("Altitude:", systemImage: "mountain.2.circle")
@@ -41,9 +40,11 @@ struct QuestionView: View {
               }
               .frame(height: 10) // set the desired height for the VStack (controls Spacer height)
           }
-          .padding()
-        Spacer() //align to the top
-      }
+          .buddySheetStyle()
+          Spacer() //align to the top
+          
+          
+      } //end view
 }
 
 #Preview {

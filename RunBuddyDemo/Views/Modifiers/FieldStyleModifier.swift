@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BuddyTextFieldStyle: ViewModifier {
+struct FieldStyleModifier: ViewModifier {
 
   let cornerRadius: CGFloat
   let backgroundOpacity: Double
@@ -30,8 +30,8 @@ struct BuddyTextFieldStyle: ViewModifier {
 
 //the applied name of the modifier
 extension View {
-    func buddyTextStyle() -> some View {
-        modifier(BuddyTextFieldStyle())
+    func buddyFieldStyle() -> some View {
+        modifier(FieldStyleModifier())
     }
 }
 
@@ -40,9 +40,7 @@ extension View {
      @State var sampleText: String = "Hello World!"
      return HStack {
          TextField("Waiting for an answer..", text: $sampleText)
-             .buddyTextStyle()
+             .buddyFieldStyle()
      }
      .padding()
  }
-
-

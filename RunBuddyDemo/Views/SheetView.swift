@@ -21,18 +21,10 @@ struct SheetView: View {
                 })
                 .autocorrectionDisabled()
             }
-            .padding(12)
-            .background(.gray.opacity(0.1))
-            .cornerRadius(8)
-            .foregroundColor(.primary)
-
+            .buddyFieldStyle()
             Spacer()
         }
-        .padding()
-        .interactiveDismissDisabled()
-        .presentationDetents([.height(200), .large])
-        .presentationBackground(.thickMaterial)
-        .presentationBackgroundInteraction(.enabled(upThrough: .large))
+        .buddySheetStyle()
     }
 }
 
