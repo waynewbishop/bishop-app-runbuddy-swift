@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		DA3536B02BD2FB9B009FDBB2 /* BuddyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */; };
 		DA3536B22BD32EB5009FDBB2 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */; };
-		DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */; };
-		DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* WeatherModel.swift */; };
+		DA3536B72BD36FAF009FDBB2 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* Prompt.swift */; };
+		DA3536B92BD37062009FDBB2 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* Forecast.swift */; };
 		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
 		DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */; };
 		DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */; };
@@ -21,15 +21,15 @@
 		DAAABCA92BC71F9D00A4C09A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */; };
 		DAAABCB12BC7209200A4C09A /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */; };
 		DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB62BCE1E7400A4C09A /* MapView.swift */; };
-		DAAABCB92BCE34D000A4C09A /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */; };
-		DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCBC2BCF98E400A4C09A /* SheetView.swift */; };
+		DAAABCB92BCE34D000A4C09A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* Question.swift */; };
+		DACF91CC2BE2F7C700A72BD0 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyEngine.swift; sourceTree = "<group>"; };
 		DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
-		DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModel.swift; sourceTree = "<group>"; };
-		DA3536B82BD37062009FDBB2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		DA3536B62BD36FAF009FDBB2 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		DA3536B82BD37062009FDBB2 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		DA5BB9462BD863850010DC12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisView.swift; sourceTree = "<group>"; };
 		DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -41,8 +41,8 @@
 		DAAABCA62BC71F9D00A4C09A /* RunBuddyDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunBuddyDemo.entitlements; sourceTree = "<group>"; };
 		DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAAABCB62BCE1E7400A4C09A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
-		DAAABCBC2BCF98E400A4C09A /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		DAAABCB82BCE34D000A4C09A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,9 @@
 		DA3536B32BD36A03009FDBB2 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
-				DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */,
+				DA3536B62BD36FAF009FDBB2 /* Prompt.swift */,
+				DA3536B82BD37062009FDBB2 /* Forecast.swift */,
+				DAAABCB82BCE34D000A4C09A /* Question.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -104,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				DA3536B32BD36A03009FDBB2 /* Structures */,
-				DAAABCBF2BD091B600A4C09A /* Models */,
+				DAAABCBF2BD091B600A4C09A /* Factories */,
 				DAAABCC02BD0979200A4C09A /* Views */,
 				DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */,
 				DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */,
@@ -122,14 +124,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DAAABCBF2BD091B600A4C09A /* Models */ = {
+		DAAABCBF2BD091B600A4C09A /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */,
-				DA3536B82BD37062009FDBB2 /* WeatherModel.swift */,
-				DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */,
+				DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */,
+				DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */,
 			);
-			path = Models;
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		DAAABCC02BD0979200A4C09A /* Views */ = {
@@ -137,7 +138,6 @@
 			children = (
 				DA5BB94E2BDCBB230010DC12 /* Modifiers */,
 				DAAABCB62BCE1E7400A4C09A /* MapView.swift */,
-				DAAABCBC2BCF98E400A4C09A /* SheetView.swift */,
 				DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */,
 				DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */,
 				DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */,
@@ -224,17 +224,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */,
-				DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */,
+				DA3536B72BD36FAF009FDBB2 /* Prompt.swift in Sources */,
 				DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */,
 				DA3536B02BD2FB9B009FDBB2 /* BuddyEngine.swift in Sources */,
 				DA3536B22BD32EB5009FDBB2 /* AnswerView.swift in Sources */,
-				DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */,
 				DAA42B122BE1A61300B041E9 /* FieldStyleModifier.swift in Sources */,
 				DAA42B142BE1D9BD00B041E9 /* SheetStyleModifier.swift in Sources */,
 				DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */,
-				DAAABCB92BCE34D000A4C09A /* QuestionModel.swift in Sources */,
-				DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */,
+				DAAABCB92BCE34D000A4C09A /* Question.swift in Sources */,
+				DA3536B92BD37062009FDBB2 /* Forecast.swift in Sources */,
 				DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */,
+				DACF91CC2BE2F7C700A72BD0 /* SearchEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,7 @@ private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
                         
                         Task {
                           do {
-                              try await engine.getGenerativeTextChunkAnswer(prompt: .prompt10MileSample, apiKey: apiKey)
+                              try await engine.getGenerativeTextChunkAnswer(prompt: .promptNewRunner, apiKey: apiKey)
                               
                           } catch {
                             print(error.localizedDescription)

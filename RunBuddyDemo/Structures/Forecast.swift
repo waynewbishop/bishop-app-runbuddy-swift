@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-class WeatherModel {
+class Forecast {
     
     //TODO: This is where we will obtain and store all the weather specific information from the OpenWeatherAPI.
     //This is where we will call the OpenWeatherAPI

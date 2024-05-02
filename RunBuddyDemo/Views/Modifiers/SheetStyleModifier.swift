@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct SheetStyleModifier: ViewModifier {
 
@@ -33,7 +34,7 @@ extension View {
         Text("MapView goes here..")
     }
     .sheet(isPresented: $isSheetPresented) {
-        SheetView()
+        //some sample view can go here..
     }
 }
 

@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct PromptModel: Codable {
+struct Prompt: Codable {
     
     //time, location and duration of effort
     let lat: Float

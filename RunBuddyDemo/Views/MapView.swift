@@ -11,30 +11,24 @@ import MapKit
 
 extension MKCoordinateRegion {
 
-    /*
-     note: zoom level of set
-     */
-    static let seattle = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 47.59392966826332,
-            longitude: -122.30586928814589),
-        span: MKCoordinateSpan(
-            latitudeDelta: 0.1,
-            longitudeDelta: 0.09)
-    )
+    static let washington = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 44.95095247964279, longitude: -120.72892421454331), span: MKCoordinateSpan(latitudeDelta: 13.248434414740949, longitudeDelta: 8.63519284897437))
 }
 
 
 struct MapView: View {
     
-    //@State private var position: MapCameraPosition = .region(.seattle)
-    @State private var position: MapCameraPosition = .automatic
+    @State private var position: MapCameraPosition = .region(.washington)
     @State private var visibleRegion: MKCoordinateRegion?
     @State private var isSheetPresented: Bool = true
+    @State var searchResults: [MKMapItem] = []
     
     var body: some View {
         
         Map(initialPosition: position) {
+            
+            ForEach(searchResults, id:\.self) { result in
+                Marker(item: result)
+            }
             
          /*
          MapCircle(center: .elDoradoPark, radius: CLLocationDistance(250))
@@ -54,11 +48,10 @@ struct MapView: View {
         }
         .onMapCameraChange { context in
             visibleRegion = context.region
-            print(visibleRegion!)
+           // print(visibleRegion!)
         }
         .sheet(isPresented: $isSheetPresented) {
-            //SheetView()
-            QuestionView()
+            QuestionView(searchRegion: $visibleRegion, searchResults: $searchResults)
         }
     }
 }

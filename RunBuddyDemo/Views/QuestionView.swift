@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct QuestionView: View {
 
 @State var location: String = ""
+@Binding var searchRegion: MKCoordinateRegion?
+@Binding var searchResults: [MKMapItem]
 
       var body: some View {
           VStack {
@@ -21,14 +24,18 @@ struct QuestionView: View {
               }
               
               HStack {
-                  Image(systemName: "mappin.and.ellipse")
+                  Image(systemName: "magnifyingglass")
                   TextField("Search for map location", text: $location, axis: .vertical)
                       .autocorrectionDisabled()
+                      .onSubmit() {
+                          print("invoke code to obtain search results..")
+                          print("search location \(String(describing: searchRegion))")
+                      }
               }
-              .buddyFieldStyle()
+              .buddyFieldStyle() //custom styling
               
               HStack {
-                  Label("Altitude:", systemImage: "mountain.2.circle")
+                  Label("Altitude:", systemImage: "mountain.2")
                   Spacer()
 
               }
@@ -47,6 +54,11 @@ struct QuestionView: View {
       } //end view
 }
 
+
 #Preview {
-    QuestionView()
+    @State var visibleRegion: MKCoordinateRegion?
+    @State var searchResults: [MKMapItem] = []
+    return VStack {
+        QuestionView(searchRegion: $visibleRegion, searchResults: $searchResults)
+    }
 }
