@@ -18,28 +18,18 @@ extension MKCoordinateRegion {
 struct MapView: View {
     
     @State private var position: MapCameraPosition = .region(.washington)
-    @State private var visibleRegion: MKCoordinateRegion?
+    @State private var searchRegion: MKCoordinateRegion?
     @State private var isSheetPresented: Bool = true
     @State var searchResults: [MKMapItem] = []
     
     var body: some View {
-        
-        Map(initialPosition: position) {
-            
-            ForEach(searchResults, id:\.self) { result in
-                Marker(item: result)
-            }
-            
-         /*
-         MapCircle(center: .elDoradoPark, radius: CLLocationDistance(250))
-             .foregroundStyle(.orange.opacity(0.60))
-             .mapOverlayLevel(level: .aboveLabels)
-         
-         MapCircle(center: .golfCourse, radius: CLLocationDistance(350))
-             .foregroundStyle(.teal.opacity(0.60))
-             .mapOverlayLevel(level: .aboveRoads)
-         */
-         
+        Map(position: $position) {
+            /*
+             note: with this model I don't need markers
+             I can just zoom in on the specified region
+             by the users selection or by using the search
+             interface.
+             */
         }
         .ignoresSafeArea()
         .mapStyle(.standard(elevation: .realistic))
@@ -47,12 +37,12 @@ struct MapView: View {
             print("now tapping the screen..")
         }
         .onMapCameraChange { context in
-            visibleRegion = context.region
-           // print(visibleRegion!)
+            searchRegion = context.region
         }
         .sheet(isPresented: $isSheetPresented) {
-            QuestionView(searchRegion: $visibleRegion, searchResults: $searchResults)
+            QuestionView(searchRegion: $searchRegion, searchResults: $searchResults)
         }
+        
     }
 }
 

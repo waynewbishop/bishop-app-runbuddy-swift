@@ -13,26 +13,30 @@ struct SearchEngine {
 
     @Binding var searchResults: [MKMapItem]
     
-    func search(for query: String, in searchRegion: MKCoordinateRegion) {
+    func search(for query: String, in searchRegion: MKCoordinateRegion) async -> () {
         
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
         request.resultTypes = .pointOfInterest
         
-        //set the searchable area. driven by use selection..
+        //searchable region set the map selection
         request.region = searchRegion
         
         Task {
-            let search = MKLocalSearch(request: request)
             
+            let search = MKLocalSearch(request: request)
             if let response = try? await search.start() {
                 
                 //update binding property on main thread
                 DispatchQueue.main.async {
-                    searchResults = response.mapItems
-                    print("there are \(searchResults.count) search results..")
+                    self.searchResults = response.mapItems
+                    print("\(searchResults.count) search results..")
                 }
             }
+            else {
+                print("error: no results found..")
+            }
+            
         } //end task
     }
 }
