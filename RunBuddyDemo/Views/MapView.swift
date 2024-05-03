@@ -38,9 +38,21 @@ struct MapView: View {
         }
         .onMapCameraChange { context in
             searchRegion = context.region
+            print(searchRegion.debugDescription)
         }
         .sheet(isPresented: $isSheetPresented) {
             QuestionView(searchRegion: $searchRegion, searchResults: $searchResults)
+        }
+        .onChange(of: searchResults) {
+            
+            let mapItem = searchResults[0]
+            let coordinate = mapItem.placemark.coordinate
+            let zoomLevel: Double = 0.012
+                        
+            withAnimation(.easeInOut(duration: 0.75)) { // Adjust animation duration
+                position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: zoomLevel, longitudeDelta: zoomLevel)))
+            }
+
         }
         
     }

@@ -14,7 +14,7 @@ struct SheetStyleModifier: ViewModifier {
     content
       .padding()
       .interactiveDismissDisabled()
-      .presentationDetents([.height(350), .large])
+      .presentationDetents([.height(300) , .large])
       .presentationBackground(.thickMaterial)
       .presentationBackgroundInteraction(.enabled(upThrough: .large))
   }
@@ -31,7 +31,7 @@ extension View {
 #Preview {
     @State var isSheetPresented: Bool = true
     return VStack {
-        Text("MapView goes here..")
+        Map()
     }
     .sheet(isPresented: $isSheetPresented) {
         //some sample view can go here..

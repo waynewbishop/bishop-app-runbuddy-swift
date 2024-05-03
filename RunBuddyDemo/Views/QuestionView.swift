@@ -29,10 +29,20 @@ struct QuestionView: View {
                   TextField("Search for map location", text: $location, axis: .vertical)
                       .autocorrectionDisabled()
                       .onSubmit() {
+                          let engine = SearchEngine(searchResults: $searchResults)
                           
+                          Task {
+                              do {
+                                  try await engine.search(for: location, in: .washington)
+                              }
+                              catch {
+                                  print(error.localizedDescription)
+                              }
+                          } //end task
                       }
               }
               .buddyFieldStyle()
+                            
               HStack {
                   Label("Altitude:", systemImage: "mountain.2.fill")
                   Spacer()

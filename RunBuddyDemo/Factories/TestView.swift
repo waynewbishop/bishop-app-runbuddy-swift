@@ -25,8 +25,13 @@ struct TestView: View {
                         let engine = SearchEngine(searchResults: $searchResults)
                         
                         Task {
-                            await engine.search(for: location, in: .washington)
-                        }
+                            do {
+                                try await engine.search(for: location, in: .washington)
+                            }
+                            catch {
+                                print(error.localizedDescription)
+                            }
+                        } //end task
                     }
             }
             .buddyFieldStyle()
@@ -37,8 +42,19 @@ struct TestView: View {
                 Text(searchResults.description)
             }
             .padding()
-
         }
+        
+        //wow, is simple stuff and super easy to lay out the interface..
+        Form {
+            Section {
+                HStack {
+                    Label("Slider", systemImage: "camera.macro")
+                    Text("what about this?")
+                }
+
+            }
+        }
+
     }
 }
 
