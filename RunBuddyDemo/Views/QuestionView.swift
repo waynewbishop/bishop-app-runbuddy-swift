@@ -11,11 +11,11 @@ import MapKit
 struct QuestionView: View {
 
 @State var location: String = ""
-@Binding var searchRegion: MKCoordinateRegion?
+@Binding var searchRegion: MKCoordinateRegion?  //todo: remove optional parameter.
 @Binding var searchResults: [MKMapItem]
 
-    
-      var body: some View {
+  var body: some View {
+      ScrollView {
           VStack {
               HStack {
                 Text("Run Buddy")
@@ -24,46 +24,67 @@ struct QuestionView: View {
                 Spacer()
               }
               
-              HStack {
-                  Image(systemName: "magnifyingglass")
-                  TextField("Search for map location", text: $location, axis: .vertical)
-                      .autocorrectionDisabled()
-                      .onSubmit() {
-                          let engine = SearchEngine(searchResults: $searchResults)
-                          
-                          Task {
-                              do {
-                                  try await engine.search(for: location, in: .washington)
-                              }
-                              catch {
-                                  print(error.localizedDescription)
-                              }
-                          } //end task
-                      }
+              GroupBox {
+                  HStack {
+                      Image(systemName: "magnifyingglass")
+                      TextField("Search for map location", text: $location, axis: .vertical)
+                          .autocorrectionDisabled()
+                          .onSubmit() {
+                              let engine = SearchEngine(searchResults: $searchResults)
+                              
+                              Task {
+                                  do {
+                                      try await engine.search(for: location, in: .washington)
+                                  }
+                                  catch {
+                                      print(error.localizedDescription)
+                                  }
+                              } //end task
+                          }
+                  }
               }
-              .buddyFieldStyle()
-                            
-              HStack {
-                  Label("Altitude:", systemImage: "mountain.2.fill")
-                  Spacer()
-              }
-              .padding(10)
               
               VStack {
                   Divider()
                     .background(.gray)
               }
-              .frame(height: 10) // set the desired VStack height
-              
+              .frame(height: 50) // set the desired VStack height
+        
+              VStack (alignment: .leading, content: {
+                  Text("STATISTICS")
+                      .font(.subheadline)
+                  
+                  GroupBox {
+                      
+                      LabeledContent("Longitude:") {
+                        Text("Testing")
+                      }
+                      .padding(.bottom, 10)
+                                            
+                      LabeledContent("Latitude:") {
+                        Text("Testing")
+                      }
+                      .padding(.bottom, 10)
+                      
+                      LabeledContent("Altitude:") {
+                        Text("Testing")
+                      }
+                      
+                  }
+                  
+              })
+
+              /*
               HStack {
                   Text(searchRegion.debugDescription)
               }
+             */
           }
           .buddySheetStyle()
           Spacer() //VStack align to the top
           
-          
-      } //end view
+      }
+  } //end view
 }
 
 

@@ -33,15 +33,12 @@ struct MapView: View {
         }
         .ignoresSafeArea()
         .mapStyle(.standard(elevation: .realistic))
-        .onTapGesture { position in
-            print("now tapping the screen..")
+        .sheet(isPresented: $isSheetPresented) {
+            QuestionView(searchRegion: $searchRegion, searchResults: $searchResults)
         }
         .onMapCameraChange { context in
             searchRegion = context.region
             print(searchRegion.debugDescription)
-        }
-        .sheet(isPresented: $isSheetPresented) {
-            QuestionView(searchRegion: $searchRegion, searchResults: $searchResults)
         }
         .onChange(of: searchResults) {
             
@@ -52,9 +49,7 @@ struct MapView: View {
             withAnimation(.easeInOut(duration: 0.75)) { // Adjust animation duration
                 position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: zoomLevel, longitudeDelta: zoomLevel)))
             }
-
-        }
-        
+        }        
     }
 }
 
