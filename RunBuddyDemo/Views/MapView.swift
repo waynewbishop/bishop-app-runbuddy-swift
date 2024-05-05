@@ -18,7 +18,7 @@ extension MKCoordinateRegion {
 struct MapView: View {
     
     @State private var position: MapCameraPosition = .region(.washington)
-    @State private var searchRegion: MKCoordinateRegion?
+    @State var searchRegion: MKCoordinateRegion?
     @State private var isSheetPresented: Bool = true
     @State var searchResults: [MKMapItem] = []
     

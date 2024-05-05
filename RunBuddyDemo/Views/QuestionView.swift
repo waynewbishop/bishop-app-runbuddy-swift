@@ -10,16 +10,30 @@ import MapKit
 
 struct QuestionView: View {
 
+@Binding var searchRegion: MKCoordinateRegion?
+@Binding var searchResults: [MKMapItem]
+    
 @State var location: String = ""
 @State var distance: String = ""
-@State var selectedDate: Date = Date()
-@State var selectedTime: Date = Date()
+@State var selectedDate = Date()
+@State var selectedTime = Date()
 @State var nutrition: Bool = true
 @State var kit: Bool = true
 @State var hydration: Bool = true
+
     
-@Binding var searchRegion: MKCoordinateRegion?
-@Binding var searchResults: [MKMapItem]
+var latitude: String {
+  //TODO: compute property from searchRegion
+    return searchRegion.debugDescription
+}
+
+var longitude: String {
+   return ""
+}
+
+var altitude: String {
+   return ""
+}
 
   var body: some View {
       ScrollView {
@@ -38,7 +52,7 @@ struct QuestionView: View {
                           .autocorrectionDisabled()
                           .onSubmit() {
                               let engine = SearchEngine(searchResults: $searchResults)
-                              
+                                                          
                               Task {
                                   do {
                                       try await engine.search(for: location, in: .washington)
@@ -63,17 +77,17 @@ struct QuestionView: View {
                   
                   GroupBox {
                       LabeledContent("Latitude") {
-                        Text("Testing")
+                        Text(latitude)
                       }
                       .padding(.bottom, 15)
                                             
                       LabeledContent("Longitude") {
-                        Text("Testing")
+                        Text(longitude)
                       }
                       .padding(.bottom, 15)
                       
                       LabeledContent("Altitude") {
-                        Text("Testing")
+                        Text(altitude)
                       }
                   }
               })
@@ -134,9 +148,10 @@ struct QuestionView: View {
               
           }
           .buddySheetStyle()
-          Spacer() //VStack align to the top
+          Spacer() //top align VStack
           
       }
+      
   } //end view
 }
 
