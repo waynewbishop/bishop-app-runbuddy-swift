@@ -46,10 +46,10 @@ struct MapView: View {
             let coordinate = mapItem.placemark.coordinate
             let zoomLevel: Double = 0.012
                         
-            withAnimation(.easeInOut(duration: 0.75)) { // Adjust animation duration
+            withAnimation(.easeInOut(duration: 1.00)) { // Adjust animation duration
                 position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: zoomLevel, longitudeDelta: zoomLevel)))
             }
-        }        
+        }
     }
 }
 

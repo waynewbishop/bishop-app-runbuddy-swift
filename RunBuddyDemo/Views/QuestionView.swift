@@ -11,17 +11,24 @@ import MapKit
 struct QuestionView: View {
 
 @State var location: String = ""
-@Binding var searchRegion: MKCoordinateRegion?  //todo: remove optional parameter.
+@State var distance: String = ""
+@State var selectedDate: Date = Date()
+@State var selectedTime: Date = Date()
+@State var nutrition: Bool = true
+@State var kit: Bool = true
+@State var hydration: Bool = true
+    
+@Binding var searchRegion: MKCoordinateRegion?
 @Binding var searchResults: [MKMapItem]
 
   var body: some View {
       ScrollView {
           VStack {
               HStack {
-                Text("Run Buddy")
+                  Text("Run Buddy")
                       .font(.largeTitle)
                       .bold()
-                Spacer()
+                  Spacer()
               }
               
               GroupBox {
@@ -51,34 +58,80 @@ struct QuestionView: View {
               .frame(height: 50) // set the desired VStack height
         
               VStack (alignment: .leading, content: {
-                  Text("STATISTICS")
+                  Text("MAP DETAILS")
                       .font(.subheadline)
                   
                   GroupBox {
-                      
-                      LabeledContent("Longitude:") {
+                      LabeledContent("Latitude") {
                         Text("Testing")
                       }
-                      .padding(.bottom, 10)
+                      .padding(.bottom, 15)
                                             
-                      LabeledContent("Latitude:") {
+                      LabeledContent("Longitude") {
                         Text("Testing")
                       }
-                      .padding(.bottom, 10)
+                      .padding(.bottom, 15)
                       
-                      LabeledContent("Altitude:") {
+                      LabeledContent("Altitude") {
                         Text("Testing")
                       }
-                      
                   }
-                  
               })
-
-              /*
-              HStack {
-                  Text(searchRegion.debugDescription)
+              
+              VStack {
+                  Divider()
+                    .background(.gray)
               }
-             */
+              .frame(height: 50) // set the desired VStack height
+                      
+              VStack (alignment: .leading, content: {
+                  Text("RUN DETAILS")
+                      .font(.subheadline)
+                  
+                  GroupBox {
+                     
+                      HStack {
+                        TextField("Run distance (miles)", text: $distance)
+                          .keyboardType(.decimalPad)
+                          .padding(.bottom, 15)
+                      }
+                    
+                      LabeledContent("Start Date") {
+                          DatePicker("Start Date", selection: $selectedDate, displayedComponents: .date)
+                                 .labelsHidden()
+                                 .padding(.bottom, 15)
+                      }
+                      
+                      LabeledContent("Start Time") {
+                          DatePicker("Start Time", selection: $selectedTime, displayedComponents: .hourAndMinute)
+                                 .labelsHidden() 
+                                 .padding(.bottom, 20)
+                      }
+                    
+                      Toggle(isOn: $nutrition) {
+                          Text("Nutrition Analysis")
+                      }
+                      .padding(.bottom, 15)
+                      
+                      Toggle(isOn: $hydration) {
+                          Text("Hydration Analysis")
+                      }
+                      .padding(.bottom, 15)
+                      
+                      Toggle(isOn: $kit) {
+                          Text("Clothing Analysis")
+                      }
+                      .padding(.bottom, 15)
+                      
+                      VStack {
+                          Divider()
+                            .background(.gray)
+                      }
+                      .frame(height: 50) // set the desired VStack height
+                
+                  }
+              })
+              
           }
           .buddySheetStyle()
           Spacer() //VStack align to the top
