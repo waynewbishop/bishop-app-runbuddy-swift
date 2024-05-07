@@ -12,37 +12,54 @@ struct QuestionView: View {
 
 @Binding var searchRegion: MKCoordinateRegion?
 @Binding var searchResults: [MKMapItem]
+
+    /*
+     note: obtain the placemark information when
+     doing the runbuddy analysis. The goal will be to
+     pass the details of the search location to
+     Gemini in order to get an rough idea of the
+     destination elevation.
+     */
     
 @State var location: String = ""
 @State var distance: String = ""
 @State var selectedDate = Date()
 @State var selectedTime = Date()
-@State var nutrition: Bool = true
-@State var kit: Bool = true
-@State var hydration: Bool = true
+@State var selectedOption = "Easy"
+@State var nutrition: Bool = false
+@State var kit: Bool = false
+@State var hydration: Bool = false
 
     
 var latitude: String {
-  //TODO: compute property from searchRegion
-    return searchRegion.debugDescription
+    if let region = searchRegion {
+        return region.center.latitude.description
+    }
+    else {
+        return ""
+    }
 }
 
 var longitude: String {
-   return ""
+    if let region = searchRegion {
+        return region.center.longitude.description
+    }
+    else {
+        return ""
+    }
 }
-
-var altitude: String {
-   return ""
-}
-
+    
   var body: some View {
-      ScrollView {
+          VStack {
+              Spacer()
+          }
           VStack {
               HStack {
                   Text("Run Buddy")
                       .font(.largeTitle)
                       .bold()
-                  Spacer()
+                      .padding()
+                 Spacer()
               }
               
               GroupBox {
@@ -70,7 +87,8 @@ var altitude: String {
                     .background(.gray)
               }
               .frame(height: 50) // set the desired VStack height
-        
+              
+          ScrollView {
               VStack (alignment: .leading, content: {
                   Text("MAP DETAILS")
                       .font(.subheadline)
@@ -85,10 +103,6 @@ var altitude: String {
                         Text(longitude)
                       }
                       .padding(.bottom, 15)
-                      
-                      LabeledContent("Altitude") {
-                        Text(altitude)
-                      }
                   }
               })
               
@@ -97,6 +111,7 @@ var altitude: String {
                     .background(.gray)
               }
               .frame(height: 50) // set the desired VStack height
+              
                       
               VStack (alignment: .leading, content: {
                   Text("RUN DETAILS")
@@ -108,6 +123,11 @@ var altitude: String {
                         TextField("Run distance (miles)", text: $distance)
                           .keyboardType(.decimalPad)
                           .padding(.bottom, 15)
+                      }
+                      
+                      LabeledContent("Run Type") {
+                         SelectionView(selectedOption: $selectedOption)
+                         .padding(.bottom, 20)
                       }
                     
                       LabeledContent("Start Date") {
@@ -141,15 +161,13 @@ var altitude: String {
                           Divider()
                             .background(.gray)
                       }
-                      .frame(height: 50) // set the desired VStack height
-                
+                      .frame(height: 50) // set the desired VStack height                
                   }
               })
               
           }
           .buddySheetStyle()
           Spacer() //top align VStack
-          
       }
       
   } //end view

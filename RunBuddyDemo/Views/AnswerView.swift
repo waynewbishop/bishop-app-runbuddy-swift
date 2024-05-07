@@ -16,6 +16,7 @@ struct AnswerView: View {
 @State var isAnimating: Bool = false
     
 private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
+private let claudeKey: String? = "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"
 
     var body: some View {
         HStack {
@@ -29,7 +30,7 @@ private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
                         
                         Task {
                           do {
-                              try await engine.getGenerativeTextChunkAnswer(prompt: .promptNewRunner, apiKey: apiKey)
+                              try await engine.getGenerativeTextChunkAnswer(prompt: .promptTrailRace, apiKey: apiKey)
                               
                           } catch {
                             print(error.localizedDescription)
