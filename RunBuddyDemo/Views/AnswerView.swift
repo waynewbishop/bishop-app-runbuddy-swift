@@ -16,7 +16,6 @@ struct AnswerView: View {
 @State var isAnimating: Bool = false
     
 private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
-private let claudeKey: String? = "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"
 
     var body: some View {
         HStack {
@@ -41,7 +40,7 @@ private let claudeKey: String? = "sk-ant-api03-ukDjebA9n6LJxaQFQ18Zp-2IzpjUDejqm
                  .padding(5)
                 } //end hstack
                 
-                TextField("Waiting for an answer..", text: $engine.chunkResponse, axis: .vertical)
+                TextField("", text: $engine.chunkResponse, axis: .vertical)
                     .frame(minHeight: 20) // Sets a minimum height to prevent collapse
                     .buddyFieldStyle()
                     .disabled(true) // Disables user interaction
@@ -52,6 +51,7 @@ private let claudeKey: String? = "sk-ant-api03-ukDjebA9n6LJxaQFQ18Zp-2IzpjUDejqm
  
         }
         .padding()
+        Spacer()
     }
 }
 

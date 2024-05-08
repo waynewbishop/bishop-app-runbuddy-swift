@@ -50,9 +50,7 @@ var longitude: String {
 }
     
   var body: some View {
-          VStack {
-              Spacer()
-          }
+      ScrollView {
           VStack {
               HStack {
                   Text("Run Buddy")
@@ -88,7 +86,7 @@ var longitude: String {
               }
               .frame(height: 50) // set the desired VStack height
               
-          ScrollView {
+
               VStack (alignment: .leading, content: {
                   Text("MAP DETAILS")
                       .font(.subheadline)
@@ -156,18 +154,17 @@ var longitude: String {
                           Text("Clothing Analysis")
                       }
                       .padding(.bottom, 15)
-                      
-                      VStack {
-                          Divider()
-                            .background(.gray)
-                      }
-                      .frame(height: 50) // set the desired VStack height                
                   }
               })
               
           }
           .buddySheetStyle()
           Spacer() //top align VStack
+          
+          VStack {
+              AnswerView()
+          }
+          
       }
       
   } //end view

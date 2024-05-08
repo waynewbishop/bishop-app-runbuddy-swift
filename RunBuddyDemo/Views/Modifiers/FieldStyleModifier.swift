@@ -13,7 +13,7 @@ struct FieldStyleModifier: ViewModifier {
   let backgroundOpacity: Double
   let foregroundColor: Color
 
-  init(cornerRadius: CGFloat = 8, backgroundOpacity: Double = 0.1, foregroundColor: Color = .primary) {
+  init(cornerRadius: CGFloat = 8, backgroundOpacity: Double = 0.2, foregroundColor: Color = .primary) {
     self.cornerRadius = cornerRadius
     self.backgroundOpacity = backgroundOpacity
     self.foregroundColor = foregroundColor
@@ -22,7 +22,7 @@ struct FieldStyleModifier: ViewModifier {
   func body(content: Content) -> some View {
     content
       .padding(15)
-      .background(.gray.opacity(backgroundOpacity))
+      .background(.yellow.opacity(backgroundOpacity))
       .cornerRadius(cornerRadius)
       .foregroundColor(foregroundColor)
   }
