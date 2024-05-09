@@ -16,8 +16,8 @@ struct AnswerView: View {
 @State var isAnimating: Bool = false
 @State var showGroupBox = false
 
-    
-private let apiKey: String? = "AIzaSyBjMts2i3xOTtfATk7ZfUBshUUlv6QQuDU"
+//access key from plist.
+private let apiKey: String? = BuddyConfig.apiKey
 
     var body: some View {
         HStack {

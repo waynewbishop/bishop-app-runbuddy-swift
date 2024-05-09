@@ -35,6 +35,13 @@ struct ThumbsView: View {
                         Button(action: {
                             // Handle save action
                         }) {
+                            Image(systemName: "repeat.circle.fill")
+                                .font(.subheadline)
+                        }
+                        
+                        Button(action: {
+                            // Handle save action
+                        }) {
                             Image(systemName: "square.and.arrow.down.fill")
                                 .font(.subheadline)
                         }
