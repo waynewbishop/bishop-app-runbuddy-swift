@@ -1,38 +1,31 @@
 Run Buddy
 ====================
 
-This project utilizes [Generative AI](https://www.linkedin.com/in/waynebishop) to help runners plan their next training run or event. Implemented in Swift,  the combines statisical weather data with Google's [Gemini API](https://ai.google.dev) to provide answers for frequently asked running questions. Considerations include variables such as location, distance, altitude, time of day, humidity as well as weather-based information.
+This project utilizes [Generative AI](https://www.linkedin.com/in/waynebishop) to help runners plan their next training run or event. Implemented in Swift, Run Buddy integrates training, location and statisical weather information with Google's [Gemini API](https://ai.google.dev) to provide answers for frequently asked running questions. This includes suggested strategies for nutrition, hydration, clothing and overall performance. 
 
 Audience
 ---------------------
 
-'To best utilize this project, you should already be familiar with the basics of Swift. This code also aims to provide an alternative for learning the basics of working with data and SwiftUI. Code examples include many Swift-specific features such as optionals, extensions, protocols and generics. Beyond Swift, audiences should be familiar with **Singleton** and **Factory** design patterns along with sets, arrays and dictionaries.
+To best utilize this project, you should already be familiar with the basics of Swift. This project also aims to provide an alternative for learning the basics of adding **Generative AI** to a project or existing workflow. While many Run Buddy concepts are functional, users are welcome to submit pull requests for new features or to complete stubbed areas of planned functionality. To userstand the code, developers should be familar with Swift-specific features such as optionals, extensions, protocols and generics. Beyond Swift, audiences should be familiar with **Singleton** and **Factory** and **@Binding** design patterns along with sets, arrays and dictionaries.
 
 
-```swift
-    let model = newTextModel(with: key)
-    let prompt: String = prompt
+Configuration
+---------------------
 
-    // Use streaming with text-only input
-    let contentStream = model.generateContentStream(prompt)
-            
-    do {
-        for try await chunk in contentStream {
-            if let text = chunk.text {
-                print(text)
-                
-                //update published property on main thread
-                DispatchQueue.main.async {
-                    self.chunkResponse += text
-                }
-            }
-        }
-    } //end do
-    catch {
-        //throw general exception
-        print("something went wrong..")
-        throw error
-    }
+To run this project, you will need to provide your own API key and set up the configuration file. Follow these steps:
+
+1. Create a new file called `BuddyConfig.plist` in the project directory.
+2. Open the `BuddyConfig.plist` file and add the following content, replacing `MyApiKey` with your actual API key:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>MyAPIKey</key>
+    <string>your_api_key_value_here</string>
+</dict>
+</plist>
 ```
 
 Usage
