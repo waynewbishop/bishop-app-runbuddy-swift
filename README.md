@@ -9,29 +9,28 @@ Audience
 To best utilize this project, you should already be familiar with the basics of Swift. This project also aims to provide an alternative for learning the basics of adding **Generative AI** to a project or existing workflow. While many Run Buddy concepts are functional, users are welcome to submit pull requests for new features or to complete stubbed areas of planned functionality. To userstand the code, developers should be familar with Swift-specific features such as optionals, extensions, protocols and generics. Beyond Swift, audiences should be familiar with **Singleton** and **Factory** and **Binding** design patterns along with sets, arrays and dictionaries.
 
 ```swift 
-    let model = newTextModel(with: key)
-    
-    let prompt: String = prompt
+let model = newTextModel(with: key)
 
-    let contentStream = model.generateContentStream(prompt)
+let prompt: String = prompt
+let contentStream = model.generateContentStream(prompt)
+        
+do {
+    for try await chunk in contentStream {
+        if let text = chunk.text {
+            print(text)
             
-    do {
-        for try await chunk in contentStream {
-            if let text = chunk.text {
-                print(text)
-                
-                //update published property on main thread
-                DispatchQueue.main.async {
-                    self.chunkResponse += text
-                }
+            //update published property on main thread
+            DispatchQueue.main.async {
+                self.chunkResponse += text
             }
         }
-    } //end do
-    catch {
-        //throw general exception
-        print("something went wrong..")
-        throw error
     }
+} //end do
+catch {
+    //throw general exception
+    print("something went wrong..")
+    throw error
+}
 ```
 
 Configuration
