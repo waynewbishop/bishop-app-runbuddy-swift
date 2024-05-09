@@ -11,54 +11,45 @@ import MapKit
 
 extension MKCoordinateRegion {
 
-    /*
-     note: zoom level of set
-     */
-    static let seattle = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 47.59392966826332,
-            longitude: -122.30586928814589),
-        span: MKCoordinateSpan(
-            latitudeDelta: 0.1,
-            longitudeDelta: 0.09)
-    )
+    static let washington = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 44.95095247964279, longitude: -120.72892421454331), span: MKCoordinateSpan(latitudeDelta: 13.248434414740949, longitudeDelta: 8.63519284897437))
 }
 
 
 struct MapView: View {
     
-    //@State private var position: MapCameraPosition = .region(.seattle)
-    @State private var position: MapCameraPosition = .automatic
-    @State private var visibleRegion: MKCoordinateRegion?
+    @State private var position: MapCameraPosition = .region(.washington)
+    @State var searchRegion: MKCoordinateRegion?
     @State private var isSheetPresented: Bool = true
+    @State var searchResults: [MKMapItem] = []
     
     var body: some View {
-        
-        Map(initialPosition: position) {
-            
-         /*
-         MapCircle(center: .elDoradoPark, radius: CLLocationDistance(250))
-             .foregroundStyle(.orange.opacity(0.60))
-             .mapOverlayLevel(level: .aboveLabels)
-         
-         MapCircle(center: .golfCourse, radius: CLLocationDistance(350))
-             .foregroundStyle(.teal.opacity(0.60))
-             .mapOverlayLevel(level: .aboveRoads)
-         */
-         
+        Map(position: $position) {
+            /*
+             note: with this model I don't need markers
+             I can just zoom in on the specified region
+             by the users selection or by using the search
+             interface.
+             */
         }
         .ignoresSafeArea()
         .mapStyle(.standard(elevation: .realistic))
-        .onTapGesture { position in
-            print("now tapping the screen..")
+        .sheet(isPresented: $isSheetPresented) {
+            QuestionView(searchRegion: $searchRegion, searchResults: $searchResults)
         }
         .onMapCameraChange { context in
-            visibleRegion = context.region
-            print(visibleRegion!)
+            searchRegion = context.region
+            print(searchRegion.debugDescription)
         }
-        .sheet(isPresented: $isSheetPresented) {
-            SheetView()
-        }        
+        .onChange(of: searchResults) {
+            
+            let mapItem = searchResults[0]
+            let coordinate = mapItem.placemark.coordinate
+            let zoomLevel: Double = 0.012
+                        
+            withAnimation(.easeInOut(duration: 1.00)) { // Adjust animation duration
+                position = .region(MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: zoomLevel, longitudeDelta: zoomLevel)))
+            }
+        }
     }
 }
 

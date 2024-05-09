@@ -8,44 +8,7 @@
 import Foundation
 import CoreLocation
 
-struct PromptModel: Codable {
-    
-    //time, location and duration of effort
-    let lat: Float
-    let long: Float
-    let startDate: Date
-    let distance: Float
-    let duration: Float
-    
-    //these properties will work best when compared to previous efforts
-    let temperature: Float
-    let humidity: Float
-    let altitude: Float
-    
-    //is the runner looking for advice in regards to nutrition
-    let gels: Bool
-    let electrolytes: Bool
-    let breakfast: Bool
-        
-    private var minResponseTokens: Int = 50
-    private var maxResponseTokens: Int = 75
-    
-    private var paragraphs: Int = 2
-    private var tone: String = "The general tone of the response should be upbeat, positive and encouraging."
-
-    
-    //to provide nutrition and general performance
-    var promptPerformance: String {
-        
-        //TODO: now we build out the string based on the supplied properties..
-        
-        return "this is a test.."
-    }
-
-    //to provide clothing recommendations
-    var promptClothing: String {
-        return "this is another test.."
-    }
+struct Prompt: Codable {
     
 }
 

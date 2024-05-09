@@ -9,6 +9,6 @@ import Foundation
 import SwiftData
 
 //use SwiftData to persist previous planning questions 
-class QuestionModel {
+class Question {
     
 }

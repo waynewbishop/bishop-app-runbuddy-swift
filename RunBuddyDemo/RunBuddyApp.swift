@@ -11,7 +11,8 @@ import SwiftUI
 struct RunBuddyApp: App {
     var body: some Scene {
         WindowGroup {
-            QuestionView()
+            MapView()
+                .preferredColorScheme(.dark)
         }
     }
 }

@@ -7,36 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA15954D2BE35B5F00C02D9A /* ReverseEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15954C2BE35B5F00C02D9A /* ReverseEngine.swift */; };
+		DA15954F2BE437FF00C02D9A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA15954E2BE437FF00C02D9A /* TestView.swift */; };
+		DA1595552BE9C9DD00C02D9A /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1595542BE9C9DD00C02D9A /* SelectionView.swift */; };
+		DA1595612BEC93AA00C02D9A /* ThumbsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1595602BEC93AA00C02D9A /* ThumbsView.swift */; };
+		DA1595632BED5FC800C02D9A /* BuddyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1595622BED5FC800C02D9A /* BuddyConfig.swift */; };
+		DA1595652BED63B600C02D9A /* BuddyConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA1595642BED63B600C02D9A /* BuddyConfig.plist */; };
 		DA3536B02BD2FB9B009FDBB2 /* BuddyEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */; };
-		DA3536B22BD32EB5009FDBB2 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */; };
-		DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */; };
-		DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* WeatherModel.swift */; };
+		DA3536B22BD32EB5009FDBB2 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */; };
+		DA3536B72BD36FAF009FDBB2 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* Prompt.swift */; };
+		DA3536B92BD37062009FDBB2 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* Forecast.swift */; };
 		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
 		DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */; };
+		DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */; };
+		DAA42B122BE1A61300B041E9 /* FieldStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B112BE1A61300B041E9 /* FieldStyleModifier.swift */; };
+		DAA42B142BE1D9BD00B041E9 /* SheetStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B132BE1D9BD00B041E9 /* SheetStyleModifier.swift */; };
 		DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */; };
 		DAAABCA52BC71F9D00A4C09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */; };
 		DAAABCA92BC71F9D00A4C09A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */; };
 		DAAABCB12BC7209200A4C09A /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */; };
 		DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB62BCE1E7400A4C09A /* MapView.swift */; };
-		DAAABCB92BCE34D000A4C09A /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */; };
-		DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCBC2BCF98E400A4C09A /* SheetView.swift */; };
+		DAAABCB92BCE34D000A4C09A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* Question.swift */; };
+		DACF91CC2BE2F7C700A72BD0 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA15954C2BE35B5F00C02D9A /* ReverseEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseEngine.swift; sourceTree = "<group>"; };
+		DA15954E2BE437FF00C02D9A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		DA1595542BE9C9DD00C02D9A /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		DA1595602BEC93AA00C02D9A /* ThumbsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbsView.swift; sourceTree = "<group>"; };
+		DA1595622BED5FC800C02D9A /* BuddyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyConfig.swift; sourceTree = "<group>"; };
+		DA1595642BED63B600C02D9A /* BuddyConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = BuddyConfig.plist; sourceTree = "<group>"; };
 		DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyEngine.swift; sourceTree = "<group>"; };
-		DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
-		DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptModel.swift; sourceTree = "<group>"; };
-		DA3536B82BD37062009FDBB2 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
+		DA3536B62BD36FAF009FDBB2 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		DA3536B82BD37062009FDBB2 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		DA5BB9462BD863850010DC12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisView.swift; sourceTree = "<group>"; };
+		DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		DAA42B112BE1A61300B041E9 /* FieldStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldStyleModifier.swift; sourceTree = "<group>"; };
+		DAA42B132BE1D9BD00B041E9 /* SheetStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetStyleModifier.swift; sourceTree = "<group>"; };
 		DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunBuddyDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBuddyApp.swift; sourceTree = "<group>"; };
 		DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAABCA62BC71F9D00A4C09A /* RunBuddyDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RunBuddyDemo.entitlements; sourceTree = "<group>"; };
 		DAAABCA82BC71F9D00A4C09A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAAABCB62BCE1E7400A4C09A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
-		DAAABCBC2BCF98E400A4C09A /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		DAAABCB82BCE34D000A4C09A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +73,10 @@
 		DA3536B32BD36A03009FDBB2 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
-				DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */,
+				DA3536B62BD36FAF009FDBB2 /* Prompt.swift */,
+				DA3536B82BD37062009FDBB2 /* Forecast.swift */,
+				DAAABCB82BCE34D000A4C09A /* Question.swift */,
+				DA1595622BED5FC800C02D9A /* BuddyConfig.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -71,6 +92,8 @@
 		DA5BB94E2BDCBB230010DC12 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				DAA42B112BE1A61300B041E9 /* FieldStyleModifier.swift */,
+				DAA42B132BE1D9BD00B041E9 /* SheetStyleModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -78,6 +101,7 @@
 		DAAABC942BC71F9C00A4C09A = {
 			isa = PBXGroup;
 			children = (
+				DA1595642BED63B600C02D9A /* BuddyConfig.plist */,
 				DAAABC9F2BC71F9C00A4C09A /* RunBuddyDemo */,
 				DAAABC9E2BC71F9C00A4C09A /* Products */,
 				DA5BB9452BD863850010DC12 /* Frameworks */,
@@ -96,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				DA3536B32BD36A03009FDBB2 /* Structures */,
-				DAAABCBF2BD091B600A4C09A /* Models */,
+				DAAABCBF2BD091B600A4C09A /* Factories */,
 				DAAABCC02BD0979200A4C09A /* Views */,
 				DAAABCA02BC71F9C00A4C09A /* RunBuddyApp.swift */,
 				DAAABCA42BC71F9D00A4C09A /* Assets.xcassets */,
@@ -114,14 +138,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DAAABCBF2BD091B600A4C09A /* Models */ = {
+		DAAABCBF2BD091B600A4C09A /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				DA3536B62BD36FAF009FDBB2 /* PromptModel.swift */,
-				DA3536B82BD37062009FDBB2 /* WeatherModel.swift */,
-				DAAABCB82BCE34D000A4C09A /* QuestionModel.swift */,
+				DA3536AF2BD2FB9B009FDBB2 /* BuddyEngine.swift */,
+				DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */,
+				DA15954C2BE35B5F00C02D9A /* ReverseEngine.swift */,
+				DA15954E2BE437FF00C02D9A /* TestView.swift */,
 			);
-			path = Models;
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		DAAABCC02BD0979200A4C09A /* Views */ = {
@@ -129,9 +154,11 @@
 			children = (
 				DA5BB94E2BDCBB230010DC12 /* Modifiers */,
 				DAAABCB62BCE1E7400A4C09A /* MapView.swift */,
-				DAAABCBC2BCF98E400A4C09A /* SheetView.swift */,
-				DA3536B12BD32EB5009FDBB2 /* QuestionView.swift */,
+				DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */,
+				DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */,
+				DA1595542BE9C9DD00C02D9A /* SelectionView.swift */,
 				DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */,
+				DA1595602BEC93AA00C02D9A /* ThumbsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAAABCA92BC71F9D00A4C09A /* Preview Assets.xcassets in Resources */,
+				DA1595652BED63B600C02D9A /* BuddyConfig.plist in Resources */,
 				DAAABCA52BC71F9D00A4C09A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,15 +242,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA15954F2BE437FF00C02D9A /* TestView.swift in Sources */,
+				DA15954D2BE35B5F00C02D9A /* ReverseEngine.swift in Sources */,
+				DA1595632BED5FC800C02D9A /* BuddyConfig.swift in Sources */,
 				DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */,
-				DA3536B72BD36FAF009FDBB2 /* PromptModel.swift in Sources */,
+				DA3536B72BD36FAF009FDBB2 /* Prompt.swift in Sources */,
 				DAAABCA12BC71F9C00A4C09A /* RunBuddyApp.swift in Sources */,
 				DA3536B02BD2FB9B009FDBB2 /* BuddyEngine.swift in Sources */,
-				DA3536B22BD32EB5009FDBB2 /* QuestionView.swift in Sources */,
-				DAAABCBD2BCF98E400A4C09A /* SheetView.swift in Sources */,
-				DAAABCB92BCE34D000A4C09A /* QuestionModel.swift in Sources */,
-				DA3536B92BD37062009FDBB2 /* WeatherModel.swift in Sources */,
+				DA3536B22BD32EB5009FDBB2 /* AnswerView.swift in Sources */,
+				DAA42B122BE1A61300B041E9 /* FieldStyleModifier.swift in Sources */,
+				DAA42B142BE1D9BD00B041E9 /* SheetStyleModifier.swift in Sources */,
+				DA1595612BEC93AA00C02D9A /* ThumbsView.swift in Sources */,
+				DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */,
+				DAAABCB92BCE34D000A4C09A /* Question.swift in Sources */,
+				DA3536B92BD37062009FDBB2 /* Forecast.swift in Sources */,
 				DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */,
+				DACF91CC2BE2F7C700A72BD0 /* SearchEngine.swift in Sources */,
+				DA1595552BE9C9DD00C02D9A /* SelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +299,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -325,6 +362,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -352,6 +390,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunBuddyDemo/RunBuddyDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"RunBuddyDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 6586N6K7KU;
 				ENABLE_PREVIEWS = YES;
@@ -389,6 +428,7 @@
 				CODE_SIGN_ENTITLEMENTS = RunBuddyDemo/RunBuddyDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"RunBuddyDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = 6586N6K7KU;
 				ENABLE_PREVIEWS = YES;
