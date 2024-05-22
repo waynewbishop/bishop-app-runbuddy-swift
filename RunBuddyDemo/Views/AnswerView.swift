@@ -15,6 +15,7 @@ struct AnswerView: View {
 @ObservedObject var engine = BuddyEngine()
 @State var isAnimating: Bool = false
 @State var showGroupBox = false
+@State var isOn: Bool = false
 
 //access key from plist.
 private let apiKey: String? = BuddyConfig.apiKey
@@ -31,10 +32,11 @@ private let apiKey: String? = BuddyConfig.apiKey
                         isAnimating = true
                         engine.chunkResponse = ""
                         showGroupBox = false
+                        isOn = false
                         
                         Task {
                           do {
-                              try await engine.getGenerativeTextChunkAnswer(prompt: .prompt10MileSample, apiKey: apiKey)
+                              try await engine.getGenerativeTextChunkAnswer(prompt: .promptParkrunSample, apiKey: apiKey)
                               
                           } catch {
                             print(error.localizedDescription)
@@ -45,20 +47,20 @@ private let apiKey: String? = BuddyConfig.apiKey
                  .padding(5)
                 } //end hstack
                 
-                //TODO: can I place the entire TextField in
-                //conditional if statement for engine.chunkResponse?
                 
                 TextField("", text: $engine.chunkResponse, axis: .vertical)
-                    .frame(minHeight: 20) // Sets a minimum height to prevent collapse
-                    .buddyFieldStyle()
-                    .disabled(true) // Disables user interaction
+                    .frame(minHeight: 20)
+                    .buddyFieldStyle(setBackgroundColor: isOn)
+                    .disabled(true)
                     .onChange(of: engine.chunkResponse) { oldValue, newValue in
                         isAnimating = false
-                        if newValue != "" { //replace with single line if statement.
+                        if newValue != "" {
                             showGroupBox = true
+                            isOn = true
                         }
                         else {
                             showGroupBox = false
+                            isOn = false
                         }
                     }
         

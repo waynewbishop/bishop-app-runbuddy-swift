@@ -34,7 +34,7 @@ struct TestView: View {
                         } //end task
                     }
             }
-            .buddyFieldStyle()
+            .buddyFieldStyle(setBackgroundColor: true)
             .padding()
 
             //results will be refreshed when value is mutated

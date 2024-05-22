@@ -15,7 +15,7 @@ struct ThumbsView: View {
     var body: some View {
             GroupBox {
                 HStack {
-                    Text("Powered by Gemini. Double-check responses.")
+                    Text("Double-check responses.")
                         .font(.caption)
                     HStack(spacing: 20) {
                         Button(action: {
