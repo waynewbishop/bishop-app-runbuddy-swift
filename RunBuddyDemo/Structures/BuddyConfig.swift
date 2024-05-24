@@ -16,11 +16,27 @@ enum BuddyConfigError: Error {
 /// BuddyConfig.plist as this does not get pushed to Github.
 struct BuddyConfig {
     
-    static let apiKey: String = {
+    static let geminiApiKey: String = {
         do {
             guard let filePath = Bundle.main.path(forResource: "BuddyConfig", ofType: "plist"),
                   let plist = NSDictionary(contentsOfFile: filePath),
-                  let apiKey = plist["MyAPIKey"] as? String else {
+                  let apiKey = plist["GeminiAPIKey"] as? String else {
+                throw BuddyConfigError.failedToLoadAPIKey
+            }
+            return apiKey
+        } catch {
+            // Handle the error gracefully
+            print("Error loading API key: \(error)")
+            return "DefaultAPIKey"
+        }
+    }()
+
+    
+    static let openWeatherApiKey: String = {
+        do {
+            guard let filePath = Bundle.main.path(forResource: "BuddyConfig", ofType: "plist"),
+                  let plist = NSDictionary(contentsOfFile: filePath),
+                  let apiKey = plist["OpenWeatherAPIKey"] as? String else {
                 throw BuddyConfigError.failedToLoadAPIKey
             }
             return apiKey

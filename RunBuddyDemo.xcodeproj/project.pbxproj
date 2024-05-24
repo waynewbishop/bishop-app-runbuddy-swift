@@ -17,6 +17,10 @@
 		DA3536B22BD32EB5009FDBB2 /* AnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */; };
 		DA3536B72BD36FAF009FDBB2 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B62BD36FAF009FDBB2 /* Prompt.swift */; };
 		DA3536B92BD37062009FDBB2 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3536B82BD37062009FDBB2 /* Forecast.swift */; };
+		DA57DB542BFF055B00FE8AD5 /* WeatherEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB532BFF055B00FE8AD5 /* WeatherEngine.swift */; };
+		DA57DB562C0134B100FE8AD5 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB552C0134B100FE8AD5 /* WeatherResponse.swift */; };
+		DA57DB582C01361500FE8AD5 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB572C01361500FE8AD5 /* AnalysisView.swift */; };
+		DA57DB602C01386E00FE8AD5 /* RunBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB5F2C01386E00FE8AD5 /* RunBuddyTests.swift */; };
 		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
 		DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */; };
 		DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */; };
@@ -31,6 +35,16 @@
 		DACF91CC2BE2F7C700A72BD0 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DA57DB612C01386E00FE8AD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DAAABC952BC71F9C00A4C09A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DAAABC9C2BC71F9C00A4C09A;
+			remoteInfo = RunBuddyDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DA15954C2BE35B5F00C02D9A /* ReverseEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseEngine.swift; sourceTree = "<group>"; };
 		DA15954E2BE437FF00C02D9A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -42,6 +56,11 @@
 		DA3536B12BD32EB5009FDBB2 /* AnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerView.swift; sourceTree = "<group>"; };
 		DA3536B62BD36FAF009FDBB2 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		DA3536B82BD37062009FDBB2 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		DA57DB532BFF055B00FE8AD5 /* WeatherEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEngine.swift; sourceTree = "<group>"; };
+		DA57DB552C0134B100FE8AD5 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		DA57DB572C01361500FE8AD5 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		DA57DB5D2C01386E00FE8AD5 /* RunBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA57DB5F2C01386E00FE8AD5 /* RunBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunBuddyTests.swift; sourceTree = "<group>"; };
 		DA5BB9462BD863850010DC12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisView.swift; sourceTree = "<group>"; };
 		DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -58,6 +77,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DA57DB5A2C01386E00FE8AD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAAABC9A2BC71F9C00A4C09A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,9 +102,18 @@
 				DA3536B62BD36FAF009FDBB2 /* Prompt.swift */,
 				DA3536B82BD37062009FDBB2 /* Forecast.swift */,
 				DAAABCB82BCE34D000A4C09A /* Question.swift */,
+				DA57DB552C0134B100FE8AD5 /* WeatherResponse.swift */,
 				DA1595622BED5FC800C02D9A /* BuddyConfig.swift */,
 			);
 			path = Structures;
+			sourceTree = "<group>";
+		};
+		DA57DB5E2C01386E00FE8AD5 /* RunBuddyTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA57DB5F2C01386E00FE8AD5 /* RunBuddyTests.swift */,
+			);
+			path = RunBuddyTests;
 			sourceTree = "<group>";
 		};
 		DA5BB9452BD863850010DC12 /* Frameworks */ = {
@@ -103,6 +138,7 @@
 			children = (
 				DA1595642BED63B600C02D9A /* BuddyConfig.plist */,
 				DAAABC9F2BC71F9C00A4C09A /* RunBuddyDemo */,
+				DA57DB5E2C01386E00FE8AD5 /* RunBuddyTests */,
 				DAAABC9E2BC71F9C00A4C09A /* Products */,
 				DA5BB9452BD863850010DC12 /* Frameworks */,
 			);
@@ -112,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */,
+				DA57DB5D2C01386E00FE8AD5 /* RunBuddyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,6 +182,7 @@
 				DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */,
 				DA15954C2BE35B5F00C02D9A /* ReverseEngine.swift */,
 				DA15954E2BE437FF00C02D9A /* TestView.swift */,
+				DA57DB532BFF055B00FE8AD5 /* WeatherEngine.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -159,6 +197,7 @@
 				DA1595542BE9C9DD00C02D9A /* SelectionView.swift */,
 				DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */,
 				DA1595602BEC93AA00C02D9A /* ThumbsView.swift */,
+				DA57DB572C01361500FE8AD5 /* AnalysisView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +205,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DA57DB5C2C01386E00FE8AD5 /* RunBuddyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA57DB632C01386E00FE8AD5 /* Build configuration list for PBXNativeTarget "RunBuddyTests" */;
+			buildPhases = (
+				DA57DB592C01386E00FE8AD5 /* Sources */,
+				DA57DB5A2C01386E00FE8AD5 /* Frameworks */,
+				DA57DB5B2C01386E00FE8AD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA57DB622C01386E00FE8AD5 /* PBXTargetDependency */,
+			);
+			name = RunBuddyTests;
+			productName = RunBuddyTests;
+			productReference = DA57DB5D2C01386E00FE8AD5 /* RunBuddyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DAAABC9C2BC71F9C00A4C09A /* RunBuddyDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAAABCAC2BC71F9D00A4C09A /* Build configuration list for PBXNativeTarget "RunBuddyDemo" */;
@@ -194,9 +251,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					DA57DB5C2C01386E00FE8AD5 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = DAAABC9C2BC71F9C00A4C09A;
+					};
 					DAAABC9C2BC71F9C00A4C09A = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -220,11 +281,19 @@
 			projectRoot = "";
 			targets = (
 				DAAABC9C2BC71F9C00A4C09A /* RunBuddyDemo */,
+				DA57DB5C2C01386E00FE8AD5 /* RunBuddyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DA57DB5B2C01386E00FE8AD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAAABC9B2BC71F9C00A4C09A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -238,12 +307,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DA57DB592C01386E00FE8AD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA57DB602C01386E00FE8AD5 /* RunBuddyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DAAABC992BC71F9C00A4C09A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DA15954F2BE437FF00C02D9A /* TestView.swift in Sources */,
 				DA15954D2BE35B5F00C02D9A /* ReverseEngine.swift in Sources */,
+				DA57DB542BFF055B00FE8AD5 /* WeatherEngine.swift in Sources */,
 				DA1595632BED5FC800C02D9A /* BuddyConfig.swift in Sources */,
 				DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */,
 				DA3536B72BD36FAF009FDBB2 /* Prompt.swift in Sources */,
@@ -253,10 +331,12 @@
 				DAA42B122BE1A61300B041E9 /* FieldStyleModifier.swift in Sources */,
 				DAA42B142BE1D9BD00B041E9 /* SheetStyleModifier.swift in Sources */,
 				DA1595612BEC93AA00C02D9A /* ThumbsView.swift in Sources */,
+				DA57DB582C01361500FE8AD5 /* AnalysisView.swift in Sources */,
 				DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */,
 				DAAABCB92BCE34D000A4C09A /* Question.swift in Sources */,
 				DA3536B92BD37062009FDBB2 /* Forecast.swift in Sources */,
 				DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */,
+				DA57DB562C0134B100FE8AD5 /* WeatherResponse.swift in Sources */,
 				DACF91CC2BE2F7C700A72BD0 /* SearchEngine.swift in Sources */,
 				DA1595552BE9C9DD00C02D9A /* SelectionView.swift in Sources */,
 			);
@@ -264,7 +344,54 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DA57DB622C01386E00FE8AD5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DAAABC9C2BC71F9C00A4C09A /* RunBuddyDemo */;
+			targetProxy = DA57DB612C01386E00FE8AD5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		DA57DB642C01386E00FE8AD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arbutusinc.RunBuddyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunBuddyDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RunBuddyDemo";
+			};
+			name = Debug;
+		};
+		DA57DB652C01386E00FE8AD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arbutusinc.RunBuddyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunBuddyDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RunBuddyDemo";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		DAAABCAA2BC71F9D00A4C09A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -461,6 +588,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DA57DB632C01386E00FE8AD5 /* Build configuration list for PBXNativeTarget "RunBuddyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA57DB642C01386E00FE8AD5 /* Debug */,
+				DA57DB652C01386E00FE8AD5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DAAABC982BC71F9C00A4C09A /* Build configuration list for PBXProject "RunBuddyDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

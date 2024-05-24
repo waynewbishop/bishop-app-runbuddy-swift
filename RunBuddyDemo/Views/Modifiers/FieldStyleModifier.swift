@@ -29,6 +29,8 @@ struct FieldStyleModifier: ViewModifier {
       .background(setBackgroundColor ? Color.yellow.opacity(backgroundOpacity) : Color.clear)
       .cornerRadius(cornerRadius)
       .foregroundColor(foregroundColor)
+      .disabled(true)
+      .frame(minHeight: 20)
   }
 }
 
@@ -42,9 +44,11 @@ extension View {
 //provide a sample preview
  #Preview {
      @State var sampleText: String = "Hello World!"
+     @State var toggle: Bool = true
+     
      return HStack {
          TextField("Waiting for an answer..", text: $sampleText)
-             .buddyFieldStyle(setBackgroundColor: true)
+             .buddyFieldStyle(setBackgroundColor: toggle)
      }
      .padding()
  }

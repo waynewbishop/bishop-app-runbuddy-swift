@@ -18,40 +18,21 @@ struct AnswerView: View {
 @State var isOn: Bool = false
 
 //access key from plist.
-private let apiKey: String? = BuddyConfig.apiKey
+private let apiKey: String? = BuddyConfig.geminiApiKey
 
     var body: some View {
         HStack {
             VStack {
                 HStack {
                     EllipsisView(isGenerating: $isAnimating)
-                                        
                     Button("Ask RunBuddy..") {
-                        
-                        //reset interface elements..
-                        isAnimating = true
-                        engine.chunkResponse = ""
-                        showGroupBox = false
-                        isOn = false
-                        
-                        Task {
-                          do {
-                              try await engine.getGenerativeTextChunkAnswer(prompt: .promptParkrunSample, apiKey: apiKey)
-                              
-                          } catch {
-                            print(error.localizedDescription)
-                            isAnimating = false
-                          }
-                        }
+                        self.askRunBuddyAndGetResponse()
                     }
                  .padding(5)
-                } //end hstack
-                
-                
+                }
+                                
                 TextField("", text: $engine.chunkResponse, axis: .vertical)
-                    .frame(minHeight: 20)
                     .buddyFieldStyle(setBackgroundColor: isOn)
-                    .disabled(true)
                     .onChange(of: engine.chunkResponse) { oldValue, newValue in
                         isAnimating = false
                         if newValue != "" {
@@ -73,6 +54,25 @@ private let apiKey: String? = BuddyConfig.apiKey
         .padding()
         Spacer()
     }
+        
+    //invoke engine and receive response.
+    private func askRunBuddyAndGetResponse() {
+        
+        //reset interface elements
+        isAnimating = true
+        engine.chunkResponse = ""
+        showGroupBox = false
+        isOn = false
+
+        Task {
+            do {
+                try await engine.getGenerativeTextChunkAnswer(prompt: .promptParkrunSample, apiKey: apiKey)
+            } catch {
+                print(error.localizedDescription)
+                isAnimating = false
+            }
+        }
+    } //end function
 }
 
 
