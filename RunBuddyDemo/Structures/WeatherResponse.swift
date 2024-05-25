@@ -1,5 +1,5 @@
 //
-//  OpenWeatherResponse.swift
+//  WeatherResponse.swift
 //  RunBuddyDemo
 //
 //  Created by Wayne Bishop on 5/24/24.
@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Used for processing response data from OpenWeatherApi
 struct WeatherResponse: Codable {
     let list: [ForecastData]
     let city: City

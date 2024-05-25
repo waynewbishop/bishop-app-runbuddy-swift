@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct AnalysisView: View {
+    
+    @State var weatherSummary: WeatherSummary
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
         Button("Check the weather forecast..") {
             // Usage example
-            let weatherEngine = WeatherEngine()
+            let weatherEngine = WeatherEngine(weatherSummary: $weatherSummary)
             let targetDate = "2024-05-24"
 
             Task {
@@ -28,6 +31,7 @@ struct AnalysisView: View {
     }
 }
 
+
 #Preview {
-    AnalysisView()
+    AnalysisView(weatherSummary: WeatherSummary())
 }

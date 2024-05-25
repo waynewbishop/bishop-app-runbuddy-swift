@@ -8,9 +8,14 @@
 import Foundation
 import SwiftUI
 
-class WeatherEngine {
+class WeatherEngine: ObservableObject {
     
-    //TODO: This works! Pass in the lat and long as parameters
+    @Binding var weatherSummary: WeatherSummary
+    
+    init(weatherSummary: Binding<WeatherSummary>) {
+        _weatherSummary = weatherSummary
+    }
+    
     func fetchForecastForDate(_ targetDate: String) async throws -> WeatherResponse {
         
         let apiKey = BuddyConfig.openWeatherApiKey
@@ -38,8 +43,6 @@ class WeatherEngine {
         
     }
     
-    //TODO: This works! Create an observed object for the weather response content which can
-    //be presented in the analysis view..
     
     func processForecastForDate(_ forecastResponse: WeatherResponse, targetDate: String) {
         let formatter = DateFormatter()
@@ -52,7 +55,7 @@ class WeatherEngine {
         }) {
             print("Forecast for \(targetDate)")
             print("City: \(forecastResponse.city.name)")
-            print("Temperature: \(targetForecast.main.temp.roundedTo)°F")  //this value also needs up be rounded to the nearest whole number..
+            print("Temperature: \(targetForecast.main.temp.roundedTo)°F")
             print("High: \(targetForecast.main.temp_max.roundedTo)")
             print("Low: \(targetForecast.main.temp_min.roundedTo)")
             print("Humidity: \(targetForecast.main.humidity)%")
