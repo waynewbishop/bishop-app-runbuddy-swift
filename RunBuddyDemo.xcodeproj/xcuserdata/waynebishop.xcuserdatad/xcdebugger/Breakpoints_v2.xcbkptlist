@@ -115,16 +115,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38C46E03-A062-41A8-847B-F08B3BA98EF4"
+            uuid = "F9BF3A67-08E8-472B-875B-3D7EE03409CA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RunBuddyDemo/Factories/WeatherEngine.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "fetchForecastForDate(_:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "processForecastForDate(_:targetDate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

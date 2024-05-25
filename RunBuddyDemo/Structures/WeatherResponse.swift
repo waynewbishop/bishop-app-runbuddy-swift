@@ -49,6 +49,8 @@ struct Weather: Codable {
 
 struct Wind: Codable {
     let speed: Double
+    let deg: Double
+    let gust: Double
 }
 
 struct Clouds: Codable {
