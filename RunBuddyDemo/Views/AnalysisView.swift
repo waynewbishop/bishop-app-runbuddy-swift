@@ -9,20 +9,35 @@ import SwiftUI
 
 struct AnalysisView: View {
     
-    @State var weatherSummary: WeatherSummary
+    @State var targetForecast: ForecastData?
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
         Button("Check the weather forecast..") {
             // Usage example
-            let weatherEngine = WeatherEngine(weatherSummary: $weatherSummary)
-            let targetDate = "2024-05-26"
+            let weatherEngine = WeatherEngine()
+            let targetDate = "2024-05-27"
 
             Task {
                 do {
                     let forecastResponse = try await weatherEngine.fetchForecastForDate(targetDate)
-                    weatherEngine.processForecastForDate(forecastResponse, targetDate: targetDate)
+                    targetForecast = weatherEngine.processForecastForDate(forecastResponse, targetDate: targetDate)
+                    
+                    if let forecast  = targetForecast {
+                        print("Target Date: \(targetDate)")
+                        print("City: \(forecastResponse.city.name)")
+                        print("Temperature: \(forecast.main.temp.roundedNearest)°F")
+                        print("High: \(forecast.main.temp_max.roundedNearest)")
+                        print("Low: \(forecast.main.temp_min.roundedNearest)")
+                        print("Humidity: \(forecast.main.humidity)%")
+                        print("Weather: \(forecast.weather.first?.main ?? "N/A")")
+                        print("Weather Details: \(forecast.weather.first?.description ?? "N/A")")
+                        print("Weather Icon: \(forecast.weather.first?.icon ?? "N/A")")
+                        print("Wind speed: \(forecast.wind.speed.roundedNearest) mph")
+                        print("Gusts: \(forecast.wind.gust.roundedNearest) mph")
+                    }
+                    
                 } catch {
                     print("Error: \(error)")
                 }
@@ -32,6 +47,7 @@ struct AnalysisView: View {
 }
 
 
+
 #Preview {
-    AnalysisView(weatherSummary: WeatherSummary())
+    AnalysisView()
 }

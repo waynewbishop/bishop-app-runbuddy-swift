@@ -10,11 +10,6 @@ import SwiftUI
 
 class WeatherEngine: ObservableObject {
     
-    @Binding var weatherSummary: WeatherSummary
-    
-    init(weatherSummary: Binding<WeatherSummary>) {
-        _weatherSummary = weatherSummary
-    }
     
     func fetchForecastForDate(_ targetDate: String) async throws -> WeatherResponse {
         
@@ -22,8 +17,10 @@ class WeatherEngine: ObservableObject {
         let latitude = 38.0832
         let longitude = -122.7282
         let units = "imperial"
-        let apiUrl = "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(units)"
+        var apiUrl = "https://api.openweathermap.org/data/2.5/forecast"
         
+        //add specified parameters
+        apiUrl += "?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(units)"
         print(apiUrl)
         
         guard let url = URL(string: apiUrl) else {
@@ -34,42 +31,31 @@ class WeatherEngine: ObservableObject {
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-            throw NSError(domain: "OpenWeatherAPI", code: 2, userInfo: [NSLocalizedDescriptionKey: "Remote server responded with an error"])
+            throw NSError(domain: "OpenWeatherAPI", code: 2, 
+                          userInfo: [NSLocalizedDescriptionKey: "Remote server responded with an error"])
         }
 
         //process the response..
         let forecastResponse = try JSONDecoder().decode(WeatherResponse.self, from: data)
         return forecastResponse
-        
     }
     
     
-    func processForecastForDate(_ forecastResponse: WeatherResponse, targetDate: String) {
+    func processForecastForDate(_ forecastResponse: WeatherResponse, targetDate: String) -> ForecastData? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        if let targetForecast = forecastResponse.list.first(where: { forecast in
+        if let targetForecast: ForecastData = forecastResponse.list.first(where: { forecast in
             let date = Date(timeIntervalSince1970: TimeInterval(forecast.dt))
             let formattedDate = formatter.string(from: date)
             return formattedDate == targetDate
         }) {
-            //TODO: build out the weatherSummary object here..
-            print("Forecast for \(targetDate)")
-            print("City: \(forecastResponse.city.name)")
-            print("Temperature: \(targetForecast.main.temp.roundedNearest)°F")
-            print("High: \(targetForecast.main.temp_max.roundedNearest)")
-            print("Low: \(targetForecast.main.temp_min.roundedNearest)")
-            print("Humidity: \(targetForecast.main.humidity)%")
             
-            print("Weather: \(targetForecast.weather.first?.main ?? "N/A")")
-            print("Weather Details: \(targetForecast.weather.first?.description ?? "N/A")")
-            print("Weather Icon: \(targetForecast.weather.first?.icon ?? "N/A")")
-            
-            print("Wind speed: \(targetForecast.wind.speed.roundedNearest) mph")
-            print("Gusts: \(targetForecast.wind.gust.roundedNearest) mph")
+            return targetForecast
             
         } else {
             print("No forecast data found for the target date.")
+            return nil
         }
     }
 

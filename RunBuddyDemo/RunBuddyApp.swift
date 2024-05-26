@@ -12,8 +12,7 @@ struct RunBuddyApp: App {
     var body: some Scene {
         WindowGroup {
             //MapView()
-            AnalysisView(weatherSummary: WeatherSummary())
-                .preferredColorScheme(.dark)
+            AnalysisView()
         }
     }
 }

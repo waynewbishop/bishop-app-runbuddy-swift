@@ -44,6 +44,7 @@ struct MapView: View {
         .onChange(of: searchResults) {
             
             let mapItem = searchResults[0]
+            
             let coordinate = mapItem.placemark.coordinate
             let zoomLevel: Double = 0.012
                         
