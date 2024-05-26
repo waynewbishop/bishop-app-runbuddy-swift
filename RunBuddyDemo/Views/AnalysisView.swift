@@ -17,7 +17,7 @@ struct AnalysisView: View {
         Button("Check the weather forecast..") {
             // Usage example
             let weatherEngine = WeatherEngine(weatherSummary: $weatherSummary)
-            let targetDate = "2024-05-24"
+            let targetDate = "2024-05-26"
 
             Task {
                 do {

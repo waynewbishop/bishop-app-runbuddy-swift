@@ -35,6 +35,7 @@ struct MapView: View {
         .mapStyle(.standard(elevation: .realistic))
         .sheet(isPresented: $isSheetPresented) {
             QuestionView(searchRegion: $searchRegion, searchResults: $searchResults)
+                .background(Colors.sheetBackgroundColor) 
         }
         .onMapCameraChange { context in
             searchRegion = context.region

@@ -53,19 +53,20 @@ class WeatherEngine: ObservableObject {
             let formattedDate = formatter.string(from: date)
             return formattedDate == targetDate
         }) {
+            //TODO: build out the weatherSummary object here..
             print("Forecast for \(targetDate)")
             print("City: \(forecastResponse.city.name)")
-            print("Temperature: \(targetForecast.main.temp.roundedTo)°F")
-            print("High: \(targetForecast.main.temp_max.roundedTo)")
-            print("Low: \(targetForecast.main.temp_min.roundedTo)")
+            print("Temperature: \(targetForecast.main.temp.roundedNearest)°F")
+            print("High: \(targetForecast.main.temp_max.roundedNearest)")
+            print("Low: \(targetForecast.main.temp_min.roundedNearest)")
             print("Humidity: \(targetForecast.main.humidity)%")
             
             print("Weather: \(targetForecast.weather.first?.main ?? "N/A")")
             print("Weather Details: \(targetForecast.weather.first?.description ?? "N/A")")
             print("Weather Icon: \(targetForecast.weather.first?.icon ?? "N/A")")
             
-            print("Wind speed: \(targetForecast.wind.speed.roundedTo) mph")
-            print("Gusts: \(targetForecast.wind.gust.roundedTo) mph")
+            print("Wind speed: \(targetForecast.wind.speed.roundedNearest) mph")
+            print("Gusts: \(targetForecast.wind.gust.roundedNearest) mph")
             
         } else {
             print("No forecast data found for the target date.")

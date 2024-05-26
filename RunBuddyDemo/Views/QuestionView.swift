@@ -33,18 +33,18 @@ struct QuestionView: View {
     
 var latitude: String {
     if let region = searchRegion {
-        return region.center.latitude.description
-    }
-    else {
+        let roundedLatitude = region.center.latitude.rounded(to: 5)
+        return String(roundedLatitude)
+    } else {
         return ""
     }
 }
 
 var longitude: String {
     if let region = searchRegion {
-        return region.center.longitude.description
-    }
-    else {
+        let roundedLongitude = region.center.longitude.rounded(to: 5)
+        return String(roundedLongitude)
+    } else {
         return ""
     }
 }
