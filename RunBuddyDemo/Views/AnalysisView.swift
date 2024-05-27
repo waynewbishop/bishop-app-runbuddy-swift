@@ -11,6 +11,8 @@ struct AnalysisView: View {
     
     @State var targetForecast: ForecastData?
     
+    //TODO: information recieved as a single prompt request (struct) or as loose parameters
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
@@ -21,13 +23,18 @@ struct AnalysisView: View {
 
             Task {
                 do {
+                    
+                    //1: Run weather forecast - private function
                     let forecastResponse = try await weatherEngine.fetchForecastForDate(targetDate)
                     targetForecast = weatherEngine.processForecastForDate(forecastResponse, targetDate: targetDate)
+                    
+                    //2: Run gemini analysis - second private function
                     
                     if let forecast  = targetForecast {
                         print("Target Date: \(targetDate)")
                         print("City: \(forecastResponse.city.name)")
                         print("Temperature: \(forecast.main.temp.roundedNearest)°F")
+                        print("Feels like: \(forecast.main.feels_like.roundedNearest)°F")
                         print("High: \(forecast.main.temp_max.roundedNearest)")
                         print("Low: \(forecast.main.temp_min.roundedNearest)")
                         print("Humidity: \(forecast.main.humidity)%")
