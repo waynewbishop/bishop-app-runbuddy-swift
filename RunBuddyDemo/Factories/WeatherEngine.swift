@@ -44,29 +44,29 @@ class WeatherEngine: ObservableObject {
         return forecastResponse
     }
     
+        
     
-    /// Returns a single WeatherResponse based on a specified date.
-    /// - Parameters:
-    ///   - forecastResponse: A OpenWeather forecast WeatherResponse.
-    ///   - targetDate: The specified target date.
-    /// - Returns: A single ForecastData record.
-    func processForecastForDate(_ forecastResponse: WeatherResponse, targetDate: String) -> ForecastData? {
+    //obtain the daily weather estimates (three for any specific date)
+    func filterHourlyForecasts(_ forecastResponse: WeatherResponse, targetDate: String) -> [ForecastData]? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        if let targetForecast: ForecastData = forecastResponse.list.first(where: { forecast in
-            let date = Date(timeIntervalSince1970: TimeInterval(forecast.dt))
-            let formattedDate = formatter.string(from: date)
-            return formattedDate == targetDate
-        }) {
-            
-            return targetForecast
-            
-        } else {
-            print("No forecast data found for the target date.")
+        let targetForecasts = forecastResponse.list.filter { forecast in
+                    let date = Date(timeIntervalSince1970: TimeInterval(forecast.dt))
+                    let formattedDate = formatter.string(from: date)
+                    return formattedDate == targetDate
+        }
+        
+        if !targetForecasts.isEmpty {
+            return targetForecasts
+        }
+        else {
+            print("No forecast data found for this target date..")
             return nil
         }
+
     }
+    
 
     
     /// Provides image representation for Openweather API icon codes.
@@ -101,48 +101,4 @@ class WeatherEngine: ObservableObject {
         }
     }
 }
-
-
-/*
- Button("Check the weather forecast..") {
-     // Usage example
-     let weatherEngine = WeatherEngine()
-     let targetDate = "2024-05-28"
-
-     Task {
-         do {
-                                 
-             //1: Run weather forecast - private function
-                 
-             let marin = CLLocationCoordinate2D(latitude: 38.0832, longitude: -122.7282)
-             
-             //let zion = CLLocationCoordinate2D(latitude: 37.1861111, longitude: -113.0182997)
-                     
-             let forecastResponse = try await weatherEngine.fetchFiveDayForecast(for: marin)
-             targetForecast = weatherEngine.processForecastForDate(forecastResponse, targetDate: targetDate)
-             
-             //2: Run gemini analysis - second private function
-             
-             if let forecast  = targetForecast {
-                 print("Target Date: \(targetDate)")
-                 print("City: \(forecastResponse.city.name)")
-                 print("Temperature: \(forecast.main.temp.roundedNearest)°F")
-                 print("Feels like: \(forecast.main.feels_like.roundedNearest)°F")
-                 print("High: \(forecast.main.temp_max.roundedNearest)")
-                 print("Low: \(forecast.main.temp_min.roundedNearest)")
-                 print("Humidity: \(forecast.main.humidity)%")
-                 print("Weather: \(forecast.weather.first?.main ?? "N/A")")
-                 print("Weather Details: \(forecast.weather.first?.description ?? "N/A")")
-                 print("Weather Icon: \(forecast.weather.first?.icon ?? "N/A")")
-                 print("Wind speed: \(forecast.wind.speed.roundedNearest) mph")
-                 print("Gusts: \(forecast.wind.gust.roundedNearest) mph")
-             }
-             
-         } catch {
-             print("Error: \(error)")
-         }
-     } //end task
-     
- } //end button
- */
 

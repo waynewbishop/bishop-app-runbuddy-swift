@@ -20,10 +20,11 @@ struct ForecastData: Codable {
     let weather: [Weather]
     let wind: Wind
     let clouds: Clouds
+    let pop: Double
     let dt_txt: String
 
     enum CodingKeys: String, CodingKey {
-        case dt, main, weather, wind, clouds
+        case dt, main, weather, wind, clouds, pop
         case dt_txt = "dt_txt"
     }
 }

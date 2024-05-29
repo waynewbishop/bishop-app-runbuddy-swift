@@ -16,7 +16,10 @@ struct AnalysisView: View {
     @State var city = "Gig Harbor"
     @State var temp: Int = 59
     @State var weather = "Cloudy"
-    @State var targetForecast: ForecastData?
+    
+    @State private var current = 59.0
+    @State private var minValue = 49.0
+    @State private var maxValue = 67.0
         
     //TODO: information recieved as a single prompt request (struct) or as loose parameters
     
@@ -35,19 +38,13 @@ struct AnalysisView: View {
                       .padding()
                 }
             }
-        
-            VStack {
-                Text(city)
-                    .font(.largeTitle)
-                
-                
-                Text(" \(String(temp))°")
-                    .font(Font.system(size: 100, weight: .thin, design: .default))
-                
-                Text(weather)
-                    .font(.title2)
-            }
             
+            
+            VStack {
+                //TODO: insert Swift chart here..
+                WeatherView()
+            }
+                        
             Spacer() //keep everything top aligned..
         }
         .padding()
