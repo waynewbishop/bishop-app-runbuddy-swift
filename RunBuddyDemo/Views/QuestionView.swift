@@ -32,7 +32,7 @@ struct QuestionView: View {
 
 //transition variables
 @State var isAnimating: Bool = false
-@State private var showModal = false
+@State var showModal: Bool = false
     
 
 var latitude: String {
@@ -166,6 +166,7 @@ var longitude: String {
           Spacer() //top align VStack
           
           VStack {
+              
               HStack {
                   EllipsisView(isGenerating: $isAnimating)
                   Button("Ask RunBuddy..") {
@@ -176,6 +177,7 @@ var longitude: String {
                   }
                .padding(5)
               }
+            
           }
           
       }

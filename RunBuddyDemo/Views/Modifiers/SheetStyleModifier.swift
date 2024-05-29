@@ -15,7 +15,7 @@ struct SheetStyleModifier: ViewModifier {
       .padding()
       .interactiveDismissDisabled()
       .presentationDetents([.height(320) , .large])
-      .presentationBackground(.thickMaterial)
+      //.presentationBackground(.thickMaterial)
       .presentationBackgroundInteraction(.enabled(upThrough: .large))
   }
 }
