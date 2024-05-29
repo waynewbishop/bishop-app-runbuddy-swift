@@ -11,6 +11,11 @@ import CoreLocation
 struct AnalysisView: View {
     
     @Binding var showModal: Bool
+    
+    @State var isAnimating: Bool = true
+    @State var city = "Gig Harbor"
+    @State var temp: Int = 59
+    @State var weather = "Cloudy"
     @State var targetForecast: ForecastData?
         
     //TODO: information recieved as a single prompt request (struct) or as loose parameters
@@ -19,6 +24,7 @@ struct AnalysisView: View {
         
         VStack {
             HStack {
+                EllipsisView(isAnimating: $isAnimating)
                 Spacer()
                 Button(action: {
                     showModal = false
@@ -29,12 +35,20 @@ struct AnalysisView: View {
                       .padding()
                 }
             }
-
-            Spacer()
-
-            Text("Hello world..")
-
-            Spacer()
+        
+            VStack {
+                Text(city)
+                    .font(.largeTitle)
+                
+                
+                Text(" \(String(temp))°")
+                    .font(Font.system(size: 100, weight: .thin, design: .default))
+                
+                Text(weather)
+                    .font(.title2)
+            }
+            
+            Spacer() //keep everything top aligned..
         }
         .padding()
         

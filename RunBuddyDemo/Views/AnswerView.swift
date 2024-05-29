@@ -24,7 +24,7 @@ private let apiKey: String? = BuddyConfig.geminiApiKey
         HStack {
             VStack {
                 HStack {
-                    EllipsisView(isGenerating: $isAnimating)
+                    EllipsisView(isAnimating: $isAnimating)
                     Button("Ask RunBuddy..") {
                         self.askRunBuddyAndGetResponse()
                     }

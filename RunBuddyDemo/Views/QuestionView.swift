@@ -67,7 +67,7 @@ var longitude: String {
               GroupBox {
                   HStack {
                       Image(systemName: "magnifyingglass")
-                      TextField("Search for map location", text: $location, axis: .vertical)
+                      TextField("Search for a run location", text: $location, axis: .vertical)
                           .autocorrectionDisabled()
                           .onSubmit() {
                               let engine = SearchEngine(searchResults: $searchResults)
@@ -168,9 +168,21 @@ var longitude: String {
           VStack {
               
               HStack {
-                  EllipsisView(isGenerating: $isAnimating)
+                  EllipsisView(isAnimating: $isAnimating)
                   Button("Ask RunBuddy..") {
                       showModal = true
+                      
+                      /*
+                       TODO: should I poll for weather data here and just pass it
+                       as a parameter? we also need to check for an internet connection
+                       as well as run distance..
+                       
+                       Polling for weather data here could be a good idea, as the user
+                       will not be waiting on the next blank view waiting for weather data
+                       to be returned. We need to ensure the sheet is not presented until
+                       all criteria are met.
+                       */
+                      
                   }
                   .sheet(isPresented: $showModal) {
                       AnalysisView(showModal: $showModal)

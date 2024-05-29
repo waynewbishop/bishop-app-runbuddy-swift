@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EllipsisView: View {
     
-    @Binding var isGenerating: Bool
+    @Binding var isAnimating: Bool
     var size: CGFloat = 35
     
     var body: some View {
@@ -22,7 +22,7 @@ struct EllipsisView: View {
             .symbolRenderingMode(.hierarchical)
             
             //only animate based on boolean value
-            .symbolEffect(.variableColor.iterative.reversing, isActive: isGenerating)
+            .symbolEffect(.variableColor.iterative.reversing, isActive: isAnimating)
             
     }
 }
@@ -31,6 +31,6 @@ struct EllipsisView: View {
 #Preview {
     @State var toggle: Bool = true
     return VStack {
-        EllipsisView(isGenerating: $toggle, size: 100)
+        EllipsisView(isAnimating: $toggle, size: 100)
     }
 }
