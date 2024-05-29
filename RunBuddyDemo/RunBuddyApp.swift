@@ -11,8 +11,7 @@ import SwiftUI
 struct RunBuddyApp: App {
     var body: some Scene {
         WindowGroup {
-            //MapView()
-            AnalysisView()
+            MapView()
         }
     }
 }

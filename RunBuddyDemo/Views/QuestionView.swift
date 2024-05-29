@@ -30,7 +30,11 @@ struct QuestionView: View {
 @State var kit: Bool = false
 @State var hydration: Bool = false
 
+//transition variables
+@State var isAnimating: Bool = false
+@State private var showModal = false
     
+
 var latitude: String {
     if let region = searchRegion {
         let roundedLatitude = region.center.latitude.rounded(to: 5)
@@ -162,7 +166,16 @@ var longitude: String {
           Spacer() //top align VStack
           
           VStack {
-              AnswerView()
+              HStack {
+                  EllipsisView(isGenerating: $isAnimating)
+                  Button("Ask RunBuddy..") {
+                      showModal = true
+                  }
+                  .sheet(isPresented: $showModal) {
+                      AnalysisView(showModal: $showModal)
+                  }
+               .padding(5)
+              }
           }
           
       }
