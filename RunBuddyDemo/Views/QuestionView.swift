@@ -21,7 +21,7 @@ struct QuestionView: View {
      destination elevation.
      */
     
-@State var location: String = ""
+@State var query: String = ""
 @State var distance: String = ""
 @State var selectedDate = Date()
 @State var selectedTime = Date()
@@ -67,14 +67,14 @@ var longitude: String {
               GroupBox {
                   HStack {
                       Image(systemName: "magnifyingglass")
-                      TextField("Search for a run location", text: $location, axis: .vertical)
+                      TextField("Search for a run location", text: $query, axis: .vertical)
                           .autocorrectionDisabled()
                           .onSubmit() {
                               let engine = SearchEngine(searchResults: $searchResults)
                                                           
                               Task {
                                   do {
-                                      try await engine.search(for: location, in: .washington)
+                                      try await engine.search(for: query, in: .washington)
                                   }
                                   catch {
                                       print(error.localizedDescription)

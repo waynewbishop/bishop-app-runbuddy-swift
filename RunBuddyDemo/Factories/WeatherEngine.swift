@@ -66,7 +66,6 @@ class WeatherEngine: ObservableObject {
         }
 
     }
-    
 
     
     /// Provides image representation for Openweather API icon codes.

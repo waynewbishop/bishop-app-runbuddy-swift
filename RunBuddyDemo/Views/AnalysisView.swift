@@ -14,6 +14,8 @@ struct AnalysisView: View {
     
     @State var isAnimating: Bool = true
     @State var city = "Gig Harbor"
+    @State var location = CLLocationCoordinate2D()
+    @State var targetDate = Date()
         
     var body: some View {
         
@@ -36,7 +38,7 @@ struct AnalysisView: View {
                 Text("Gig Harbor")
                     .font(.largeTitle)
                 
-                Text("Wednesday, May 29")
+                Text("Friday, May 31")
                     .font(.subheadline)
             }
             
