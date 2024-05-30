@@ -12,67 +12,77 @@ import Charts
 
 struct ForecastView: View {
     
-    @State var targetForecasts: [ForecastData]?
     @State var weatherEngine = WeatherEngine()
+    @State var dailyForecasts = [Forecast]()
     
-    //these values will be overriden
-    @State var location = CLLocationCoordinate2D(latitude: 38.0832, longitude: -122.7282)
-    @State var targetDate = "2024-06-01"
-    
-    let dailySales: [(day: Date, sales: Int)] = [
-        (day: Date(), sales: 45),
-        (day: Date() + 1, sales: 64),
-        (day: Date() + 3, sales: 86)
-    ]
+    @State var location = CLLocationCoordinate2D(latitude: 37.174562, longitude: -113.0270529)
+    @State var targetDate = "2024-05-31"
     
     var body: some View {
         
         VStack {
             Chart {
-                ForEach(dailySales, id: \.day) {
-                    LineMark(
-                        x: .value("Day", $0.day, unit: .day),
-                        y: .value("Sales", $0.sales)
+                ForEach(dailyForecasts) { forecast in
+                    LineMark (
+                        x: .value("Hour", forecast.date, unit: .hour),
+                        y: .value("Temp", forecast.temp)
                     )
+                    .foregroundStyle(Color.blue.opacity(0.5))
+                    
+                    PointMark(
+                        x: .value("Hour", forecast.date, unit: .hour),
+                        y: .value("Temp", forecast.temp)
+                    )
+                    .foregroundStyle(Color.blue)
+                    
+                    AreaMark(
+                        x: .value("Hour", forecast.date, unit: .hour),
+                        y: .value("Humdity", forecast.humidity)
+                    )
+                    .foregroundStyle(Color.green.opacity(0.5))
                 }
             }
-            .frame(height: 150)
+            .frame(height: 200)
             .padding()
+            .chartYAxisLabel("Temperature/Humidity")
+            
         }
         .onAppear() {
-            //self.weatherForecastData()
+            self.weatherForecastData()
         }
         
         VStack (alignment: .leading, content: {
-            Text("Summary")
+            Text("Weather Summary")
                 .font(.headline)
             GroupBox () {
-                Text("High of 65° and low of 45°. Feels 57. Wind gusts up to 14 mph.")
-                    
+                Text("High of 65° and low of 45°. Feels like 57°. Wind gusts up to 14 mph. Chance of precipitation is 82%.")
             }
         })
+        .padding()
         
     }
     
     
-    
     private func weatherForecastData() {
+        
         Task {
             do {
                 let forecastResponse = try await weatherEngine.fetchFiveDayForecast(for: location)
                 
-                //process collection data on the main thread
+                //process collection on the main thread
                 DispatchQueue.main.async {
-                    targetForecasts = weatherEngine.filterHourlyForecasts(forecastResponse, targetDate: targetDate)
+                   let targetForecasts = weatherEngine.filterHourlyForecasts(forecastResponse, targetDate: targetDate)
                     
                     if let forecasts = targetForecasts {
-                        print(forecasts.description)
+                        print(forecasts.count)
                         
-                        //this is where we convert data from the
-                        //targetForecasts collection to a denormalized struct
-                        //that can be handled by Swift charts. High, Low and
-                        //target temps for each day. We also want the chart to
-                        //include a legend.
+                        //iterate through results
+                        for forecast in forecasts {
+                            let item = Forecast(dt: forecast.dt, temp: forecast.main.temp, feels_like: forecast.main.feels_like, temp_min: forecast.main.temp_min, temp_max: forecast.main.temp_max, humidity: forecast.main.humidity)
+                            
+                            dailyForecasts.append(item)
+                           print(item)
+                        }
                     }
                 }
                 

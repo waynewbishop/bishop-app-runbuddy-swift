@@ -14,8 +14,7 @@ struct AnalysisView: View {
     
     @State var isAnimating: Bool = true
     @State var city = "Gig Harbor"
-    
-    
+        
     var body: some View {
         
         VStack {
@@ -31,12 +30,13 @@ struct AnalysisView: View {
                       .padding()
                 }
             }
+            .padding()
             
             VStack {
                 Text("Gig Harbor")
                     .font(.largeTitle)
                 
-                Text("Wednesday, May 29th, 2024")
+                Text("Wednesday, May 29")
                     .font(.subheadline)
             }
             
@@ -50,7 +50,7 @@ struct AnalysisView: View {
                                     
             Spacer() //keep everything top aligned..
         }
-        .padding()
+        //provide .padding() around subviews..
         
     }
     
