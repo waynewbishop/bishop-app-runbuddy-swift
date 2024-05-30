@@ -10,7 +10,7 @@ import CoreLocation
 import Charts
 
 
-struct WeatherView: View {
+struct ForecastView: View {
     
     @State var targetForecasts: [ForecastData]?
     @State var weatherEngine = WeatherEngine()
@@ -19,14 +19,38 @@ struct WeatherView: View {
     @State var location = CLLocationCoordinate2D(latitude: 38.0832, longitude: -122.7282)
     @State var targetDate = "2024-06-01"
     
+    let dailySales: [(day: Date, sales: Int)] = [
+        (day: Date(), sales: 45),
+        (day: Date() + 1, sales: 64),
+        (day: Date() + 3, sales: 86)
+    ]
+    
     var body: some View {
         
         VStack {
-            
+            Chart {
+                ForEach(dailySales, id: \.day) {
+                    LineMark(
+                        x: .value("Day", $0.day, unit: .day),
+                        y: .value("Sales", $0.sales)
+                    )
+                }
+            }
+            .frame(height: 150)
+            .padding()
         }
         .onAppear() {
-            self.weatherForecastData()
+            //self.weatherForecastData()
         }
+        
+        VStack (alignment: .leading, content: {
+            Text("Summary")
+                .font(.headline)
+            GroupBox () {
+                Text("High of 65° and low of 45°. Feels 57. Wind gusts up to 14 mph.")
+                    
+            }
+        })
         
     }
     
@@ -43,6 +67,12 @@ struct WeatherView: View {
                     
                     if let forecasts = targetForecasts {
                         print(forecasts.description)
+                        
+                        //this is where we convert data from the
+                        //targetForecasts collection to a denormalized struct
+                        //that can be handled by Swift charts. High, Low and
+                        //target temps for each day. We also want the chart to
+                        //include a legend.
                     }
                 }
                 
@@ -55,5 +85,5 @@ struct WeatherView: View {
 }
 
 #Preview {
-    WeatherView()
+    ForecastView()
 }

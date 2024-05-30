@@ -14,14 +14,7 @@ struct AnalysisView: View {
     
     @State var isAnimating: Bool = true
     @State var city = "Gig Harbor"
-    @State var temp: Int = 59
-    @State var weather = "Cloudy"
     
-    @State private var current = 59.0
-    @State private var minValue = 49.0
-    @State private var maxValue = 67.0
-        
-    //TODO: information recieved as a single prompt request (struct) or as loose parameters
     
     var body: some View {
         
@@ -39,12 +32,22 @@ struct AnalysisView: View {
                 }
             }
             
+            VStack {
+                Text("Gig Harbor")
+                    .font(.largeTitle)
+                
+                Text("Wednesday, May 29th, 2024")
+                    .font(.subheadline)
+            }
             
             VStack {
-                //TODO: insert Swift chart here..
-                WeatherView()
+                //insert swift chart statistics
+                //only if the target date is 5 days or less from the
+                //current date. If not show a some sort of custom view
+                //that explains how it works..
+                ForecastView()
             }
-                        
+                                    
             Spacer() //keep everything top aligned..
         }
         .padding()
