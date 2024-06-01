@@ -52,10 +52,7 @@ struct AnalysisView: View {
                                     
             Spacer() //keep everything top aligned..
         }
-        //provide .padding() around subviews..
-        
     }
-    
 }
 
 

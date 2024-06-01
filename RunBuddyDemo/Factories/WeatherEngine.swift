@@ -11,6 +11,8 @@ import CoreLocation
 
 class WeatherEngine: ObservableObject {
     
+    var summary: String = ""
+    var icon: Image = Image("")
     
     /// Retrieves the weather forecast for the next 5 days
     /// - Parameters:
@@ -46,7 +48,7 @@ class WeatherEngine: ObservableObject {
     
         
     
-    //obtain the daily weather estimates (three for any specific date)
+    //obtain the hourly weather forecast (up to eight entries for any target date)
     func filterHourlyForecasts(_ forecastResponse: WeatherResponse, targetDate: String) -> [ForecastData]? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -64,14 +66,54 @@ class WeatherEngine: ObservableObject {
             print("No forecast data found for this target date..")
             return nil
         }
-
     }
 
+    
+    //provides the weather summary for the requested forecast
+    func getWeatherSummary(for forecasts: [ForecastData]) {
+        
+        var temp_max: Double = 0
+        var temp_min: Double = -100
+        var wind: Double = 0
+        var pop: Double = 0
+
+        
+        for forecast in forecasts {
+            
+            if forecast.main.temp_max > temp_max {
+                temp_max = forecast.main.temp_max
+                icon = getWeatherIcon(for: forecast.weather[0].icon)
+            }
+            
+            //additional logic for low temp
+            if temp_min != -100 {
+                if forecast.main.temp_min < temp_min {
+                    temp_min = forecast.main.temp_min
+                }
+            }
+            else {
+                temp_min = forecast.main.temp_min
+            }
+            
+            if forecast.wind.gust > wind {
+                wind = forecast.wind.gust
+            }
+                    
+            if forecast.pop > pop {
+                pop = forecast.pop
+            }
+        }
+        
+        //provide a display summary
+        self.summary = "High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind gusts up to \(wind.roundedNearest) mph. Chance of precipitation is \(pop.roundedNearest * 100)%."
+        
+    }
+    
     
     /// Provides image representation for Openweather API icon codes.
     /// - Parameter iconCode: Openweather weather string representations
     /// - Returns: SwiftUI image.
-    func getWeatherIcon(iconCode: String) -> Image {
+    func getWeatherIcon(for iconCode: String) -> Image {
         switch iconCode {
         case "01d":
             return Image(systemName: "sun.max")

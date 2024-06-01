@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7C614C06-A37C-468F-B7FE-FA7B46D2E5F9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RunBuddyDemo/Views/Weather/ForecastView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "weatherForecastData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "85818F3C-C5CE-4BC6-92A4-E4CA42CBA481"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -30,10 +14,56 @@
             filePath = "RunBuddyDemo/Views/Weather/ForecastView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "weatherForecastData()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8919B393-9FE5-4214-AECA-B50E84C246AE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RunBuddyDemo/Factories/WeatherEngine.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getWeatherSummary(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8919B393-9FE5-4214-AECA-B50E84C246AE - ec0b1709a9686f96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RunBuddyDemo.WeatherEngine.getWeatherSummary(for: Swift.Array&lt;RunBuddyDemo.ForecastData&gt;) -&gt; ()"
+                  moduleName = "RunBuddyDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waynebishop/Dropbox%20(Personal)/iPhone%20Development/RunBuddyDemo/RunBuddyDemo/RunBuddyDemo/Factories/WeatherEngine.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79">
+               </Location>
+               <Location
+                  uuid = "8919B393-9FE5-4214-AECA-B50E84C246AE - ec0b1709a9686f96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "RunBuddyDemo.WeatherEngine.getWeatherSummary(for: Swift.Array&lt;RunBuddyDemo.ForecastData&gt;) -&gt; ()"
+                  moduleName = "RunBuddyDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/waynebishop/Dropbox%20(Personal)/iPhone%20Development/RunBuddyDemo/RunBuddyDemo/RunBuddyDemo/Factories/WeatherEngine.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

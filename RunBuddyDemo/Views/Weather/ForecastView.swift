@@ -12,18 +12,18 @@ import Charts
 
 struct ForecastView: View {
     
-    @State var weatherEngine = WeatherEngine()
-    @State var dailyForecasts = [Forecast]()
+    @StateObject var weatherEngine = WeatherEngine()
+    @State var chartForecasts = [ChartForecast]()
     
-    //@State var location = CLLocationCoordinate2D(latitude: 37.1047193, longitude: -113.7286516)
-    @State var location = CLLocationCoordinate2D(latitude: 47.33260, longitude: -122.680216)
-    @State var targetDate = "2024-05-31"
+    @State var location = CLLocationCoordinate2D(latitude: 37.1047193, longitude: -113.7286516)
+    //@State var location = CLLocationCoordinate2D(latitude: 47.33260, longitude: -122.680216)
+    @State var targetDate = "2024-06-01"
     
     var body: some View {
         
         VStack {
             Chart {
-                ForEach(dailyForecasts) { forecast in
+                ForEach(chartForecasts) { forecast in
                     LineMark (
                         x: .value("Hour", forecast.date, unit: .hour),
                         y: .value("Temp", forecast.temp)
@@ -40,29 +40,31 @@ struct ForecastView: View {
                         x: .value("Hour", forecast.date, unit: .hour),
                         y: .value("Humdity", forecast.humidity)
                     )
-                    .foregroundStyle(Color.green.opacity(0.3))
-                    
+                    .foregroundStyle(Color.green.opacity(0.2))
                 }
-                
             }
-            .frame(height: 200)
+            .frame(height: 225)
             .padding()
-            .chartYAxisLabel("Temperature/Humidity")
+            .chartYAxisLabel("Temperature / Humidity")
             
         }
         .onAppear() {
             self.weatherForecastData()
         }
         
-        VStack (alignment: .leading, content: {
-            Text("Weather Summary")
-                .font(.headline)
-            GroupBox () {
-                Text("High of 65° and low of 45°. Feels like 57°. Wind gusts up to 14 mph. Chance of precipitation is 82%.")
-            }
-        })
-        .padding()
-        
+        if weatherEngine.summary != "" {
+            VStack (alignment: .leading, content: {
+                HStack {
+                    Text("Weather Summary")
+                        .font(.headline)
+                    weatherEngine.icon
+                }
+                GroupBox () {
+                Text(weatherEngine.summary)
+                }
+            })
+            .padding()
+        }
     }
     
     
@@ -79,14 +81,13 @@ struct ForecastView: View {
                     if let forecasts = targetForecasts {
                         print(forecasts.count)
                         
-                       //TODO: pass the collection to establish totals..
-                        //pass back a single string as a @Binding..
-                        
+                        weatherEngine.getWeatherSummary(for: forecasts)
+                         
                         //iterate through results
                         for forecast in forecasts {
-                            let item = Forecast(dt: forecast.dt, temp: forecast.main.temp, feels_like: forecast.main.feels_like, temp_min: forecast.main.temp_min, temp_max: forecast.main.temp_max, humidity: forecast.main.humidity, weather_main: forecast.weather[0].main, weather_description: forecast.weather[0].description, weather_icon: forecast.weather[0].icon, wind: forecast.wind.gust, pop: forecast.pop)
+                            let item = ChartForecast(dt: forecast.dt, temp: forecast.main.temp, feels_like: forecast.main.feels_like, temp_min: forecast.main.temp_min, temp_max: forecast.main.temp_max, humidity: forecast.main.humidity)
                             
-                            dailyForecasts.append(item)
+                            chartForecasts.append(item)
                            print(item)
                         }
                     }
