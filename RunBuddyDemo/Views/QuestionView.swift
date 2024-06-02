@@ -56,11 +56,14 @@ var longitude: String {
   var body: some View {
       ScrollView {
           VStack {
+              Spacer()
+          }
+          VStack {
               HStack {
                   Text("Run Buddy")
                       .font(.largeTitle)
                       .bold()
-                      .padding()
+                     // .padding()
                  Spacer()
               }
               

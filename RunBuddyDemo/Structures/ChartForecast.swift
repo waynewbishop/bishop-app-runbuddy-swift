@@ -17,6 +17,7 @@ struct ChartForecast: Identifiable {
     let temp_min: Double
     let temp_max: Double
     let humidity: Int
+    let pop: Double 
     
     // Use the 'dt' property as the identifier
     var id: Int {

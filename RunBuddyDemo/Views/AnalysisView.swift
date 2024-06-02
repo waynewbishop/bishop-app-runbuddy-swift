@@ -13,12 +13,11 @@ struct AnalysisView: View {
     @Binding var showModal: Bool
     
     @State var isAnimating: Bool = true
-    @State var city = "Gig Harbor"
+    @State var city = "Snohomish"
     @State var location = CLLocationCoordinate2D()
     @State var targetDate = Date()
         
     var body: some View {
-        
         VStack {
             HStack {
                 EllipsisView(isAnimating: $isAnimating)
@@ -34,23 +33,25 @@ struct AnalysisView: View {
             }
             .padding()
             
-            VStack {
-                Text("Gig Harbor")
-                    .font(.largeTitle)
+            ScrollView {
+                VStack {
+                    Text(city)
+                        .font(.largeTitle)
+                    
+                    Text("Sunday, June 2")
+                        .font(.subheadline)
+                }
                 
-                Text("Friday, May 31")
-                    .font(.subheadline)
-            }
-            
-            VStack {
-                //insert swift chart statistics
-                //only if the target date is 5 days or less from the
-                //current date. If not show a some sort of custom view
-                //that explains how it works..
-                ForecastView()
-            }
-                                    
-            Spacer() //keep everything top aligned..
+                VStack {
+                    //insert swift chart statistics
+                    //only if the target date is 5 days or less from the
+                    //current date. If not show a some sort of custom view
+                    //that explains how it works..
+                    ForecastView()
+                }
+                Spacer() //keep everything top aligned..
+                
+            } //end scrollview
         }
     }
 }

@@ -39,7 +39,7 @@ struct MapView: View {
         }
         .onMapCameraChange { context in
             searchRegion = context.region
-            print(searchRegion.debugDescription)
+            //print(searchRegion.debugDescription)
         }
         .onChange(of: searchResults) {
             

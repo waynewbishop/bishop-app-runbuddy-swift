@@ -15,9 +15,13 @@ struct ForecastView: View {
     @StateObject var weatherEngine = WeatherEngine()
     @State var chartForecasts = [ChartForecast]()
     
-    @State var location = CLLocationCoordinate2D(latitude: 37.1047193, longitude: -113.7286516)
+    //47.9630579,-122.0994235
+    
+    @State var location = CLLocationCoordinate2D(latitude: 47.9630579, longitude: -122.0994235)
+   // @State var location = CLLocationCoordinate2D(latitude: 37.1047193, longitude: -113.7286516)
     //@State var location = CLLocationCoordinate2D(latitude: 47.33260, longitude: -122.680216)
-    @State var targetDate = "2024-06-01"
+    //@State var location = CLLocationCoordinate2D(latitude: 44.9509, longitude: -120.7289)
+    @State var targetDate = "2024-06-03"
     
     var body: some View {
         
@@ -58,7 +62,8 @@ struct ForecastView: View {
                     Text("Weather Summary")
                         .font(.headline)
                     weatherEngine.icon
-                }
+                        //.symbolRenderingMode(.multicolor)
+                 }
                 GroupBox () {
                 Text(weatherEngine.summary)
                 }
@@ -79,16 +84,16 @@ struct ForecastView: View {
                    let targetForecasts = weatherEngine.filterHourlyForecasts(forecastResponse, targetDate: targetDate)
                     
                     if let forecasts = targetForecasts {
-                        print(forecasts.count)
+                        //print(forecasts.count)
                         
-                        weatherEngine.getWeatherSummary(for: forecasts)
+                        weatherEngine.createWeatherSummary(with: forecasts)
                          
                         //iterate through results
                         for forecast in forecasts {
-                            let item = ChartForecast(dt: forecast.dt, temp: forecast.main.temp, feels_like: forecast.main.feels_like, temp_min: forecast.main.temp_min, temp_max: forecast.main.temp_max, humidity: forecast.main.humidity)
+                            let item = ChartForecast(dt: forecast.dt, temp: forecast.main.temp, feels_like: forecast.main.feels_like, temp_min: forecast.main.temp_min, temp_max: forecast.main.temp_max, humidity: forecast.main.humidity, pop: forecast.pop)
                             
                             chartForecasts.append(item)
-                           print(item)
+                           //print(item)
                         }
                     }
                 }

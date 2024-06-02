@@ -27,7 +27,7 @@ class WeatherEngine: ObservableObject {
         
         //add specified parameters
         apiUrl += "?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(units)"
-        print(apiUrl)
+        //print(apiUrl)
         
         guard let url = URL(string: apiUrl) else {
             throw NSError(domain: "openweatherapi.org", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
@@ -70,7 +70,7 @@ class WeatherEngine: ObservableObject {
 
     
     //provides the weather summary for the requested forecast
-    func getWeatherSummary(for forecasts: [ForecastData]) {
+    func createWeatherSummary(with forecasts: [ForecastData]) {
         
         var temp_max: Double = 0
         var temp_min: Double = -100
@@ -79,6 +79,8 @@ class WeatherEngine: ObservableObject {
 
         
         for forecast in forecasts {
+            
+            print(forecast.weather[0].icon)
             
             if forecast.main.temp_max > temp_max {
                 temp_max = forecast.main.temp_max
@@ -95,17 +97,18 @@ class WeatherEngine: ObservableObject {
                 temp_min = forecast.main.temp_min
             }
             
-            if forecast.wind.gust > wind {
-                wind = forecast.wind.gust
+            if forecast.wind.speed > wind {
+                wind = forecast.wind.speed
             }
                     
             if forecast.pop > pop {
                 pop = forecast.pop
+                print(pop)
             }
         }
         
         //provide a display summary
-        self.summary = "High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind gusts up to \(wind.roundedNearest) mph. Chance of precipitation is \(pop.roundedNearest * 100)%."
+        self.summary = "High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind speed up to \(wind.roundedNearest) mph. Chance of precipitation is \(pop * 100)%."
         
     }
     
@@ -122,11 +125,11 @@ class WeatherEngine: ObservableObject {
         case "02d":
             return Image(systemName: "cloud.sun")
         case "02n":
-            return Image(systemName: "cloud.moon")
+            return Image(systemName: "cloud.sun")
         case "03d", "03n":
             return Image(systemName: "cloud")
         case "04d", "04n":
-            return Image(systemName: "cloud.fill")
+            return Image(systemName: "cloud")
         case "09d", "09n":
             return Image(systemName: "cloud.drizzle")
         case "10d", "10n":

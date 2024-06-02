@@ -8,7 +8,28 @@
 import Foundation
 import CoreLocation
 
-struct Prompt: Codable {
+struct Prompt {
+    
+    //creata a prompt based on weather requirements
+    func newWeatherPrompt(forecasts: [ForecastData], location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String?  {
+        return nil
+    }
+
+    //create a prompt based on nutritional requirements
+    func newNutritionPrompt(location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String? {
+        return nil
+    }
+    
+    //create a prompt based on hydration requirements
+    func newHydrationPrompt(location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String? {
+        return nil
+    }
+    
+    //create a prompt baseed on clothing requirements
+    func newClothingPrompt(location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String? {
+        return nil
+    }
+    
     
 }
 
