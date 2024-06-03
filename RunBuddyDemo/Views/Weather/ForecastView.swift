@@ -15,15 +15,30 @@ struct ForecastView: View {
     @StateObject var weatherEngine = WeatherEngine()
     @State var chartForecasts = [ChartForecast]()
     
-    //47.9630579,-122.0994235
+    @State var location: CLLocationCoordinate2D
+    @State var targetDate = "2024-06-04"
     
-    @State var location = CLLocationCoordinate2D(latitude: 47.9630579, longitude: -122.0994235)
    // @State var location = CLLocationCoordinate2D(latitude: 37.1047193, longitude: -113.7286516)
-    //@State var location = CLLocationCoordinate2D(latitude: 47.33260, longitude: -122.680216)
-    //@State var location = CLLocationCoordinate2D(latitude: 44.9509, longitude: -120.7289)
-    @State var targetDate = "2024-06-03"
+   // @State var location = CLLocationCoordinate2D(latitude: 47.33260, longitude: -122.680216)
+   // @State var location = CLLocationCoordinate2D(latitude: 44.9509, longitude: -120.7289)
+
     
     var body: some View {
+        
+        if weatherEngine.summary != "" {
+            VStack (alignment: .leading, content: {
+                HStack {
+                    weatherEngine.icon
+                        .imageScale(.large)
+                    Text("Sunday, June 2 - Bridle Trails Park")
+                        .font(.headline)
+                 }
+                GroupBox () {
+                    Text(weatherEngine.summary)
+                }
+            })
+            .padding()
+        }
         
         VStack {
             Chart {
@@ -56,20 +71,31 @@ struct ForecastView: View {
             self.weatherForecastData()
         }
         
-        if weatherEngine.summary != "" {
-            VStack (alignment: .leading, content: {
-                HStack {
-                    Text("Weather Summary")
-                        .font(.headline)
-                    weatherEngine.icon
-                        //.symbolRenderingMode(.multicolor)
-                 }
-                GroupBox () {
-                Text(weatherEngine.summary)
-                }
-            })
-            .padding()
+        HStack {
+            Text("Percent Precipitation")
+                .font(.headline)
+            Spacer()
         }
+        .padding()
+        
+        
+        //provide a bar chart for precipitation
+        VStack {
+            Chart {
+                ForEach(chartForecasts) { forecast in
+                    BarMark(
+                        x: .value("Hour", forecast.date, unit: .hour),
+                        y: .value("Percent Precipitation", forecast.pop * 100)
+                    )
+                    .foregroundStyle(Color.orange.opacity(0.4))
+                }
+            }
+        }
+        .frame(height: 150)
+        .padding()
+        .chartYAxisLabel("Percent Precipitation")
+        
+        
     }
     
     
@@ -107,5 +133,12 @@ struct ForecastView: View {
 }
 
 #Preview {
-    ForecastView()
+
+    //provide test data..
+    @State var location = CLLocationCoordinate2D(latitude: 47.64373, longitude: -122.17364)
+    @State var targetDate = "2024-06-04"
+    
+    return VStack {
+        ForecastView(location: location, targetDate: targetDate)
+    }
 }

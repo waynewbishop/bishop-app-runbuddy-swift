@@ -74,16 +74,18 @@ class WeatherEngine: ObservableObject {
         
         var temp_max: Double = 0
         var temp_min: Double = -100
+        var weather_main = ""
         var wind: Double = 0
         var pop: Double = 0
 
         
         for forecast in forecasts {
             
-            print(forecast.weather[0].icon)
+            //print(forecast.weather[0].icon)
             
             if forecast.main.temp_max > temp_max {
                 temp_max = forecast.main.temp_max
+                weather_main = forecast.weather[0].main
                 icon = getWeatherIcon(for: forecast.weather[0].icon)
             }
             
@@ -103,12 +105,12 @@ class WeatherEngine: ObservableObject {
                     
             if forecast.pop > pop {
                 pop = forecast.pop
-                print(pop)
+                //print(pop)
             }
         }
         
         //provide a display summary
-        self.summary = "High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind speed up to \(wind.roundedNearest) mph. Chance of precipitation is \(pop * 100)%."
+        self.summary = "\(weather_main). High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind gusts up to \(wind.roundedNearest) mph. Chance of precipitation is \(pop * 100)%."
         
     }
     

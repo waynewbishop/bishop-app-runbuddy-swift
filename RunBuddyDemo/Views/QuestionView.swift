@@ -21,7 +21,7 @@ struct QuestionView: View {
      destination elevation.
      */
     
-@State var query: String = ""
+@State var name: String = ""
 @State var distance: String = ""
 @State var selectedDate = Date()
 @State var selectedTime = Date()
@@ -33,7 +33,6 @@ struct QuestionView: View {
 //transition variables
 @State var isAnimating: Bool = false
 @State var showModal: Bool = false
-    
 
 var latitude: String {
     if let region = searchRegion {
@@ -70,14 +69,14 @@ var longitude: String {
               GroupBox {
                   HStack {
                       Image(systemName: "magnifyingglass")
-                      TextField("Search for a run location", text: $query, axis: .vertical)
+                      TextField("Search for a run location", text: $name, axis: .vertical)
                           .autocorrectionDisabled()
                           .onSubmit() {
                               let engine = SearchEngine(searchResults: $searchResults)
                                                           
                               Task {
                                   do {
-                                      try await engine.search(for: query, in: .washington)
+                                      try await engine.search(for: name, in: .washington)
                                   }
                                   catch {
                                       print(error.localizedDescription)
@@ -174,21 +173,16 @@ var longitude: String {
                   EllipsisView(isAnimating: $isAnimating)
                   Button("Ask RunBuddy..") {
                       showModal = true
-                      
-                      /*
-                       TODO: should I poll for weather data here and just pass it
-                       as a parameter? we also need to check for an internet connection
-                       as well as run distance..
-                       
-                       Polling for weather data here could be a good idea, as the user
-                       will not be waiting on the next blank view waiting for weather data
-                       to be returned. We need to ensure the sheet is not presented until
-                       all criteria are met.
-                       */
-                      
                   }
                   .sheet(isPresented: $showModal) {
-                      AnalysisView(showModal: $showModal)
+                      
+                      if let region = searchRegion {
+                          let location = region.center
+                          
+                          let question = Question(name: name, location: location, distance: distance, targetDate: selectedDate, targetTime: selectedTime, selectedOption: selectedOption, nutrition: nutrition, kit: kit, hydration: hydration)
+                          
+                          AnalysisView(showModal: $showModal, question: question)
+                      }
                   }
                .padding(5)
               }

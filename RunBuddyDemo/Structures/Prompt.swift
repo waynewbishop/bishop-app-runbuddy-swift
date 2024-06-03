@@ -10,7 +10,7 @@ import CoreLocation
 
 struct Prompt {
     
-    //creata a prompt based on weather requirements
+    //create a prompt based on weather requirements
     func newWeatherPrompt(forecasts: [ForecastData], location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String?  {
         return nil
     }
@@ -25,12 +25,11 @@ struct Prompt {
         return nil
     }
     
-    //create a prompt baseed on clothing requirements
+    //create a prompt based on clothing requirements
     func newClothingPrompt(location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String? {
         return nil
     }
-    
-    
+        
 }
 
 //MARK: these are just sample prompts to be used for testing..

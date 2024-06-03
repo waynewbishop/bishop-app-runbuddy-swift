@@ -22,6 +22,7 @@
 		DA57DB682C017EB600FE8AD5 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB672C017EB600FE8AD5 /* Double.swift */; };
 		DA57DB6C2C02E47200FE8AD5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB6B2C02E47200FE8AD5 /* Colors.swift */; };
 		DA57DB6E2C07897600FE8AD5 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB6D2C07897600FE8AD5 /* ForecastView.swift */; };
+		DA57DB712C0D5FEF00FE8AD5 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB702C0D5FEF00FE8AD5 /* History.swift */; };
 		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
 		DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */; };
 		DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */; };
@@ -63,6 +64,7 @@
 		DA57DB672C017EB600FE8AD5 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		DA57DB6B2C02E47200FE8AD5 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DA57DB6D2C07897600FE8AD5 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		DA57DB702C0D5FEF00FE8AD5 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		DA5BB9462BD863850010DC12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisView.swift; sourceTree = "<group>"; };
 		DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				DA57DB552C0134B100FE8AD5 /* WeatherResponse.swift */,
 				DA1595622BED5FC800C02D9A /* BuddyConfig.swift */,
 				DA57DB6B2C02E47200FE8AD5 /* Colors.swift */,
+				DA57DB702C0D5FEF00FE8AD5 /* History.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				DA3536B22BD32EB5009FDBB2 /* AnswerView.swift in Sources */,
 				DAA42B122BE1A61300B041E9 /* FieldStyleModifier.swift in Sources */,
 				DAA42B142BE1D9BD00B041E9 /* SheetStyleModifier.swift in Sources */,
+				DA57DB712C0D5FEF00FE8AD5 /* History.swift in Sources */,
 				DA1595612BEC93AA00C02D9A /* ThumbsView.swift in Sources */,
 				DA57DB6E2C07897600FE8AD5 /* ForecastView.swift in Sources */,
 				DA57DB6C2C02E47200FE8AD5 /* Colors.swift in Sources */,

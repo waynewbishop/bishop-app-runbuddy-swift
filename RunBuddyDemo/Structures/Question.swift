@@ -1,5 +1,5 @@
 //
-//  DataModel.swift
+//  Question.swift
 //  RunBuddyDemo
 //
 //  Created by Wayne Bishop on 4/15/24.
@@ -7,8 +7,18 @@
 
 import Foundation
 import SwiftData
+import CoreLocation
 
-//use SwiftData to persist previous planning questions 
-class Question {
-    
+
+//builds out the structure for passing question parameters
+struct Question {
+    let name: String
+    let location: CLLocationCoordinate2D
+    let distance: String
+    let targetDate: Date
+    let targetTime: Date
+    let selectedOption: String
+    let nutrition: Bool
+    let kit: Bool
+    let hydration: Bool
 }

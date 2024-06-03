@@ -8,14 +8,17 @@
 import SwiftUI
 import CoreLocation
 
+
+extension CLLocationCoordinate2D {
+    static let gigHarbor = CLLocationCoordinate2D(latitude: 47.64373, longitude: -122.17364)
+}
+
 struct AnalysisView: View {
     
     @Binding var showModal: Bool
     
+    @State var question: Question
     @State var isAnimating: Bool = true
-    @State var city = "Snohomish"
-    @State var location = CLLocationCoordinate2D()
-    @State var targetDate = Date()
         
     var body: some View {
         VStack {
@@ -34,24 +37,20 @@ struct AnalysisView: View {
             .padding()
             
             ScrollView {
-                VStack {
-                    Text(city)
-                        .font(.largeTitle)
-                    
-                    Text("Sunday, June 2")
-                        .font(.subheadline)
-                }
                 
                 VStack {
                     //insert swift chart statistics
                     //only if the target date is 5 days or less from the
                     //current date. If not show a some sort of custom view
                     //that explains how it works..
-                    ForecastView()
+                    ForecastView(location: question.location)
                 }
                 Spacer() //keep everything top aligned..
                 
             } //end scrollview
+            .onAppear() {
+                print(question)
+            }
         }
     }
 }
@@ -59,10 +58,11 @@ struct AnalysisView: View {
 
 
 #Preview {
-
     @State var showModal: Bool  = false
+    @State var testQuestion = Question(name: "Gig Harbor", location: .gigHarbor, distance: "3.1", targetDate: Date(), targetTime: Date(), selectedOption: "Easy", nutrition: false, kit: false, hydration: false)
+    
     return VStack {
-        AnalysisView(showModal: $showModal)
+        AnalysisView(showModal: $showModal, question: testQuestion)
     }
 
 }
