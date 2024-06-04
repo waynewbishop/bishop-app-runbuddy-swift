@@ -10,18 +10,36 @@ import CoreLocation
 import Charts
 
 
+//used for preview testing
+extension CLLocationCoordinate2D {
+    static let gigHarbor = CLLocationCoordinate2D(latitude: 47.64373, longitude: -122.17364)
+    
+    static let zionPark = CLLocationCoordinate2D(latitude: 37.1047193, longitude: -113.7286516)
+}
+
+
 struct ForecastView: View {
     
     @StateObject var weatherEngine = WeatherEngine()
     @State var chartForecasts = [ChartForecast]()
     
     @State var location: CLLocationCoordinate2D
-    @State var targetDate = "2024-06-04"
-    
-   // @State var location = CLLocationCoordinate2D(latitude: 37.1047193, longitude: -113.7286516)
-   // @State var location = CLLocationCoordinate2D(latitude: 47.33260, longitude: -122.680216)
-   // @State var location = CLLocationCoordinate2D(latitude: 44.9509, longitude: -120.7289)
+    @State var targetDate = ""
+    @State var name = ""
 
+    //present date in long string format
+    var headingDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        guard let date = formatter.date(from: targetDate) else {
+            return "Invalid Date"
+        }
+        
+        formatter.dateFormat = "EEEE, MMMM d"
+        return formatter.string(from: date)
+    }
+    
     
     var body: some View {
         
@@ -30,7 +48,7 @@ struct ForecastView: View {
                 HStack {
                     weatherEngine.icon
                         .imageScale(.large)
-                    Text("Sunday, June 2 - Bridle Trails Park")
+                    Text(headingDate + " - " + name)
                         .font(.headline)
                  }
                 GroupBox () {
@@ -135,10 +153,9 @@ struct ForecastView: View {
 #Preview {
 
     //provide test data..
-    @State var location = CLLocationCoordinate2D(latitude: 47.64373, longitude: -122.17364)
-    @State var targetDate = "2024-06-04"
+    @State var targetDate = "2024-06-05"
     
     return VStack {
-        ForecastView(location: location, targetDate: targetDate)
+        ForecastView(location: .zionPark, targetDate: targetDate, name:"Zion National Park")
     }
 }

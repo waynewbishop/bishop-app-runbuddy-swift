@@ -15,7 +15,7 @@ struct Question {
     let name: String
     let location: CLLocationCoordinate2D
     let distance: String
-    let targetDate: Date
+    let selectedDate: Date
     let targetTime: Date
     let selectedOption: String
     let nutrition: Bool

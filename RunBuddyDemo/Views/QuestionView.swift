@@ -52,6 +52,7 @@ var longitude: String {
     }
 }
     
+    
   var body: some View {
       ScrollView {
           VStack {
@@ -139,6 +140,10 @@ var longitude: String {
                                  .labelsHidden()
                                  .padding(.bottom, 15)
                       }
+                      .onChange(of: selectedDate) { oldValue, newValue in
+                         // print(newValue)
+                      }
+                      
                       
                       LabeledContent("Start Time") {
                           DatePicker("Start Time", selection: $selectedTime, displayedComponents: .hourAndMinute)
@@ -179,7 +184,7 @@ var longitude: String {
                       if let region = searchRegion {
                           let location = region.center
                           
-                          let question = Question(name: name, location: location, distance: distance, targetDate: selectedDate, targetTime: selectedTime, selectedOption: selectedOption, nutrition: nutrition, kit: kit, hydration: hydration)
+                          let question = Question(name: name, location: location, distance: distance, selectedDate: selectedDate, targetTime: selectedTime, selectedOption: selectedOption, nutrition: nutrition, kit: kit, hydration: hydration)
                           
                           AnalysisView(showModal: $showModal, question: question)
                       }

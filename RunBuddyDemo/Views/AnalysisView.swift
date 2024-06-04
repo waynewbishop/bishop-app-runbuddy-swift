@@ -9,16 +9,19 @@ import SwiftUI
 import CoreLocation
 
 
-extension CLLocationCoordinate2D {
-    static let gigHarbor = CLLocationCoordinate2D(latitude: 47.64373, longitude: -122.17364)
-}
-
-struct AnalysisView: View {
-    
+struct AnalysisView: View {    
     @Binding var showModal: Bool
     
     @State var question: Question
     @State var isAnimating: Bool = true
+
+
+var targetDate: String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter.string(from: question.selectedDate)
+}
+
         
     var body: some View {
         VStack {
@@ -39,18 +42,12 @@ struct AnalysisView: View {
             ScrollView {
                 
                 VStack {
-                    //insert swift chart statistics
-                    //only if the target date is 5 days or less from the
-                    //current date. If not show a some sort of custom view
-                    //that explains how it works..
-                    ForecastView(location: question.location)
+                    //show weather and supporting analysis
+                    ForecastView(location: question.location, targetDate: targetDate, name: question.name)
                 }
                 Spacer() //keep everything top aligned..
                 
             } //end scrollview
-            .onAppear() {
-                print(question)
-            }
         }
     }
 }
@@ -59,7 +56,9 @@ struct AnalysisView: View {
 
 #Preview {
     @State var showModal: Bool  = false
-    @State var testQuestion = Question(name: "Gig Harbor", location: .gigHarbor, distance: "3.1", targetDate: Date(), targetTime: Date(), selectedOption: "Easy", nutrition: false, kit: false, hydration: false)
+    @State var selectedDate = Date()
+    
+    @State var testQuestion = Question(name: "Ballard Locks", location: .gigHarbor, distance: "3.1", selectedDate: Date(), targetTime: Date(), selectedOption: "Easy", nutrition: false, kit: false, hydration: false)
     
     return VStack {
         AnalysisView(showModal: $showModal, question: testQuestion)
