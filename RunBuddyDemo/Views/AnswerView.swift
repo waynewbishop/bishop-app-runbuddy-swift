@@ -66,7 +66,7 @@ private let apiKey: String? = BuddyConfig.geminiApiKey
 
         Task {
             do {
-                try await engine.getGenerativeTextChunkAnswer(prompt: .promptParkrunSample, apiKey: apiKey)
+                try await engine.getGenerativeTextChunkAnswer(prompt: .promptWeatherAnalysis, apiKey: apiKey)
             } catch {
                 print(error.localizedDescription)
                 isAnimating = false

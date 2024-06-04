@@ -25,6 +25,7 @@
 		DA57DB712C0D5FEF00FE8AD5 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB702C0D5FEF00FE8AD5 /* History.swift */; };
 		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
 		DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */; };
+		DA65619F2C0FACAB0030076B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65619E2C0FACAB0030076B /* Date.swift */; };
 		DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */; };
 		DAA42B122BE1A61300B041E9 /* FieldStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B112BE1A61300B041E9 /* FieldStyleModifier.swift */; };
 		DAA42B142BE1D9BD00B041E9 /* SheetStyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA42B132BE1D9BD00B041E9 /* SheetStyleModifier.swift */; };
@@ -67,6 +68,7 @@
 		DA57DB702C0D5FEF00FE8AD5 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		DA5BB9462BD863850010DC12 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipsisView.swift; sourceTree = "<group>"; };
+		DA65619E2C0FACAB0030076B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DAA42B0F2BE15EA800B041E9 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		DAA42B112BE1A61300B041E9 /* FieldStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldStyleModifier.swift; sourceTree = "<group>"; };
 		DAA42B132BE1D9BD00B041E9 /* SheetStyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetStyleModifier.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				DA57DB672C017EB600FE8AD5 /* Double.swift */,
+				DA65619E2C0FACAB0030076B /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA65619F2C0FACAB0030076B /* Date.swift in Sources */,
 				DA57DB542BFF055B00FE8AD5 /* WeatherEngine.swift in Sources */,
 				DA1595632BED5FC800C02D9A /* BuddyConfig.swift in Sources */,
 				DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */,

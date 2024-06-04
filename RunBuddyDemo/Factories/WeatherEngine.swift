@@ -112,6 +112,8 @@ class WeatherEngine: ObservableObject {
         //provide a display summary
         self.summary = "\(weather_main). High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind gusts up to \(wind.roundedNearest) mph. Chance of precipitation is \(pop * 100)%."
         
+        print(summary)
+        
     }
     
     
@@ -121,27 +123,27 @@ class WeatherEngine: ObservableObject {
     func getWeatherIcon(for iconCode: String) -> Image {
         switch iconCode {
         case "01d":
-            return Image(systemName: "sun.max")
+            return Image(systemName: "sun.max.fill")
         case "01n":
-            return Image(systemName: "moon")
+            return Image(systemName: "moon.fill")
         case "02d":
-            return Image(systemName: "cloud.sun")
+            return Image(systemName: "cloud.sun.fill")
         case "02n":
-            return Image(systemName: "cloud.sun")
+            return Image(systemName: "cloud.sun.fill")
         case "03d", "03n":
-            return Image(systemName: "cloud")
+            return Image(systemName: "cloud.fill")
         case "04d", "04n":
-            return Image(systemName: "cloud")
+            return Image(systemName: "cloud.fill")
         case "09d", "09n":
-            return Image(systemName: "cloud.drizzle")
+            return Image(systemName: "cloud.drizzle.fill")
         case "10d", "10n":
-            return Image(systemName: "cloud.rain")
+            return Image(systemName: "cloud.rain.fill")
         case "11d", "11n":
-            return Image(systemName: "cloud.bolt")
+            return Image(systemName: "cloud.bolt.fill")
         case "13d", "13n":
-            return Image(systemName: "cloud.snow")
+            return Image(systemName: "cloud.snow.fill")
         case "50d", "50n":
-            return Image(systemName: "cloud.fog")
+            return Image(systemName: "cloud.fog.fill")
         default:
             return Image(systemName: "questionmark.circle")
         }
