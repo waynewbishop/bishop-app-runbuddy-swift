@@ -9,47 +9,46 @@ import SwiftUI
 import CoreLocation
 
 
-struct AnalysisView: View {    
+struct AnalysisView: View {
     @Binding var showModal: Bool
     
     @State var question: Question
     @State var isAnimating: Bool = true
-
-
-var targetDate: String {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd"
-    return formatter.string(from: question.selectedDate)
-}
-
-        
+    
+    
+    var targetDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: question.selectedDate)
+    }
+    
+    
     var body: some View {
-        VStack {
-            HStack {
-                EllipsisView(isAnimating: $isAnimating)
-                Spacer()
-                Button(action: {
-                    showModal = false
-                }) {
-                    Image(systemName: "xmark")
-                      .resizable()
-                      .frame(width: 16, height: 16)
-                      .padding()
-                }
-            }
-            .padding()
-            
-            ScrollView {
+        ScrollView {
+            VStack {
                 
+                HStack {
+                    EllipsisView(isAnimating: $isAnimating)
+                    Spacer()
+                    Button(action: {
+                        showModal = false
+                    }) {
+                        Image(systemName: "xmark")
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                    }
+                }
+                .padding(.horizontal)
+         
+                 
                 VStack {
                     //show weather and supporting analysis
                     ForecastView(location: question.location, targetDate: targetDate, name: question.name)
                 }
-                Spacer() //keep everything top aligned..
-                
-            } //end scrollview
+            }
         }
     }
+
 }
 
 

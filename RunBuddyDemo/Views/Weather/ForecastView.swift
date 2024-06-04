@@ -42,60 +42,49 @@ struct ForecastView: View {
     
     
     var body: some View {
-        
-        if weatherEngine.summary != "" {
-            VStack (alignment: .leading, content: {
-                HStack {
-                    weatherEngine.icon
-                        .imageScale(.large)
-                    Text(headingDate + " - " + name)
-                        .font(.headline)
-                 }
-                GroupBox () {
-                    Text(weatherEngine.summary)
-                }
-            })
-            .padding()
-        }
-        
+               
         VStack {
-            Chart {
-                ForEach(chartForecasts) { forecast in
-                    LineMark (
-                        x: .value("Hour", forecast.date, unit: .hour),
-                        y: .value("Temp", forecast.temp)
-                    )
-                    .foregroundStyle(Color.blue.opacity(0.4))
-                    
-                    PointMark(
-                        x: .value("Hour", forecast.date, unit: .hour),
-                        y: .value("Temp", forecast.temp)
-                    )
-                    .foregroundStyle(Color.blue)
-                    
-                    AreaMark(
-                        x: .value("Hour", forecast.date, unit: .hour),
-                        y: .value("Humdity", forecast.humidity)
-                    )
-                    .foregroundStyle(Color.green.opacity(0.2))
-                }
+            VStack {
+                Text(self.name)
+                    .font(.title3)
+                    //.padding()
+                weatherEngine.icon
+                    .font(.system(size: 90, weight: .ultraLight))
             }
-            .frame(height: 225)
             .padding()
-            .chartYAxisLabel("Temperature / Humidity")
+            
+            VStack {
+                Chart {
+                    ForEach(chartForecasts) { forecast in
+                        LineMark (
+                            x: .value("Hour", forecast.date, unit: .hour),
+                            y: .value("Temp", forecast.temp)
+                        )
+                        .foregroundStyle(Color.blue.opacity(0.4))
+                        
+                        PointMark(
+                            x: .value("Hour", forecast.date, unit: .hour),
+                            y: .value("Temp", forecast.temp)
+                        )
+                        .foregroundStyle(Color.blue)
+                        
+                        AreaMark(
+                            x: .value("Hour", forecast.date, unit: .hour),
+                            y: .value("Humdity", forecast.humidity)
+                        )
+                        .foregroundStyle(Color.green.opacity(0.2))
+                    }
+                }
+                .frame(height: 225)
+                .padding()
+                .chartYAxisLabel("Temperature / Humidity")
+                
+            }
+            .onAppear() {
+                self.weatherForecastData()
+          }
             
         }
-        .onAppear() {
-            self.weatherForecastData()
-        }
-        
-        HStack {
-            Text("Percent Precipitation")
-                .font(.headline)
-            Spacer()
-        }
-        .padding()
-        
         
         //provide a bar chart for precipitation
         VStack {
@@ -113,7 +102,7 @@ struct ForecastView: View {
         .padding()
         .chartYAxisLabel("Percent Precipitation")
         
-        
+        Spacer()
     }
     
     
@@ -153,9 +142,9 @@ struct ForecastView: View {
 #Preview {
 
     //provide test data..
-    @State var targetDate = "2024-06-05"
+    @State var targetDate = "2024-06-04"
     
     return VStack {
-        ForecastView(location: .zionPark, targetDate: targetDate, name:"Zion National Park")
+        ForecastView(location: .gigHarbor, targetDate: targetDate, name:"Zion National Park")
     }
 }

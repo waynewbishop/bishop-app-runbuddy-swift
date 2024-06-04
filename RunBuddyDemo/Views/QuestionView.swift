@@ -70,8 +70,9 @@ var longitude: String {
               GroupBox {
                   HStack {
                       Image(systemName: "magnifyingglass")
-                      TextField("Search for a run location", text: $name, axis: .vertical)
+                      TextField("Search for a run location", text: $name)
                           .autocorrectionDisabled()
+                          .autocapitalization(.words)  // Better for place names
                           .onSubmit() {
                               let engine = SearchEngine(searchResults: $searchResults)
                                                           
