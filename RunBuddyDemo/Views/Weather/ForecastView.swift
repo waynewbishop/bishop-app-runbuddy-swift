@@ -13,7 +13,6 @@ import Charts
 //used for preview testing
 extension CLLocationCoordinate2D {
     static let gigHarbor = CLLocationCoordinate2D(latitude: 47.64373, longitude: -122.17364)
-    
     static let zionPark = CLLocationCoordinate2D(latitude: 37.1047193, longitude: -113.7286516)
 }
 
@@ -30,6 +29,7 @@ struct ForecastView: View {
     @State var targetDate = ""
     @State var name = ""
     @State var distance = ""
+    @State var terrain = ""
     
     //access key from plist.
     private let apiKey: String? = BuddyConfig.geminiApiKey
@@ -69,14 +69,14 @@ struct ForecastView: View {
                         Spacer()
                     }
                     HStack {
-                       TextField("", text: $engine.chunkResponse, axis: .vertical)
-                       // TextEditor(text: $engine.chunkResponse)
-                        //    .frame(minHeight: 100) // Optional: Set a minimum height
-                            //.border(Color.gray, width: 1) // Optional: Add a border for better visibility
+                        Text(engine.chunkResponse)
+                            .lineLimit(nil)
+                            Spacer()
+                        
+                       // Text("This is a test..")
                     }
                 }
                 .padding(.horizontal)
-                //.frame(height: 200) // set the desired VStack height
             }
             
             VStack {
@@ -108,9 +108,7 @@ struct ForecastView: View {
             }
             .onAppear() {
                 self.weatherForecastData()
-                self.askRunBuddyAndGetResponse()
-          }
-            
+            }
         }
         
         //provide a bar chart for precipitation
@@ -134,11 +132,11 @@ struct ForecastView: View {
     
     
     //invoke engine and receive response.
-    private func askRunBuddyAndGetResponse() {
+    private func askRunBuddyAndGetResponse(_ prompt: String) {
         
         Task {
             do {
-                try await engine.getGenerativeTextChunkAnswer(prompt: .promptWeatherAnalysis, apiKey: apiKey)
+                try await engine.getGenerativeTextChunkAnswer(prompt: prompt, apiKey: apiKey)
             } catch {
                 print(error.localizedDescription)
             }
@@ -168,6 +166,14 @@ struct ForecastView: View {
                            //print(item)
                         }
                     }
+                    
+                    //build a new prompt for weather analysis
+                    let prompt = Prompt()
+                    let revisedPrompt = prompt.newWeatherPrompt(summary: weatherEngine.summary, location: location, distance: distance, targetDate: targetDate, terrain: terrain)
+                    
+                    //print(revisedPrompt)
+
+                    self.askRunBuddyAndGetResponse(revisedPrompt)
                 }
                 
             } catch {
@@ -180,9 +186,10 @@ struct ForecastView: View {
 #Preview {
 
     //provide test data..
-    @State var targetDate = "2024-06-05"
+    @State var targetDate = "2024-06-08"
+    @State var summary = "Sun. High of 92 and low of 68. Wind gusts up to 8 mph."
     
     return VStack {
-        ForecastView(location: .zionPark, targetDate: targetDate, name:"Zion National Park")
+        ForecastView(location: .zionPark, targetDate: targetDate, name:"Zion National Park", distance: "3.1")
     }
 }

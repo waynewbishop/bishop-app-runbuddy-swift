@@ -26,7 +26,10 @@ struct AnalysisView: View {
     var body: some View {
         ScrollView {
             VStack {
-                
+                VStack {
+                    
+                }
+                .frame(height: 15)
                 HStack {
                     EllipsisView(isAnimating: $isAnimating)
                     Spacer()
@@ -57,7 +60,7 @@ struct AnalysisView: View {
     @State var showModal: Bool  = false
     @State var selectedDate = Date()
     
-    @State var testQuestion = Question(name: "Ballard Locks", location: .gigHarbor, distance: "3.1", selectedDate: selectedDate.advanceDays(by: 3), targetTime: Date(), selectedOption: "Easy", nutrition: false, kit: false, hydration: false)
+    @State var testQuestion = Question(name: "Ballard Locks", location: .gigHarbor, distance: "3.1", selectedDate: selectedDate.advanceDays(by: 3), selectedOption: "Easy", terrainOption: "Road", nutrition: false, kit: false, hydration: false)
     
     return VStack {
         AnalysisView(showModal: $showModal, question: testQuestion)

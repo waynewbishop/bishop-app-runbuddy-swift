@@ -11,8 +11,13 @@ import CoreLocation
 struct Prompt {
     
     //create a prompt based on weather requirements
-    func newWeatherPrompt(forecasts: [ForecastData], location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String?  {
-        return nil
+    func newWeatherPrompt(summary: String, location: CLLocationCoordinate2D, distance: String, targetDate: String, terrain: String) -> String  {
+        
+        var finalPrompt: String = ""
+        
+        finalPrompt = "I am planning a \(terrain) run of \(distance) miles \(targetDate.headingDate) at the geographic coordinates of latitude \(location.latitude) and longitude \(location.longitude). The overall forecast calls for \(summary). Based on the geographic region and weather forecast provide a time range for the suggested workout. This is a requirement. If the weather high gets above 75 degrees or below 35 degrees suggest the use of an indoor gym or treadmill. The response should be provide a single 30-50 word paragraph. Do not include the longitude and latitude coordinates in the response. Also, assume I want to start the run during daylight hours. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. The response should also be in English."
+        
+        return finalPrompt
     }
 
     //create a prompt based on nutritional requirements
@@ -44,6 +49,6 @@ extension String {
     
     static let promptTrailRace: String = "I have a 6.2 mile trail race this weekend and the course has 800 feet of vertical and will be around 2K above sea level in Marin Headlands. I currnetly run around 25 per week and aim to do around 800 of vertical per week. Provide nutrition suggestions before, during and after the event. Also clothing suggestions for the race. Provide a single 75-150 word paragraph for a suggested strategy. Use two or three paragraphs if needed. The general tone of the response should be upbeat, positive and encouraging. Be sure not to use any titles or sub headings in the response. The response should also be in English."
     
-    static let promptWeatherAnalysis = "I am planning to run 3.1 miles Thursday, June 6 at the geographic coordinates of latitude 47.64373 and longitude -122.17364. The overall forecast calls for Clouds. High of 74° and low of 46°. Wind gusts up to 7 mph. Chance of precipitation is 0.0%. Based on the geographic region and anticipated weather forecast provide a time range for the suggested workout. This is a requirement. The response should be provide a single 50-75 word paragraph. Do not include the longitude and latitude coordinates in the response. Also, assume I want to start the run during daylight hours. The general tone of the response should be upbeat, positive and encouraging. Be sure not to use any titles or sub headings in the response. The response should also be in English."
+    static let promptWeatherAnalysis = "I am planning to run 3.1 miles Thursday, June 6 at the geographic coordinates of latitude 47.64373 and longitude -122.17364. The overall forecast calls for Clouds. High of 74° and low of 46°. Wind gusts up to 7 mph. Chance of precipitation is 0.0%. Based on the geographic region and anticipated weather forecast provide a time range for the suggested workout. This is a requirement. if the geographic location or temperature conditions look unfavorable for running, suggest the use of an indoor gym or treadmill. The response should be provide a single 50-75 word paragraph. Do not include the longitude and latitude coordinates in the response. Also, assume I want to start the run during daylight hours. The general tone of the response should be upbeat, positive and encouraging. Be sure not to use any titles or sub headings in the response. The response should also be in English."
     
 }

@@ -112,8 +112,6 @@ class WeatherEngine: ObservableObject {
         //provide a display summary
         self.summary = "\(weather_main). High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind gusts up to \(wind.roundedNearest) mph. Chance of precipitation is \(pop * 100)%."
         
-        print(summary)
-        
     }
     
     

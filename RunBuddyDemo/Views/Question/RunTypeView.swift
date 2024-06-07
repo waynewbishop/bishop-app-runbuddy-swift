@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SelectionView: View {
+struct RunTypeView: View {
     
     @Binding var selectedOption: String
     
@@ -36,6 +36,6 @@ struct SelectionView: View {
 #Preview {
  @State var selectedOption: String = "Easy"
     return VStack {
-        SelectionView(selectedOption: $selectedOption)
+        RunTypeView(selectedOption: $selectedOption)
     }
 }
