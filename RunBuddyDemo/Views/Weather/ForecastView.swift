@@ -52,31 +52,40 @@ struct ForecastView: View {
                
         VStack {
             VStack {
+                Spacer()
+            }
+             VStack {
                 Text(self.name)
                     .font(.title)
-                    //.padding()
                 weatherEngine.icon
-                    .font(.system(size: 90, weight: .ultraLight))
+                    .font(.system(size: 95, weight: .ultraLight))
                     .symbolRenderingMode(.multicolor)
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color.blue.opacity(0.5))
+                    )
             }
             .padding()
             
-            if engine.chunkResponse != "" {
-                VStack {
-                    HStack {
-                        Text("Weather Analysis")
-                            .font(.headline)
-                        Spacer()
-                    }
-                    HStack {
-                        Text(engine.chunkResponse)
-                            .lineLimit(nil)
+            VStack {
+                if engine.chunkResponse != "" {
+                    VStack {
+                        HStack {
+                            Text("Weather Analysis")
+                                .font(.headline)
                             Spacer()
-                        
-                       // Text("This is a test..")
+                        }
+                        HStack {
+                            Text(engine.chunkResponse)
+                                .lineLimit(nil)
+                            Spacer()
+                            
+                            // Text("This is a test..")
+                        }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
             }
             
             VStack {
@@ -149,6 +158,13 @@ struct ForecastView: View {
             do {
                 let forecastResponse = try await weatherEngine.fetchFiveDayForecast(for: location)
                 
+                //check the location name
+                let city = forecastResponse.city.name
+                if self.name == "" {
+                    print(city)
+                    self.name = city
+                }
+                
                 //process collection on the main thread
                 DispatchQueue.main.async {
                    let targetForecasts = weatherEngine.filterHourlyForecasts(forecastResponse, targetDate: targetDate)
@@ -186,7 +202,7 @@ struct ForecastView: View {
 #Preview {
 
     //provide test data..
-    @State var targetDate = "2024-06-08"
+    @State var targetDate = "2024-06-10"
     @State var summary = "Sun. High of 92 and low of 68. Wind gusts up to 8 mph."
     
     return VStack {

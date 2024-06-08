@@ -20,11 +20,13 @@ struct QuestionView: View {
      Gemini in order to get an rough idea of the
      destination elevation.
      */
+
+//persistent storage
+@AppStorage("name") private var persistedName = ""
     
 @State var name: String = ""
 @State var distance: String = ""
 @State var selectedDate = Date()
-@State var selectedTime = Date()
 @State var selectedOption = "Easy"
 @State var terrainOption = "Road"
 @State var nutrition: Bool = false
@@ -87,6 +89,12 @@ var longitude: String {
                                     }
                                 } //end task
                             }
+                            .onAppear {
+                                name = persistedName // Load persisted value on appear
+                            }
+                            .onChange(of: name) { oldValue, newValue in
+                               persistedName = newValue // Save changes to persisted value
+                            }
                     }
                 }
                 
@@ -129,11 +137,10 @@ var longitude: String {
                         
                         HStack {
                             TextField("Run distance (miles)", text: $distance) {
-                                // This will be called when the user starts editing the text field
-                                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                             }
                             .keyboardType(.decimalPad)
                             .padding(.bottom, 15)
+                            .disabled(true) //TODO: this interface element does not work. Look at Strava..
                         }
                         
                         LabeledContent("Type") {
@@ -150,6 +157,9 @@ var longitude: String {
                             DatePicker("Start Date", selection: $selectedDate, displayedComponents: .date)
                                 .labelsHidden()
                                 .padding(.bottom, 15)
+                        }
+                        .onChange(of: selectedDate) { oldValue, newValue in
+                            print(newValue)
                         }
                         
                         Toggle(isOn: $nutrition) {

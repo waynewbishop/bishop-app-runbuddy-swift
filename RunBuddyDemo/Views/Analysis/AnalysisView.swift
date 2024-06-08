@@ -19,6 +19,7 @@ struct AnalysisView: View {
     var targetDate: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
+        print(question.selectedDate)
         return formatter.string(from: question.selectedDate)
     }
     
@@ -58,9 +59,9 @@ struct AnalysisView: View {
 
 #Preview {
     @State var showModal: Bool  = false
-    @State var selectedDate = Date()
+    @State var selectedDate = Date().advanceDays(by: 1)
     
-    @State var testQuestion = Question(name: "Ballard Locks", location: .gigHarbor, distance: "3.1", selectedDate: selectedDate.advanceDays(by: 3), selectedOption: "Easy", terrainOption: "Road", nutrition: false, kit: false, hydration: false)
+    @State var testQuestion = Question(name: "Ballard Locks", location: .gigHarbor, distance: "3.1", selectedDate: selectedDate.advanceDays(by: 0), selectedOption: "Easy", terrainOption: "Road", nutrition: false, kit: false, hydration: false)
     
     return VStack {
         AnalysisView(showModal: $showModal, question: testQuestion)

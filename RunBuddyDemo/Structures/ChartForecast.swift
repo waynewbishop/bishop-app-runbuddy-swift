@@ -1,5 +1,5 @@
 //
-//  Forecast.swift
+//  ChartForecast.swift
 //  RunBuddyDemo
 //
 //  Created by Wayne Bishop on 4/19/24.
@@ -18,6 +18,7 @@ struct ChartForecast: Identifiable {
     let temp_max: Double
     let humidity: Int
     let pop: Double 
+
     
     // Use the 'dt' property as the identifier
     var id: Int {

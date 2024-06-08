@@ -15,6 +15,8 @@ struct Prompt {
         
         var finalPrompt: String = ""
         
+        print(targetDate.headingDate)
+        
         finalPrompt = "I am planning a \(terrain) run of \(distance) miles \(targetDate.headingDate) at the geographic coordinates of latitude \(location.latitude) and longitude \(location.longitude). The overall forecast calls for \(summary). Based on the geographic region and weather forecast provide a time range for the suggested workout. This is a requirement. If the weather high gets above 75 degrees or below 35 degrees suggest the use of an indoor gym or treadmill. The response should be provide a single 30-50 word paragraph. Do not include the longitude and latitude coordinates in the response. Also, assume I want to start the run during daylight hours. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. The response should also be in English."
         
         return finalPrompt

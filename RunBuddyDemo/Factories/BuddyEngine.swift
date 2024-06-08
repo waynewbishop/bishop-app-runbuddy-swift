@@ -43,7 +43,7 @@ class BuddyEngine: ObservableObject {
         do {
             for try await chunk in contentStream {
                 if let text = chunk.text {
-                    print(text)
+                   // print(text)
                     
                     //update published property on main thread
                     DispatchQueue.main.async {
