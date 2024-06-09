@@ -14,16 +14,30 @@ struct Prompt {
     func newWeatherPrompt(summary: String, location: CLLocationCoordinate2D, distance: String, targetDate: String, terrain: String) -> String  {
         
         var finalPrompt: String = ""
-        
-        print(targetDate.headingDate)
-        
-        finalPrompt = "I am planning a \(terrain) run of \(distance) miles \(targetDate.headingDate) at the geographic coordinates of latitude \(location.latitude) and longitude \(location.longitude). The overall forecast calls for \(summary). Based on the geographic region and weather forecast provide a time range for the suggested workout. This is a requirement. If the weather high gets above 75 degrees or below 35 degrees suggest the use of an indoor gym or treadmill. The response should be provide a single 30-50 word paragraph. Do not include the longitude and latitude coordinates in the response. Also, assume I want to start the run during daylight hours. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. The response should also be in English."
+  
+        //TODO: Remove terrain. This is should be applied to performance and not weather analysis..
+        //TODO: This prompt should also be redesigned and formatted correctly, to provide more accurate results
+        //TODO: Need to also include a static table of prompt assumptions. These can be designed as static variables accessible at complile time.
+        //TODO: location also needs to be changed to a string from CLLocationCoordinate2D (perhaps just add name,
+         
+        finalPrompt = "I am planning a \(terrain) run on the date \(targetDate.headingDate) at the geographic coordinates of latitude \(location.latitude) and longitude \(location.longitude). The overall forecast calls for \(summary). Based on the geographic region and weather forecast provide a time range for the suggested workout. This is a requirement. If the weather high gets above 75 degrees or below 35 degrees suggest the use of an indoor gym or treadmill. The response should be provide a single 30-50 word paragraph. Do not include the longitude and latitude coordinates in the response. Also, assume I want to start the run during daylight hours. If the time of the request is past 12PM noon for the local timezone, instead suggest a run start time in the evening but before sunset. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. The response should also be in English."
         
         return finalPrompt
     }
 
     //create a prompt based on nutritional requirements
     func newNutritionPrompt(location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String? {
+        
+        //provides example as how I can build out my prompts using structured data and bullet points.
+        let something: Int = 0
+        
+        let formattedText = """
+        Here are some round bullet points:
+        \u{2981} First item
+        \u{2981} Second item
+        And here's a regular paragraph.
+        """
+        
         return nil
     }
     

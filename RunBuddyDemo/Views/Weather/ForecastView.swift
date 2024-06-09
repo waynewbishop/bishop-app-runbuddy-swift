@@ -30,6 +30,7 @@ struct ForecastView: View {
     @State var name = ""
     @State var distance = ""
     @State var terrain = ""
+    @State var country = ""
     
     //access key from plist.
     private let apiKey: String? = BuddyConfig.geminiApiKey
@@ -63,7 +64,7 @@ struct ForecastView: View {
                     .padding()
                     .background(
                         RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.blue.opacity(0.5))
+                            .fill(Color.gray.opacity(0.1))
                     )
             }
             .padding()
@@ -161,8 +162,8 @@ struct ForecastView: View {
                 //check the location name
                 let city = forecastResponse.city.name
                 if self.name == "" {
-                    print(city)
                     self.name = city
+                    self.country = forecastResponse.city.country
                 }
                 
                 //process collection on the main thread
@@ -202,7 +203,7 @@ struct ForecastView: View {
 #Preview {
 
     //provide test data..
-    @State var targetDate = "2024-06-10"
+    @State var targetDate = "2024-06-13"
     @State var summary = "Sun. High of 92 and low of 68. Wind gusts up to 8 mph."
     
     return VStack {

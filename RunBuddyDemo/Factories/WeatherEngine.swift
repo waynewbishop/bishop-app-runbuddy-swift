@@ -77,7 +77,8 @@ class WeatherEngine: ObservableObject {
         var weather_main = ""
         var wind: Double = 0
         var pop: Double = 0
-
+        var humidity: Int = 0 
+        var i: Int = 0
         
         for forecast in forecasts {
             
@@ -105,12 +106,21 @@ class WeatherEngine: ObservableObject {
                     
             if forecast.pop > pop {
                 pop = forecast.pop
-                //print(pop)
             }
-        }
+            
+            //calculate average humidity.
+            i += 1
+            
+            if forecast.main.humidity > 0 {
+                humidity += forecast.main.humidity
+            }
+            
+        } //end for
+        
+        humidity = humidity / i 
         
         //provide a display summary
-        self.summary = "\(weather_main). High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind gusts up to \(wind.roundedNearest) mph. Chance of precipitation is \(pop * 100)%."
+        self.summary = "\(weather_main). High of \(temp_max.roundedNearest)° and low of \(temp_min.roundedNearest)°. Wind gusts up to \(wind.roundedNearest) mph. Today, the average humidity is \(humidity)%. Chance of precipitation is \(pop * 100)%."
         
     }
     
@@ -129,7 +139,7 @@ class WeatherEngine: ObservableObject {
         case "02n":
             return Image(systemName: "cloud.sun.fill")
         case "03d", "03n":
-            return Image(systemName: "cloud.fill")
+            return Image(systemName: "cloud.sun.fill")
         case "04d", "04n":
             return Image(systemName: "cloud.fill")
         case "09d", "09n":

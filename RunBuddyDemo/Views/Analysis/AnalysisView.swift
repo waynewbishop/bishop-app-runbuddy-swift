@@ -59,7 +59,7 @@ struct AnalysisView: View {
 
 #Preview {
     @State var showModal: Bool  = false
-    @State var selectedDate = Date().advanceDays(by: 1)
+    @State var selectedDate = Date().advanceDays(by: 0)
     
     @State var testQuestion = Question(name: "Ballard Locks", location: .gigHarbor, distance: "3.1", selectedDate: selectedDate.advanceDays(by: 0), selectedOption: "Easy", terrainOption: "Road", nutrition: false, kit: false, hydration: false)
     
