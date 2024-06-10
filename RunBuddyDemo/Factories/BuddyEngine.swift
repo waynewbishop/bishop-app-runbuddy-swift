@@ -34,7 +34,6 @@ class BuddyEngine: ObservableObject {
 
         let model = newTextModel(with: key)
         
-        //TODO: With main functionality working, now we can build out a strongly typed model for the prompt.
         let prompt: String = prompt
         
         // Use streaming with text-only input

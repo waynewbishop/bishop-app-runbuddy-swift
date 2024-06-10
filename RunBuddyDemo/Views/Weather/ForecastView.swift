@@ -95,9 +95,10 @@ struct ForecastView: View {
                         weatherEngine.icon
                              .font(.system(size: 35, weight: .regular))
                             .symbolRenderingMode(.multicolor)
+                            .padding(.horizontal, 10)
                             .background(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .fill(Color.gray.opacity(0.1))
+                                RoundedRectangle(cornerRadius: 30)
+                                    .fill(Color.blue.opacity(0.1))
                             )
                         Spacer()
                         //move presentation to the left
@@ -207,13 +208,13 @@ struct ForecastView: View {
                            //print(item)
                         }
                     }
-                    
+                                        
                     //build a new prompt for weather analysis
                     let prompt = Prompt()
-                    let revisedPrompt = prompt.newWeatherPrompt(summary: weatherEngine.summary, location: location, distance: distance, targetDate: targetDate, terrain: terrain)
+                    let revisedPrompt = prompt.weatherAnalysisPrompt(with: chartForecasts, name: name, targetDate: targetDate)
                     
                     //print(revisedPrompt)
-
+                                        
                     self.askRunBuddyAndGetResponse(revisedPrompt)
                 }
                 

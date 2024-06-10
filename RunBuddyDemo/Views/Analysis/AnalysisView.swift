@@ -19,7 +19,6 @@ struct AnalysisView: View {
     var targetDate: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        print(question.selectedDate)
         return formatter.string(from: question.selectedDate)
     }
     

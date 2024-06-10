@@ -11,33 +11,44 @@ import CoreLocation
 struct Prompt {
     
     //create a prompt based on weather requirements
-    func newWeatherPrompt(summary: String, location: CLLocationCoordinate2D, distance: String, targetDate: String, terrain: String) -> String  {
+    func weatherAnalysisPrompt(with forecasts: [ChartForecast], name: String, targetDate: String) -> String {
         
-        var finalPrompt: String = ""
-  
-        //TODO: Remove terrain. This is should be applied to performance and not weather analysis..
-        //TODO: This prompt should also be redesigned and formatted correctly, to provide more accurate results
-        //TODO: Need to also include a static table of prompt assumptions. These can be designed as static variables accessible at complile time.
-        //TODO: location also needs to be changed to a string from CLLocationCoordinate2D (perhaps just add name,
-         
-        finalPrompt = "I am planning a \(terrain) run on the date \(targetDate.headingDate) at the geographic coordinates of latitude \(location.latitude) and longitude \(location.longitude). The overall forecast calls for \(summary). Based on the geographic region and weather forecast provide a time range for the suggested workout. This is a requirement. If the weather high gets above 75 degrees or below 35 degrees suggest the use of an indoor gym or treadmill. The response should be provide a single 30-50 word paragraph. Do not include the longitude and latitude coordinates in the response. Also, assume I want to start the run during daylight hours. If the time of the request is past 12PM noon for the local timezone, instead suggest a run start time in the evening but before sunset. Do not provide any recommendations for clothing, hydration or nutrition. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. The response should also be in English."
-        
-        return finalPrompt
-    }
+        let finalPrompt = """
+        User: I am planning a run today. Preferably, I'd like to avoid running in extreme heat or rain. The response should be provide a single 30 to 40 word paragraph. Assume I want to run during daylight hours. Do not provide any recommendations for clothing, hydration or nutrition. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. Any numerical values provided in the response should be rounded to the nearest whole number. The response should also be in English.
 
-    //create a prompt based on nutritional requirements
-    func newNutritionPrompt(location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String? {
+        Location: \(name)
+
+        Planned Exercise: Outdoor running
+
+        Weather Forecast Data:
         
-        //provides example as how I can build out my prompts using structured data and bullet points.
-        let something: Int = 0
+        \(getFlatForecast(with: forecasts))
         
-        let formattedText = """
-        Here are some round bullet points:
-        \u{2981} First item
-        \u{2981} Second item
-        And here's a regular paragraph.
         """
         
+        return finalPrompt
+        
+    }
+    
+    //MARK: Helper functions
+    
+    //provide the hourly weather forecast in a flatten string for AI analysis.
+    private func getFlatForecast(with forecasts: [ChartForecast]) -> String {
+        
+        var results: String = ""
+        let degreeSymbol: Character = "\u{00B0}"
+        let bulletSymbol: Character = "\u{2981}"
+        
+        for forecast in forecasts {
+            results += "\(bulletSymbol) \(forecast.date): Temperature: \(forecast.temp) \(degreeSymbol)F, Chance of Precipitation: \(forecast.pop)%, Humidity: \(forecast.humidity)%."
+        }
+        
+        return results
+    }
+    
+
+    //create a prompt based on nutritional requirements
+    func newNutritionPrompt(location: CLLocationCoordinate2D, distance: Double, targetDate: Date) -> String? {        
         return nil
     }
     
