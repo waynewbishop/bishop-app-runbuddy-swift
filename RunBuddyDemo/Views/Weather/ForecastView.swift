@@ -32,6 +32,8 @@ struct ForecastView: View {
     @State var terrain = ""
     @State var country = ""
     
+    let degreeSymbol: Character = "\u{00B0}"
+    
     //access key from plist.
     private let apiKey: String? = BuddyConfig.geminiApiKey
 
@@ -57,17 +59,9 @@ struct ForecastView: View {
             }
              VStack {
                 Text(self.name)
-                    .font(.title)
-                weatherEngine.icon
-                    .font(.system(size: 95, weight: .ultraLight))
-                    .symbolRenderingMode(.multicolor)
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(Color.gray.opacity(0.1))
-                    )
+                     .font(.title)
             }
-            .padding()
+            .frame(height: 100) // set the desired VStack height
             
             VStack {
                 if engine.chunkResponse != "" {
@@ -88,6 +82,36 @@ struct ForecastView: View {
                     .padding(.horizontal)
                 }
             }
+            .padding(.bottom)
+            
+            VStack {
+                if engine.chunkResponse != "" {
+                    HStack {
+                        Text("\(weatherEngine.high.roundedNearest.description)\(degreeSymbol)")
+                            .font(.title)
+                        Text("\(weatherEngine.low.roundedNearest.description)\(degreeSymbol)")
+                            .font(.title)
+                            .foregroundColor(.gray)
+                        weatherEngine.icon
+                             .font(.system(size: 35, weight: .regular))
+                            .symbolRenderingMode(.multicolor)
+                            .background(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .fill(Color.gray.opacity(0.1))
+                            )
+                        Spacer()
+                        //move presentation to the left
+                    }
+                    HStack {
+                        Text("Fahrenheit (\(degreeSymbol)F)")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        Spacer()
+                    }
+                    
+                }
+            }
+            .padding(.horizontal)
             
             VStack {
                 Chart {

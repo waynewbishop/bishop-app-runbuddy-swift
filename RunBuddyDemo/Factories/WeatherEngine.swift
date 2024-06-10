@@ -13,6 +13,8 @@ class WeatherEngine: ObservableObject {
     
     var summary: String = ""
     var icon: Image = Image("")
+    var high: Double = 0
+    var low: Double = 0
     
     /// Retrieves the weather forecast for the next 5 days
     /// - Parameters:
@@ -88,16 +90,19 @@ class WeatherEngine: ObservableObject {
                 temp_max = forecast.main.temp_max
                 weather_main = forecast.weather[0].main
                 icon = getWeatherIcon(for: forecast.weather[0].icon)
+                high = forecast.main.temp_max
             }
             
             //additional logic for low temp
             if temp_min != -100 {
                 if forecast.main.temp_min < temp_min {
                     temp_min = forecast.main.temp_min
+                    low = forecast.main.temp_min
                 }
             }
             else {
                 temp_min = forecast.main.temp_min
+                low = forecast.main.temp_min
             }
             
             if forecast.wind.speed > wind {
