@@ -29,4 +29,21 @@ extension Date {
         }
     }
     
+    func toString(formatString: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone = .current) -> String {
+       let formatter = DateFormatter()
+       formatter.dateFormat = formatString
+       formatter.timeZone = timeZone
+        
+       return formatter.string(from: self)
+    }
+       
+   static func fromUTCString(_ dateString: String, formatString: String = "yyyy-MM-dd HH:mm:ss Z") -> Date? {
+       let formatter = DateFormatter()
+       formatter.dateFormat = formatString
+       formatter.timeZone = TimeZone(abbreviation: "UTC")
+       
+       return formatter.date(from: dateString)
+   }
+    
+    
 }

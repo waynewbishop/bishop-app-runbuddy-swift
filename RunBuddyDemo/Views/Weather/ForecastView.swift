@@ -184,6 +184,9 @@ struct ForecastView: View {
             do {
                 let forecastResponse = try await weatherEngine.fetchFiveDayForecast(for: location)
                 
+                //TODO: Add support for sunrise and sunset times in weather analysis prompt.
+                //let sunrise = forecastResponse.city.sunrise
+                
                 //check the location name
                 let city = forecastResponse.city.name
                 if self.name == "" {
@@ -208,6 +211,9 @@ struct ForecastView: View {
                            //print(item)
                         }
                     }
+                    
+                    //TODO: only call the engine if the target date
+                    //is within 6 days of the current date.
                                         
                     //build a new prompt for weather analysis
                     let prompt = Prompt()
@@ -216,6 +222,7 @@ struct ForecastView: View {
                     //print(revisedPrompt)
                                         
                     self.askRunBuddyAndGetResponse(revisedPrompt)
+                    
                 }
                 
             } catch {
@@ -229,7 +236,6 @@ struct ForecastView: View {
 
     //provide test data..
     @State var targetDate = "2024-06-13"
-    @State var summary = "Sun. High of 92 and low of 68. Wind gusts up to 8 mph."
     
     return VStack {
         ForecastView(location: .zionPark, targetDate: targetDate, name:"Zion National Park", distance: "3.1")

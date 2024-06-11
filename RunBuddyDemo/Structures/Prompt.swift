@@ -26,6 +26,8 @@ struct Prompt {
         
         """
         
+        print(finalPrompt)
+        
         return finalPrompt
         
     }
@@ -40,7 +42,16 @@ struct Prompt {
         let bulletSymbol: Character = "\u{2981}"
         
         for forecast in forecasts {
-            results += "\(bulletSymbol) \(forecast.date): Temperature: \(forecast.temp) \(degreeSymbol)F, Chance of Precipitation: \(forecast.pop)%, Humidity: \(forecast.humidity)%."
+            
+            // Convert a UTC date string to a Date object
+            if let utcDate = Date.fromUTCString(forecast.date.description) {
+                
+                //convert to local timezone.
+                let localDateString = utcDate.toString()
+                
+                //print("Local time: \(localDateString)")
+                results += "\(bulletSymbol) \(localDateString): Temperature: \(forecast.temp) \(degreeSymbol)F, Chance of Precipitation: \(forecast.pop * 100)%, Humidity: \(forecast.humidity)%."
+            }
         }
         
         return results
