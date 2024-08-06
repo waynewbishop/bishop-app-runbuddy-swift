@@ -1,7 +1,7 @@
 Run Buddy
 ====================
 
-This project utilizes [Generative AI](https://www.linkedin.com/in/waynebishop) to help runners plan their next training run or event. Implemented in Swift, Run Buddy integrates training, location and statisical weather information with Google's [Gemini API](https://ai.google.dev) to provide answers for frequently asked running questions. This includes suggested strategies for nutrition, hydration, clothing and overall performance. 
+This project utilizes [Generative AI](https://www.linkedin.com/in/waynebishop) to help runners plan their next training run or event. Implemented in Swift, Run Buddy integrates training, location and statistical weather information with Google's [Gemini API](https://ai.google.dev) to provide answers for frequently asked running questions. This includes suggested strategies for nutrition, hydration, clothing and overall performance. 
 
 Audience
 ---------------------
