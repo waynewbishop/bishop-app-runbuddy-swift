@@ -14,7 +14,7 @@ struct Prompt {
     func promptForecast(weather forecasts: [ChartForecast], city: String, targetDate: String) -> String {
         
         let finalPrompt = """
-        User: I am planning a run today. Preferably, I'd like to avoid running in extreme heat, humidity or rain. This includes avoiding running in temperatures above 80 degrees Fahrenheit and humidity levels above 80%. The response should provide a single 30 to 40 word paragraph. Assume I want to run during daylight hours. Do not provide any recommendations for clothing, hydration or nutrition. Any forecasted precipitation or humidity should be treated as a continuous function between each time interval. For example, for any two time points t1 and t2 where precipitation or humidity is forecasted, assume P(t) is continuous for all t between t1 and t2. Any references to times should only be in 12-hour clock format. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. All numerical values provided in the response should be rounded to the nearest whole number. The response should also be in English.
+        User: I am planning a run today. Preferably, I'd like to avoid running in extreme heat, humidity or rain. This includes avoiding running in temperatures above 80 degrees Fahrenheit and humidity levels above 80%. The response should provide a single 15 to 25 word paragraph. Assume I want to run during daylight hours. Do not provide any recommendations for clothing, hydration or nutrition. Any forecasted precipitation or humidity should be treated as a continuous function between each time interval. For example, for any two time points t1 and t2 where precipitation or humidity is forecasted, assume P(t) is continuous for all t between t1 and t2. Any references to times should only be in 12-hour clock format. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. All numerical values provided in the response should be rounded to the nearest whole number. The response should also be in English.
 
         Location: \(city)
 
@@ -33,9 +33,9 @@ struct Prompt {
     func promptNutrition(weather forecasts: [ChartForecast], location: CLLocationCoordinate2D, city: String, intensity: String, duration: String) -> String {
         
         let finalPrompt = """
-        User: I am planning a \(intensity.lowercased()) intensity run sometime during daylight hours for \(duration) in \(city). Based on the weather temperature, location altitude and humidity, provide nutritional advice on fueling with gels, water or electrolytes during my run. The response should provide a single 20 to 30 word paragraph. If gels, how many gels should I consume and at what interval? Assume I'll be running sometime during daylight hours. Also provide pre and post-run fueling advice. No water or electrolytes are needed during runs of 30 minutes or less. Do not provide recommendations for the best time of day to run. Provide a schedule for the consumption of water and electrolytes when temperatures are above 65 degrees. Provide a schedule for consumption of water and electrolytes when my running duration exceeds 30 minutes. The general tone of the response should be upbeat, positive and encouraging. Calculate the location's altitude using the provided location coordinates. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. Do not provide any recommendations for the best time to run during the day. Any response that includes time of day should be in 12-hour clock format. All numerical values provided in the response should be rounded to the nearest whole number. The response should also be in English.
+        User: I am planning a \(intensity.lowercased()) intensity run sometime during daylight hours for \(duration) in \(city). I need nutritional advice on fueling with gels, water or electrolytes during my run. The response should provide a single 20 to 30 word paragraph and should not include bullet points, hyphens or indentations. If gels, how many gels should I consume and at what interval? Assume I'll be starting my run during the most optimal weather conditions. Do not provide any weather analysis, or recommendations for clothing. No electrolytes are needed during runs of 30 minutes or less. Do not provide recommendations for the best time of day to run. Provide an overview for consumption of water and electrolytes when my running duration exceeds 30 minutes. The general tone of the response should be upbeat, positive and encouraging. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. Any response that includes time of day should be in 12-hour clock format. Altitude statistics should be expressed in feet. All numerical values provided in the response should be rounded to the nearest whole number. The response should also be in English.
 
-        Location: \(city), (coordinates: \(location.latitude), \(location.longitude))
+        Location: \(city)
 
         Planned Exercise: Outdoor running
 
@@ -47,6 +47,27 @@ struct Prompt {
 
         return finalPrompt
     }
+    
+    
+    //create a prompt based on nutritional requirements
+    func promptClothing(weather forecasts: [ChartForecast], location: CLLocationCoordinate2D, city: String, intensity: String, terrain: String, duration: String) -> String {
+        
+        let finalPrompt = """
+        User: I am planning a \(intensity.lowercased()) intensity run on the \(terrain.lowercased()) for \(duration) in \(city). I need suggested clothing fabric preference, layering recommendation and clothing style. Do not provide any fabric recommendations that use cotton. Do not recommend wearing a jacket when temperatures are at or above 50 degrees. The response should provide a single 15 to 25 word paragraph. As part of your analysis, provide fabric preferences and layerability based on weather conditions. The general tone of the response should be upbeat, positive and encouraging. Provide an anaylsis of the weather as part your response. When required, only refer to yourself in first person. Do not use any titles or sub headings in the response. Do not provide any recommendations for the best time to run during the day. Any response that includes time of day should be in 12-hour clock format. Altitude statistics should be expressed in feet. All numerical values provided in the response should be rounded to the nearest whole number. The response should also be in English.
+
+        Location: \(city) (coordinates: \(location.latitude), \(location.longitude))
+
+        Planned Exercise: Outdoor running
+
+        Weather Forecast Data:
+        \(getFlatForecast(with: forecasts))
+        """
+
+        print(finalPrompt)
+
+        return finalPrompt
+    }
+
     
     
     //MARK: Helper functions

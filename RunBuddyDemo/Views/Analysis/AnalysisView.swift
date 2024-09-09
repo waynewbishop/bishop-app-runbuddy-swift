@@ -84,6 +84,13 @@ struct AnalysisView: View {
                        NutritionView(chartForecasts: $chartForecasts, question: question, apiKey: apiKey)
                     }
                 }
+                
+                if question.kit == true {
+                    VStack {
+                        ClothingView(chartForecasts: $chartForecasts, question: question, apiKey: apiKey)
+                    }
+                }
+                
             }
             .id(refreshTrigger)
         }
@@ -103,7 +110,7 @@ struct AnalysisView: View {
     @State var showModal: Bool  = false
     @State var selectedDate = Date().advanceDays(by: 0)
     
-    @State var testQuestion = Question(city: "Chautauqua Trail, CO", location: .chautauquaTrail, duration: "30-60 minutes", selectedDate: selectedDate.advanceDays(by: 3), intensity: "Tempo", terrainOption: "Road", nutrition: true, kit: false)
+    @State var testQuestion = Question(city: "Chautauqua Trail, CO", location: .chautauquaTrail, duration: "30-60 minutes", selectedDate: selectedDate.advanceDays(by: 3), intensity: "Tempo", terrain: "Road", nutrition: true, kit: true)
     
     return VStack {
         AnalysisView(showModal: $showModal, question: testQuestion)

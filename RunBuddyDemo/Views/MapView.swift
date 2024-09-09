@@ -32,7 +32,7 @@ struct MapView: View {
              */
         }
         .ignoresSafeArea()
-        .mapStyle(.standard(elevation: .realistic))
+        .mapStyle(.standard(elevation: .automatic))
         .sheet(isPresented: $isSheetPresented) {
             QuestionView(searchRegion: $searchRegion, searchResults: $searchResults)
                 .background(Colors.sheetBackgroundColor)

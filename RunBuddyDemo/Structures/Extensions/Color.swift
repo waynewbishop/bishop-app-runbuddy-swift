@@ -17,7 +17,7 @@ extension Color {
     }
     
     static func random() -> Color {
-        let colors: [Color] = [.green, .blue, .orange, .gray]
+        let colors: [Color] = [.green, .blue, .orange, .purple, .yellow, .red]
         return colors.randomElement() ?? .black
     }
 }

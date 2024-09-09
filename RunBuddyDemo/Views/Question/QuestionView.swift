@@ -245,7 +245,7 @@ var longitude: String {
                         if let region = searchRegion {
                             let location = region.center
                             
-                            let question = Question(city: name, location: location, duration: durationOption, selectedDate: selectedDate, intensity: selectedOption, terrainOption: terrainOption, nutrition: nutrition, kit: kit)
+                            let question = Question(city: name, location: location, duration: durationOption, selectedDate: selectedDate, intensity: selectedOption, terrain: terrainOption, nutrition: nutrition, kit: kit)
                             
                             AnalysisView(showModal: $showModal, question: question)
                         }

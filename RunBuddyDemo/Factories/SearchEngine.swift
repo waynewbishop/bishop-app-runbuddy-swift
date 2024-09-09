@@ -43,8 +43,11 @@ struct SearchEngine {
     //associates a map point of interest with a system icon
     func imageSystemIconForCategory(_ category: MKPointOfInterestCategory?) -> String {
         
-        print(category!)
-        
+        //check trivial case
+        guard let category = category else {
+          return "mappin" // Default icon for nil category
+        }
+                
         switch category {
         case .airport:
             return "airplane"

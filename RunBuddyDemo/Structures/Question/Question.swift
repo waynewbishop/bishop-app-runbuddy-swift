@@ -17,7 +17,7 @@ struct Question {
     let duration: String
     let selectedDate: Date
     let intensity: String
-    let terrainOption: String
+    let terrain: String
     let nutrition: Bool
     let kit: Bool
 }

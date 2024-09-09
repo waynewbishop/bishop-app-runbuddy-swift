@@ -47,6 +47,8 @@
 		DAAABCB72BCE1E7400A4C09A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB62BCE1E7400A4C09A /* MapView.swift */; };
 		DAAABCB92BCE34D000A4C09A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAABCB82BCE34D000A4C09A /* Question.swift */; };
 		DACF91CC2BE2F7C700A72BD0 /* SearchEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */; };
+		DAE6E3832C62B9FE00B71A6B /* ClothingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6E3822C62B9FE00B71A6B /* ClothingView.swift */; };
+		DAE6E3852C62D37300B71A6B /* AnalysisImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE6E3842C62D37300B71A6B /* AnalysisImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		DAAABCB62BCE1E7400A4C09A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DAAABCB82BCE34D000A4C09A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		DACF91CB2BE2F7C700A72BD0 /* SearchEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEngine.swift; sourceTree = "<group>"; };
+		DAE6E3822C62B9FE00B71A6B /* ClothingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothingView.swift; sourceTree = "<group>"; };
+		DAE6E3842C62D37300B71A6B /* AnalysisImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,8 @@
 				DA57DB572C01361500FE8AD5 /* AnalysisView.swift */,
 				DA57DB6D2C07897600FE8AD5 /* ForecastView.swift */,
 				DAA87ACD2C33ABBF00CF11F4 /* NutritionView.swift */,
+				DAE6E3822C62B9FE00B71A6B /* ClothingView.swift */,
+				DAE6E3842C62D37300B71A6B /* AnalysisImage.swift */,
 			);
 			path = Analysis;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				DAA42B142BE1D9BD00B041E9 /* SheetStyleModifier.swift in Sources */,
 				DA57DB712C0D5FEF00FE8AD5 /* History.swift in Sources */,
 				DAA87AC72C2E3FF700CF11F4 /* Int.swift in Sources */,
+				DAE6E3852C62D37300B71A6B /* AnalysisImage.swift in Sources */,
 				DA1595612BEC93AA00C02D9A /* ThumbsView.swift in Sources */,
 				DA57DB6E2C07897600FE8AD5 /* ForecastView.swift in Sources */,
 				DAA87AB12C1BE22300CF11F4 /* DurationView.swift in Sources */,
@@ -444,6 +451,7 @@
 				DAA42B102BE15EA800B041E9 /* QuestionView.swift in Sources */,
 				DAAABCB92BCE34D000A4C09A /* Question.swift in Sources */,
 				DAA87ABB2C1FE9D300CF11F4 /* FavoriteImage.swift in Sources */,
+				DAE6E3832C62B9FE00B71A6B /* ClothingView.swift in Sources */,
 				DA3536B92BD37062009FDBB2 /* ChartForecast.swift in Sources */,
 				DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */,
 				DA57DB562C0134B100FE8AD5 /* WeatherResponse.swift in Sources */,
