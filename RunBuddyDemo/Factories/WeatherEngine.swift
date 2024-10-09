@@ -29,7 +29,7 @@ class WeatherEngine: ObservableObject {
         
         //add specified parameters
         apiUrl += "?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)&units=\(units)"
-        //print(apiUrl)
+        print(apiUrl)
         
         guard let url = URL(string: apiUrl) else {
             throw NSError(domain: "openweatherapi.org", code: 1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])

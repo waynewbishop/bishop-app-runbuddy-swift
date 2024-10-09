@@ -331,8 +331,8 @@ var longitude: String {
 
 
 #Preview {
-    @State var visibleRegion: MKCoordinateRegion? = .washington
-    @State var searchResults: [MKMapItem] = []
+    @Previewable @State var visibleRegion: MKCoordinateRegion? = .washington
+    @Previewable @State var searchResults: [MKMapItem] = []
     return VStack {
         QuestionView(searchRegion: $visibleRegion, searchResults: $searchResults)
             .modelContainer(for: Favorite.self)

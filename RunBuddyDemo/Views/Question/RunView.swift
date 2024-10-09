@@ -34,7 +34,7 @@ struct RunView: View {
 
 
 #Preview {
- @State var selectedOption: String = "Easy"
+    @Previewable @State var selectedOption: String = "Easy"
     return VStack {
         RunView(selectedOption: $selectedOption)
     }

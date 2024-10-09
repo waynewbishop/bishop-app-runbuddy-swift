@@ -33,7 +33,7 @@ struct TerrainView: View {
 }
 
 #Preview {
-    @State var selectedOption: String = "Road"
+    @Previewable @State var selectedOption: String = "Road"
     return VStack {
         TerrainView(selectedOption: $selectedOption)
     }

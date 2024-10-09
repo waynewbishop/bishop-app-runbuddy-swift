@@ -29,7 +29,7 @@ struct EllipsisView: View {
 
 //special preview macro for testing animation state..
 #Preview {
-    @State var toggle: Bool = true
+    @Previewable @State var toggle: Bool = true
     return VStack {
         EllipsisView(isAnimating: $toggle, size: 100)
     }

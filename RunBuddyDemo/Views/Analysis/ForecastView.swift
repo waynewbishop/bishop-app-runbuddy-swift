@@ -261,12 +261,13 @@ struct ForecastView: View {
 #Preview {
 
     //provide test data..
-    @State var targetDate = "2024-08-01"
-    @State var chartForecasts = [ChartForecast]()
-    @State var selectedDate = Date().advanceDays(by: 0)
-    @State var apiKey: String? = BuddyConfig.geminiApiKey
+    @Previewable @State var apiKey: String? = BuddyConfig.geminiApiKey
     
-    @State var testQuestion = Question(city: "Gig Harbor", location: .gigHarbor, duration: "30 minutes", selectedDate: selectedDate.advanceDays(by: 1), intensity: "Easy", terrain: "Road", nutrition: false, kit: false)
+    //provide test data..
+    @Previewable @State var targetDate = "2024-08-01"
+    @Previewable @State var chartForecasts = [ChartForecast]()
+    
+    @Previewable @State var testQuestion = Question(city: "Gig Harbor", location: .gigHarbor, duration: "30 minutes", selectedDate: Date().advanceDays(by: 1), intensity: "Easy", terrain: "Road", nutrition: false, kit: false)
     
     return VStack {
         ForecastView(chartForecasts: $chartForecasts, location: .gigHarbor, targetDate: targetDate, name:"Zion National Park", duration: "30 minutes", apiKey: apiKey)

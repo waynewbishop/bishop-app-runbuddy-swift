@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA0F3A012CA4D001000793F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0F3A002CA4D000000793F5 /* UIKit.framework */; };
+		DA0F3A032CA4F36A000793F5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0F3A022CA4F36A000793F5 /* XCTest.framework */; };
 		DA1595552BE9C9DD00C02D9A /* RunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1595542BE9C9DD00C02D9A /* RunView.swift */; };
 		DA1595612BEC93AA00C02D9A /* ThumbsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1595602BEC93AA00C02D9A /* ThumbsView.swift */; };
 		DA1595632BED5FC800C02D9A /* BuddyConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1595622BED5FC800C02D9A /* BuddyConfig.swift */; };
@@ -23,7 +25,6 @@
 		DA57DB6C2C02E47200FE8AD5 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB6B2C02E47200FE8AD5 /* Colors.swift */; };
 		DA57DB6E2C07897600FE8AD5 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB6D2C07897600FE8AD5 /* ForecastView.swift */; };
 		DA57DB712C0D5FEF00FE8AD5 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57DB702C0D5FEF00FE8AD5 /* History.swift */; };
-		DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */ = {isa = PBXBuildFile; productRef = DA5BB9432BD862BC0010DC12 /* Structures */; };
 		DA5BB94D2BDBFF730010DC12 /* EllipsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5BB94C2BDBFF730010DC12 /* EllipsisView.swift */; };
 		DA65619F2C0FACAB0030076B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA65619E2C0FACAB0030076B /* Date.swift */; };
 		DA6561A12C0FD98E0030076B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6561A02C0FD98E0030076B /* String.swift */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA0F3A002CA4D000000793F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/iOSSupport/System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DA0F3A022CA4F36A000793F5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DA1595542BE9C9DD00C02D9A /* RunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunView.swift; sourceTree = "<group>"; };
 		DA1595602BEC93AA00C02D9A /* ThumbsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbsView.swift; sourceTree = "<group>"; };
 		DA1595622BED5FC800C02D9A /* BuddyConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyConfig.swift; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA0F3A012CA4D001000793F5 /* UIKit.framework in Frameworks */,
+				DA0F3A032CA4F36A000793F5 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA5BB9442BD862BC0010DC12 /* Structures in Frameworks */,
 				DAAABCB12BC7209200A4C09A /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +166,8 @@
 		DA5BB9452BD863850010DC12 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DA0F3A022CA4F36A000793F5 /* XCTest.framework */,
+				DA0F3A002CA4D000000793F5 /* UIKit.framework */,
 				DA5BB9462BD863850010DC12 /* XCTest.framework */,
 			);
 			name = Frameworks;
@@ -342,7 +348,6 @@
 			name = RunBuddyDemo;
 			packageProductDependencies = (
 				DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */,
-				DA5BB9432BD862BC0010DC12 /* Structures */,
 			);
 			productName = RunBuddyDemo;
 			productReference = DAAABC9D2BC71F9C00A4C09A /* RunBuddyDemo.app */;
@@ -378,7 +383,6 @@
 			mainGroup = DAAABC942BC71F9C00A4C09A;
 			packageReferences = (
 				DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
-				DA5BB9422BD862BC0010DC12 /* XCRemoteSwiftPackageReference "swift-structures" */,
 			);
 			productRefGroup = DAAABC9E2BC71F9C00A4C09A /* Products */;
 			projectDirPath = "";
@@ -479,15 +483,24 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6586N6K7KU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/System/iOSSupport/System/Library/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.arbutusinc.RunBuddyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunBuddyDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RunBuddyDemo";
 			};
 			name = Debug;
@@ -498,15 +511,24 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6586N6K7KU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/System/iOSSupport/System/Library/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.arbutusinc.RunBuddyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RunBuddyDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RunBuddyDemo";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -660,7 +682,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arbutusinc.RunBuddyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -698,7 +721,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arbutusinc.RunBuddyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -738,14 +762,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DA5BB9422BD862BC0010DC12 /* XCRemoteSwiftPackageReference "swift-structures" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/waynewbishop/swift-structures";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.0;
-			};
-		};
 		DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/generative-ai-swift";
@@ -757,11 +773,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DA5BB9432BD862BC0010DC12 /* Structures */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DA5BB9422BD862BC0010DC12 /* XCRemoteSwiftPackageReference "swift-structures" */;
-			productName = Structures;
-		};
 		DAAABCB02BC7209200A4C09A /* GoogleGenerativeAI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DAAABCAF2BC7209200A4C09A /* XCRemoteSwiftPackageReference "generative-ai-swift" */;

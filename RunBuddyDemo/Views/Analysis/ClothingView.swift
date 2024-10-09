@@ -87,11 +87,10 @@ struct ClothingView: View {
 
 #Preview {
     
-    @State var selectedDate = Date()
-    @State var chartForecasts = ChartForecast.generateTestData()
+    @Previewable @State var chartForecasts = ChartForecast.generateTestData()
+    @Previewable @State var previewQuestion = Question(city: "Zion Park", location: .gigHarbor, duration: "30 minutes", selectedDate: Date().advanceDays(by: 1), intensity: "Threshold", terrain: "Road", nutrition: false, kit: false)
+    
     let apiKey: String? = BuddyConfig.geminiApiKey
-
-    @State var previewQuestion = Question(city: "Zion Park", location: .gigHarbor, duration: "30 minutes", selectedDate: selectedDate.advanceDays(by: 1), intensity: "Threshold", terrain: "Road", nutrition: false, kit: false)
     
     return VStack {
         ClothingView(chartForecasts: $chartForecasts, question: previewQuestion, apiKey: apiKey)

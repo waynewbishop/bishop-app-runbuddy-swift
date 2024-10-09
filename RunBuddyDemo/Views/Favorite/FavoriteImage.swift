@@ -42,7 +42,7 @@ struct FavoriteImage: View {
 
 #Preview {
     
-    @State var name = "Zion National Park"
+    @Previewable @State var name = "Zion National Park"
     let systemIcon = "mappin"
     
     return VStack {

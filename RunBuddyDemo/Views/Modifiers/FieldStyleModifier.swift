@@ -43,8 +43,8 @@ extension View {
 
 //provide a sample preview
  #Preview {
-     @State var sampleText: String = "Hello World!"
-     @State var toggle: Bool = true
+     @Previewable @State var sampleText: String = "Hello World!"
+     @Previewable @State var toggle: Bool = true
      
      return HStack {
          TextField("Waiting for an answer..", text: $sampleText)

@@ -103,7 +103,7 @@ struct FavoriteRow: View {
 
 #Preview {
 
-    @State var showFavorite: Bool = true
+    @Previewable @State var showFavorite: Bool = true
     
     return VStack {
         FavoriteView(showFavorite: $showFavorite)

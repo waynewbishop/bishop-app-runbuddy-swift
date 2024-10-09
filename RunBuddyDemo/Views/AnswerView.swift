@@ -77,7 +77,7 @@ private let apiKey: String? = BuddyConfig.geminiApiKey
 
 
 #Preview {
-    @State var showGroupBox: Bool = false
+    @Previewable @State var showGroupBox: Bool = false
     return VStack {
         AnswerView(showGroupBox: showGroupBox)
     }

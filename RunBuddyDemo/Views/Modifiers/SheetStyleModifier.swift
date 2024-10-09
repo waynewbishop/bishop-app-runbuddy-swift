@@ -29,7 +29,7 @@ extension View {
 
 
 #Preview {
-    @State var isSheetPresented: Bool = true
+    @Previewable @State var isSheetPresented: Bool = true
     return VStack {
         Map()
     }

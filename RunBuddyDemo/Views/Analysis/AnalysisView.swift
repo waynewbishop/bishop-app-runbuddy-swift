@@ -107,10 +107,8 @@ struct AnalysisView: View {
 
 
 #Preview {
-    @State var showModal: Bool  = false
-    @State var selectedDate = Date().advanceDays(by: 0)
-    
-    @State var testQuestion = Question(city: "Chautauqua Trail, CO", location: .chautauquaTrail, duration: "30-60 minutes", selectedDate: selectedDate.advanceDays(by: 3), intensity: "Tempo", terrain: "Road", nutrition: true, kit: true)
+    @Previewable @State var showModal: Bool  = false    
+    @Previewable @State var testQuestion = Question(city: "Chautauqua Trail, CO", location: .chautauquaTrail, duration: "30-60 minutes", selectedDate: Date().advanceDays(by: 3), intensity: "Tempo", terrain: "Road", nutrition: true, kit: true)
     
     return VStack {
         AnalysisView(showModal: $showModal, question: testQuestion)

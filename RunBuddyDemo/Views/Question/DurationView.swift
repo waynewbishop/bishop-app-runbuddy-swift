@@ -59,7 +59,7 @@ struct DurationView: View {
 }
 
 #Preview {
-    @State var durationOption: String = "30 minutes"
+    @Previewable @State var durationOption: String = "30 minutes"
     
     return VStack {
         DurationView(selectedOption: $durationOption)
